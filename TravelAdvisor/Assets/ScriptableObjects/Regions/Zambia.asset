@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: Zambia
+  m_EditorClassIdentifier: 
+  Province_State: n/a
+  Country_Region: Zambia
+  Confirmed: 17857
+  Deaths: 364
+  Recovered: 17145
+  Active: 348
+  Combined_Key: Zambia
+  Incident_Rate: 97.13360932761154
+  Case_Fatality_Ratio: 2.0384163073304586

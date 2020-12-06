@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: West Flanders,  Belgium
+  m_EditorClassIdentifier: 
+  Province_State: West Flanders
+  Country_Region: Belgium
+  Confirmed: 45698
+  Deaths: 0
+  Recovered: 0
+  Active: 45698
+  Combined_Key: West Flanders,  Belgium
+  Incident_Rate: 3821.554847147842
+  Case_Fatality_Ratio: 0

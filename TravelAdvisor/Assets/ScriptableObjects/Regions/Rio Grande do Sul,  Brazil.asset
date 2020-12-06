@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: Rio Grande do Sul,  Brazil
+  m_EditorClassIdentifier: 
+  Province_State: Rio Grande do Sul
+  Country_Region: Brazil
+  Confirmed: 342035
+  Deaths: 7104
+  Recovered: 312660
+  Active: 22271
+  Combined_Key: Rio Grande do Sul,  Brazil
+  Incident_Rate: 3006.30935150435
+  Case_Fatality_Ratio: 2.0769804259797975

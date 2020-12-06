@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: Belgorod Oblast,  Russia
+  m_EditorClassIdentifier: 
+  Province_State: Belgorod Oblast
+  Country_Region: Russia
+  Confirmed: 16901
+  Deaths: 90
+  Recovered: 15175
+  Active: 1636
+  Combined_Key: Belgorod Oblast,  Russia
+  Incident_Rate: 1090.4743347209712
+  Case_Fatality_Ratio: 0.5325128690610023

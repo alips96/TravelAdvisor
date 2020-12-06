@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: Togo
+  m_EditorClassIdentifier: 
+  Province_State: n/a
+  Country_Region: Togo
+  Confirmed: 3051
+  Deaths: 65
+  Recovered: 2599
+  Active: 387
+  Combined_Key: Togo
+  Incident_Rate: 36.853447572981246
+  Case_Fatality_Ratio: 2.1304490331039005

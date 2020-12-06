@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: Distrito Federal,  Brazil
+  m_EditorClassIdentifier: 
+  Province_State: Distrito Federal
+  Country_Region: Brazil
+  Confirmed: 232781
+  Deaths: 3968
+  Recovered: 220971
+  Active: 7842
+  Combined_Key: Distrito Federal,  Brazil
+  Incident_Rate: 7720.076623371455
+  Case_Fatality_Ratio: 1.7046064756144188

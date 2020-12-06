@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: Chandigarh,  India
+  m_EditorClassIdentifier: 
+  Province_State: Chandigarh
+  Country_Region: India
+  Confirmed: 17828
+  Deaths: 287
+  Recovered: 16613
+  Active: 928
+  Combined_Key: Chandigarh,  India
+  Incident_Rate: 1538.9223572754825
+  Case_Fatality_Ratio: 1.6098272380525016

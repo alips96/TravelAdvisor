@@ -5,10 +5,6 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 
-/// <summary>
-/// So far, we can download and save the file in the destination folder.
-/// Download process occurs only once per day.
-/// </summary>
 public class DataCollection : MonoBehaviour
 {
     string yesterday;
@@ -31,7 +27,7 @@ public class DataCollection : MonoBehaviour
         string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv";
 
         UnityWebRequest webRequest = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
-        string path = Path.Combine(Application.dataPath + "/Data", "covidData.csv");
+        string path = Path.Combine(Application.dataPath + "/Editor/Data", "covidData.csv");
         webRequest.downloadHandler = new DownloadHandlerFile(path);
 
         yield return webRequest.SendWebRequest();

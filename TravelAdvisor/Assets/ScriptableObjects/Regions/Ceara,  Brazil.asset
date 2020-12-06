@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: Ceara,  Brazil
+  m_EditorClassIdentifier: 
+  Province_State: Ceara
+  Country_Region: Brazil
+  Confirmed: 303868
+  Deaths: 9683
+  Recovered: 253097
+  Active: 41088
+  Combined_Key: Ceara,  Brazil
+  Incident_Rate: 3327.4792440450033
+  Case_Fatality_Ratio: 3.186581015440915
