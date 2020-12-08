@@ -16,16 +16,16 @@ public class CsvToSo
     {
         string[] allLines = File.ReadAllLines(Application.dataPath + dataCsvPath);
 
-        foreach (string line in allLines.Skip(1))
+        for(int i = 1; i < allLines.Length; i++)
         {
-            string updatedLine = line.Replace("\"", string.Empty);
-            updatedLine = updatedLine.Replace("*", string.Empty);
-            string[] column = updatedLine.Split(',');
+            if (i > 649 && i < 3924) //skip US
+                continue;
+
+            string line = allLines[i].Replace("\"", string.Empty);
+            line = line.Replace("*", string.Empty);
+            string[] column = line.Split(',');
 
             Region region = ScriptableObject.CreateInstance<Region>();
-
-            if (column[3] == "US")
-                continue;
 
             if (column[3] == "Korea" || column[2] == "Bonaire")
             {
@@ -35,9 +35,9 @@ public class CsvToSo
             {
                 region.Province_State = "n/a"; //this means the stats are provided only for the  country.
                 region.Country_Region = column[3];
-                region.Confirmed = column[7].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[7]);
-                region.Deaths = column[8].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[8]);
-                region.Recovered = column[9].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[9]);
+                region.Confirmed = Convert.ToInt32(column[7]);
+                region.Deaths = Convert.ToInt32(column[8]);
+                region.Recovered = Convert.ToInt32(column[9]);
                 region.Active = column[10].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[10]);
                 region.Combined_Key = column[11];
                 region.Incident_Rate = column[12].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[12]);
@@ -47,9 +47,9 @@ public class CsvToSo
             {
                 region.Province_State = column[2];
                 region.Country_Region = column[3];
-                region.Confirmed = column[7].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[7]);
-                region.Deaths = column[8].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[8]);
-                region.Recovered = column[9].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[9]);
+                region.Confirmed = Convert.ToInt32(column[7]);
+                region.Deaths = Convert.ToInt32(column[8]);
+                region.Recovered = Convert.ToInt32(column[9]);
                 region.Active = column[10].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[10]);
                 region.Combined_Key = column[11] + ", " + column[12];
                 region.Incident_Rate = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
