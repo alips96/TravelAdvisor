@@ -17,12 +17,27 @@ public class DataCollection : MonoBehaviour
         if (shouldDownloadCorpus)
         {
             PlayerPrefs.DeleteAll();
-            StartCoroutine(DownloadCorpus());
+            StartCoroutine(DownloadWorldCorpus());
+            StartCoroutine(DownloadUSCorpus());
             PlayerPrefs.SetInt(yesterday, 1);
         }
     }
 
-    private IEnumerator DownloadCorpus()
+    private IEnumerator DownloadUSCorpus()
+    {
+        string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/81f5d98667f8f61196801b9eddac92136ae73824/csse_covid_19_data/csse_covid_19_daily_reports_us/" + yesterday + ".csv";
+
+        UnityWebRequest webRequest = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
+        string path = Path.Combine(Application.dataPath + "/Editor/Data", "USCovidData.csv");
+        webRequest.downloadHandler = new DownloadHandlerFile(path);
+
+        yield return webRequest.SendWebRequest();
+
+        if (webRequest.isNetworkError || webRequest.isHttpError)
+            Debug.LogError(webRequest.error);
+    }
+
+    private IEnumerator DownloadWorldCorpus()
     {
         string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv";
 
