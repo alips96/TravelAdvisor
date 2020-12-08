@@ -8,7 +8,8 @@ using System.Text;
 
 public class CsvToSo
 {
-    private static string dataCsvPath = "/Editor/Data/covidData.csv";
+    private readonly static string dataCsvPath = "/Editor/Data/covidData.csv";
+    private readonly static string usDataCsvPath = "/Editor/Data/USCovidData.csv";
 
     [MenuItem("Utilities/Generate Region Stats")]
     public static void GenerateRegionStats()
@@ -55,6 +56,33 @@ public class CsvToSo
                 region.Case_Fatality_Ratio = column[14].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[14]);
             }
             
+
+            AssetDatabase.CreateAsset(region, $"Assets/ScriptableObjects/Regions/{region.Combined_Key}.asset");
+        }
+
+        AssetDatabase.SaveAssets();
+    }
+
+    [MenuItem("Utilities/Generate US Stats")]
+    public static void GenerateUSRegionStats()
+    {
+        string[] allLines = File.ReadAllLines(Application.dataPath + usDataCsvPath);
+
+        foreach (string line in allLines.Skip(1))
+        {
+            string[] column = line.Split(',');
+
+            Region region = ScriptableObject.CreateInstance<Region>();
+
+            region.Province_State = column[0];
+            region.Country_Region = "US";
+            region.Confirmed = Convert.ToInt32(column[5]);
+            region.Deaths = Convert.ToInt32(column[6]);
+            region.Recovered = column[7].CompareTo("") == 0 ? 0 : (int) float.Parse(column[7]);
+            region.Active = (int) float.Parse(column[8]);
+            region.Incident_Rate = column[10].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[10]);
+            region.Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
+            region.Combined_Key = column[0] + ", US"; 
 
             AssetDatabase.CreateAsset(region, $"Assets/ScriptableObjects/Regions/{region.Combined_Key}.asset");
         }
