@@ -8,8 +8,8 @@ using System.Text;
 
 public class CsvToSo
 {
-    private readonly static string dataCsvPath = "/Editor/Data/covidData.csv";
-    private readonly static string usDataCsvPath = "/Editor/Data/USCovidData.csv";
+    private static readonly string dataCsvPath = "/Editor/Data/covidData.csv";
+    private static readonly string usDataCsvPath = "/Editor/Data/USCovidData.csv";
 
     [MenuItem("Utilities/Generate Region Stats")]
     public static void GenerateRegionStats()
