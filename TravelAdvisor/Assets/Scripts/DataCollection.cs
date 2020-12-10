@@ -25,7 +25,7 @@ public class DataCollection : MonoBehaviour
 
     private IEnumerator DownloadUSCorpus()
     {
-        string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/81f5d98667f8f61196801b9eddac92136ae73824/csse_covid_19_data/csse_covid_19_daily_reports_us/" + yesterday + ".csv";
+        string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + yesterday + ".csv";
 
         UnityWebRequest webRequest = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
         string path = Path.Combine(Application.dataPath + "/Editor/Data", "USCovidData.csv");
