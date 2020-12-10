@@ -6,20 +6,19 @@ using UnityEngine.UI;
 public class AutoCompleteText : MonoBehaviour
 {
     List<string> myList = new List<string>();
-    public Dropdown dropDown;
-    public InputField inputField;
+    [SerializeField] private Dropdown dropDown;
+    [SerializeField] private InputField inputField;
+    [SerializeField] private Country countrySO;
 
     private void Start()
     {
-        myList.Add("Ali");
-        myList.Add("Nariman");
-        myList.Add("Ali, Germany");
-        myList.Add("Nariman, Iran");
+        myList = countrySO.AllRegions;
     }
+
     public void InputValueChanged() //called by dokme
     {
         dropDown.ClearOptions();
-        string word = inputField.text;
+        string word = inputField.text.ToLower();
 
         if (!string.IsNullOrEmpty(word))
         {

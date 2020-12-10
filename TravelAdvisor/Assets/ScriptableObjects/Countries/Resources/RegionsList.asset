@@ -1,0 +1,715 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fdab1f5daa1a342a35e86d95159ce9, type: 3}
+  m_Name: RegionsList
+  m_EditorClassIdentifier: 
+  AllRegions:
+  - afghanistan
+  - albania
+  - algeria
+  - andorra
+  - angola
+  - antigua and barbuda
+  - argentina
+  - armenia
+  - australian capital territory,  australia
+  - new south wales,  australia
+  - northern territory,  australia
+  - queensland,  australia
+  - south australia,  australia
+  - tasmania,  australia
+  - victoria,  australia
+  - western australia,  australia
+  - austria
+  - azerbaijan
+  - bahamas
+  - bahrain
+  - bangladesh
+  - barbados
+  - belarus
+  - antwerp,  belgium
+  - brussels,  belgium
+  - east flanders,  belgium
+  - flemish brabant,  belgium
+  - hainaut,  belgium
+  - liege,  belgium
+  - limburg,  belgium
+  - luxembourg,  belgium
+  - namur,  belgium
+  - unknown,  belgium
+  - walloon brabant,  belgium
+  - west flanders,  belgium
+  - belize
+  - benin
+  - bhutan
+  - bolivia
+  - bosnia and herzegovina
+  - botswana
+  - acre,  brazil
+  - alagoas,  brazil
+  - amapa,  brazil
+  - amazonas,  brazil
+  - bahia,  brazil
+  - ceara,  brazil
+  - distrito federal,  brazil
+  - espirito santo,  brazil
+  - goias,  brazil
+  - maranhao,  brazil
+  - mato grosso,  brazil
+  - mato grosso do sul,  brazil
+  - minas gerais,  brazil
+  - para,  brazil
+  - paraiba,  brazil
+  - parana,  brazil
+  - pernambuco,  brazil
+  - piaui,  brazil
+  - rio grande do norte,  brazil
+  - rio grande do sul,  brazil
+  - rio de janeiro,  brazil
+  - rondonia,  brazil
+  - roraima,  brazil
+  - santa catarina,  brazil
+  - sao paulo,  brazil
+  - sergipe,  brazil
+  - tocantins,  brazil
+  - brunei
+  - bulgaria
+  - burkina faso
+  - burma
+  - burundi
+  - cabo verde
+  - cambodia
+  - cameroon
+  - alberta,  canada
+  - british columbia,  canada
+  - diamond princess,  canada
+  - grand princess,  canada
+  - manitoba,  canada
+  - new brunswick,  canada
+  - newfoundland and labrador,  canada
+  - northwest territories, canada
+  - nova scotia,  canada
+  - nunavut,  canada
+  - ontario,  canada
+  - prince edward island,  canada
+  - quebec,  canada
+  - repatriated travellers,  canada
+  - saskatchewan,  canada
+  - yukon,  canada
+  - central african republic
+  - chad
+  - antofagasta,  chile
+  - araucania,  chile
+  - arica y parinacota,  chile
+  - atacama,  chile
+  - aysen,  chile
+  - biobio,  chile
+  - coquimbo,  chile
+  - los lagos,  chile
+  - los rios,  chile
+  - magallanes,  chile
+  - maule,  chile
+  - metropolitana,  chile
+  - nuble,  chile
+  - ohiggins,  chile
+  - tarapaca,  chile
+  - unknown,  chile
+  - valparaiso,  chile
+  - anhui,  china
+  - beijing,  china
+  - chongqing,  china
+  - fujian,  china
+  - gansu,  china
+  - guangdong,  china
+  - guangxi,  china
+  - guizhou,  china
+  - hainan,  china
+  - hebei,  china
+  - heilongjiang,  china
+  - henan,  china
+  - hong kong,  china
+  - hubei,  china
+  - hunan,  china
+  - inner mongolia,  china
+  - jiangsu,  china
+  - jiangxi,  china
+  - jilin,  china
+  - liaoning,  china
+  - macau,  china
+  - ningxia,  china
+  - qinghai,  china
+  - shaanxi,  china
+  - shandong,  china
+  - shanghai,  china
+  - shanxi,  china
+  - sichuan,  china
+  - tianjin,  china
+  - tibet,  china
+  - xinjiang,  china
+  - yunnan,  china
+  - zhejiang,  china
+  - amazonas,  colombia
+  - antioquia,  colombia
+  - arauca,  colombia
+  - atlantico,  colombia
+  - bolivar,  colombia
+  - boyaca,  colombia
+  - caldas,  colombia
+  - capital district,  colombia
+  - caqueta,  colombia
+  - casanare,  colombia
+  - cauca,  colombia
+  - cesar,  colombia
+  - choco,  colombia
+  - cordoba,  colombia
+  - cundinamarca,  colombia
+  - guainia,  colombia
+  - guaviare,  colombia
+  - huila,  colombia
+  - la guajira,  colombia
+  - magdalena,  colombia
+  - meta,  colombia
+  - narino,  colombia
+  - norte de santander,  colombia
+  - putumayo,  colombia
+  - quindio,  colombia
+  - risaralda,  colombia
+  - san andres y providencia,  colombia
+  - santander,  colombia
+  - sucre,  colombia
+  - tolima,  colombia
+  - unknown,  colombia
+  - valle del cauca,  colombia
+  - vaupes,  colombia
+  - vichada,  colombia
+  - comoros
+  - congo (brazzaville)
+  - congo (kinshasa)
+  - costa rica
+  - cote d'ivoire
+  - croatia
+  - cuba
+  - cyprus
+  - czechia
+  - faroe islands,  denmark
+  - greenland,  denmark
+  - denmark
+  - diamond princess
+  - djibouti
+  - dominica
+  - dominican republic
+  - ecuador
+  - egypt
+  - el salvador
+  - equatorial guinea
+  - eritrea
+  - estonia
+  - eswatini
+  - ethiopia
+  - fiji
+  - finland
+  - french guiana,  france
+  - french polynesia,  france
+  - guadeloupe,  france
+  - martinique,  france
+  - mayotte,  france
+  - new caledonia,  france
+  - reunion,  france
+  - saint barthelemy,  france
+  - saint pierre and miquelon,  france
+  - st martin,  france
+  - france
+  - gabon
+  - gambia
+  - georgia
+  - baden-wurttemberg,  germany
+  - bayern,  germany
+  - berlin,  germany
+  - brandenburg,  germany
+  - bremen,  germany
+  - hamburg,  germany
+  - hessen,  germany
+  - mecklenburg-vorpommern,  germany
+  - niedersachsen,  germany
+  - nordrhein-westfalen,  germany
+  - rheinland-pfalz,  germany
+  - saarland,  germany
+  - sachsen,  germany
+  - sachsen-anhalt,  germany
+  - schleswig-holstein,  germany
+  - thuringen,  germany
+  - unknown,  germany
+  - ghana
+  - greece
+  - grenada
+  - guatemala
+  - guinea
+  - guinea-bissau
+  - guyana
+  - haiti
+  - holy see
+  - honduras
+  - hungary
+  - iceland
+  - andaman and nicobar islands,  india
+  - andhra pradesh,  india
+  - arunachal pradesh,  india
+  - assam,  india
+  - bihar,  india
+  - chandigarh,  india
+  - chhattisgarh,  india
+  - dadra and nagar haveli and daman and diu,  india
+  - delhi,  india
+  - goa,  india
+  - gujarat,  india
+  - haryana,  india
+  - himachal pradesh,  india
+  - jammu and kashmir,  india
+  - jharkhand,  india
+  - karnataka,  india
+  - kerala,  india
+  - ladakh,  india
+  - lakshadweep,  india
+  - madhya pradesh,  india
+  - maharashtra,  india
+  - manipur,  india
+  - meghalaya,  india
+  - mizoram,  india
+  - nagaland,  india
+  - odisha,  india
+  - puducherry,  india
+  - punjab,  india
+  - rajasthan,  india
+  - sikkim,  india
+  - tamil nadu,  india
+  - telangana,  india
+  - tripura,  india
+  - unknown,  india
+  - uttar pradesh,  india
+  - uttarakhand,  india
+  - west bengal,  india
+  - indonesia
+  - iran
+  - iraq
+  - ireland
+  - israel
+  - abruzzo,  italy
+  - basilicata,  italy
+  - calabria,  italy
+  - campania,  italy
+  - emilia-romagna,  italy
+  - friuli venezia giulia,  italy
+  - lazio,  italy
+  - liguria,  italy
+  - lombardia,  italy
+  - marche,  italy
+  - molise,  italy
+  - p.a. bolzano,  italy
+  - p.a. trento,  italy
+  - piemonte,  italy
+  - puglia,  italy
+  - sardegna,  italy
+  - sicilia,  italy
+  - toscana,  italy
+  - umbria,  italy
+  - valle d'aosta,  italy
+  - veneto,  italy
+  - jamaica
+  - aichi,  japan
+  - akita,  japan
+  - aomori,  japan
+  - chiba,  japan
+  - ehime,  japan
+  - fukui,  japan
+  - fukuoka,  japan
+  - fukushima,  japan
+  - gifu,  japan
+  - gunma,  japan
+  - hiroshima,  japan
+  - hokkaido,  japan
+  - hyogo,  japan
+  - ibaraki,  japan
+  - ishikawa,  japan
+  - iwate,  japan
+  - kagawa,  japan
+  - kagoshima,  japan
+  - kanagawa,  japan
+  - kochi,  japan
+  - kumamoto,  japan
+  - kyoto,  japan
+  - mie,  japan
+  - miyagi,  japan
+  - miyazaki,  japan
+  - nagano,  japan
+  - nagasaki,  japan
+  - nara,  japan
+  - niigata,  japan
+  - oita,  japan
+  - okayama,  japan
+  - okinawa,  japan
+  - osaka,  japan
+  - port quarantine,  japan
+  - saga,  japan
+  - saitama,  japan
+  - shiga,  japan
+  - shimane,  japan
+  - shizuoka,  japan
+  - tochigi,  japan
+  - tokushima,  japan
+  - tokyo,  japan
+  - tottori,  japan
+  - toyama,  japan
+  - unknown,  japan
+  - wakayama,  japan
+  - yamagata,  japan
+  - yamaguchi,  japan
+  - yamanashi,  japan
+  - jordan
+  - kazakhstan
+  - kenya
+  - kosovo
+  - kuwait
+  - kyrgyzstan
+  - laos
+  - latvia
+  - lebanon
+  - lesotho
+  - liberia
+  - libya
+  - liechtenstein
+  - lithuania
+  - luxembourg
+  - ms zaandam
+  - madagascar
+  - malawi
+  - malaysia
+  - maldives
+  - mali
+  - malta
+  - marshall islands
+  - mauritania
+  - mauritius
+  - aguascalientes,  mexico
+  - baja california,  mexico
+  - baja california sur,  mexico
+  - campeche,  mexico
+  - chiapas,  mexico
+  - chihuahua,  mexico
+  - ciudad de mexico,  mexico
+  - coahuila,  mexico
+  - colima,  mexico
+  - durango,  mexico
+  - guanajuato,  mexico
+  - guerrero,  mexico
+  - hidalgo,  mexico
+  - jalisco,  mexico
+  - mexico,  mexico
+  - michoacan,  mexico
+  - morelos,  mexico
+  - nayarit,  mexico
+  - nuevo leon,  mexico
+  - oaxaca,  mexico
+  - puebla,  mexico
+  - queretaro,  mexico
+  - quintana roo,  mexico
+  - san luis potosi,  mexico
+  - sinaloa,  mexico
+  - sonora,  mexico
+  - tabasco,  mexico
+  - tamaulipas,  mexico
+  - tlaxcala,  mexico
+  - unknown,  mexico
+  - veracruz,  mexico
+  - yucatan,  mexico
+  - zacatecas,  mexico
+  - moldova
+  - monaco
+  - mongolia
+  - montenegro
+  - morocco
+  - mozambique
+  - namibia
+  - nepal
+  - aruba,  netherlands
+  - curacao,  netherlands
+  - drenthe,  netherlands
+  - flevoland,  netherlands
+  - friesland,  netherlands
+  - gelderland,  netherlands
+  - groningen,  netherlands
+  - limburg,  netherlands
+  - noord-brabant,  netherlands
+  - noord-holland,  netherlands
+  - overijssel,  netherlands
+  - sint maarten,  netherlands
+  - unknown,  netherlands
+  - utrecht,  netherlands
+  - zeeland,  netherlands
+  - zuid-holland,  netherlands
+  - new zealand
+  - nicaragua
+  - niger
+  - nigeria
+  - north macedonia
+  - norway
+  - oman
+  - azad jammu and kashmir,  pakistan
+  - balochistan,  pakistan
+  - gilgit-baltistan,  pakistan
+  - islamabad,  pakistan
+  - khyber pakhtunkhwa,  pakistan
+  - punjab,  pakistan
+  - sindh,  pakistan
+  - panama
+  - papua new guinea
+  - paraguay
+  - amazonas,  peru
+  - ancash,  peru
+  - apurimac,  peru
+  - arequipa,  peru
+  - ayacucho,  peru
+  - cajamarca,  peru
+  - callao,  peru
+  - cusco,  peru
+  - huancavelica,  peru
+  - huanuco,  peru
+  - ica,  peru
+  - junin,  peru
+  - la libertad,  peru
+  - lambayeque,  peru
+  - lima,  peru
+  - loreto,  peru
+  - madre de dios,  peru
+  - moquegua,  peru
+  - pasco,  peru
+  - piura,  peru
+  - puno,  peru
+  - san martin,  peru
+  - tacna,  peru
+  - tumbes,  peru
+  - ucayali,  peru
+  - unknown,  peru
+  - philippines
+  - poland
+  - portugal
+  - qatar
+  - romania
+  - adygea republic,  russia
+  - altai krai,  russia
+  - altai republic,  russia
+  - amur oblast,  russia
+  - arkhangelsk oblast,  russia
+  - astrakhan oblast,  russia
+  - bashkortostan republic,  russia
+  - belgorod oblast,  russia
+  - bryansk oblast,  russia
+  - buryatia republic,  russia
+  - chechen republic,  russia
+  - chelyabinsk oblast,  russia
+  - chukotka autonomous okrug,  russia
+  - chuvashia republic,  russia
+  - dagestan republic,  russia
+  - ingushetia republic,  russia
+  - irkutsk oblast,  russia
+  - ivanovo oblast,  russia
+  - jewish autonomous okrug,  russia
+  - kabardino-balkarian republic,  russia
+  - kaliningrad oblast,  russia
+  - kalmykia republic,  russia
+  - kaluga oblast,  russia
+  - kamchatka krai,  russia
+  - karachay-cherkess republic,  russia
+  - karelia republic,  russia
+  - kemerovo oblast,  russia
+  - khabarovsk krai,  russia
+  - khakassia republic,  russia
+  - khanty-mansi autonomous okrug,  russia
+  - kirov oblast,  russia
+  - komi republic,  russia
+  - kostroma oblast,  russia
+  - krasnodar krai,  russia
+  - krasnoyarsk krai,  russia
+  - kurgan oblast,  russia
+  - kursk oblast,  russia
+  - leningrad oblast,  russia
+  - lipetsk oblast,  russia
+  - magadan oblast,  russia
+  - mari el republic,  russia
+  - mordovia republic,  russia
+  - moscow,  russia
+  - moscow oblast,  russia
+  - murmansk oblast,  russia
+  - nenets autonomous okrug,  russia
+  - nizhny novgorod oblast,  russia
+  - north ossetia - alania republic,  russia
+  - novgorod oblast,  russia
+  - novosibirsk oblast,  russia
+  - omsk oblast,  russia
+  - orel oblast,  russia
+  - orenburg oblast,  russia
+  - penza oblast,  russia
+  - perm krai,  russia
+  - primorsky krai,  russia
+  - pskov oblast,  russia
+  - rostov oblast,  russia
+  - ryazan oblast,  russia
+  - saint petersburg,  russia
+  - sakha (yakutiya) republic,  russia
+  - sakhalin oblast,  russia
+  - samara oblast,  russia
+  - saratov oblast,  russia
+  - smolensk oblast,  russia
+  - stavropol krai,  russia
+  - sverdlovsk oblast,  russia
+  - tambov oblast,  russia
+  - tatarstan republic,  russia
+  - tomsk oblast,  russia
+  - tula oblast,  russia
+  - tver oblast,  russia
+  - tyumen oblast,  russia
+  - tyva republic,  russia
+  - udmurt republic,  russia
+  - ulyanovsk oblast,  russia
+  - vladimir oblast,  russia
+  - volgograd oblast,  russia
+  - vologda oblast,  russia
+  - voronezh oblast,  russia
+  - yamalo-nenets autonomous okrug,  russia
+  - yaroslavl oblast,  russia
+  - zabaykalsky krai,  russia
+  - rwanda
+  - saint kitts and nevis
+  - saint lucia
+  - saint vincent and the grenadines
+  - samoa
+  - san marino
+  - sao tome and principe
+  - saudi arabia
+  - senegal
+  - serbia
+  - seychelles
+  - sierra leone
+  - singapore
+  - slovakia
+  - slovenia
+  - solomon islands
+  - somalia
+  - south africa
+  - south sudan
+  - andalusia,  spain
+  - aragon,  spain
+  - asturias,  spain
+  - baleares,  spain
+  - c. valenciana,  spain
+  - canarias,  spain
+  - cantabria,  spain
+  - castilla - la mancha,  spain
+  - castilla y leon,  spain
+  - catalonia,  spain
+  - ceuta,  spain
+  - extremadura,  spain
+  - galicia,  spain
+  - la rioja,  spain
+  - madrid,  spain
+  - melilla,  spain
+  - murcia,  spain
+  - navarra,  spain
+  - pais vasco,  spain
+  - unknown,  spain
+  - sri lanka
+  - sudan
+  - suriname
+  - blekinge,  sweden
+  - dalarna,  sweden
+  - gavleborg,  sweden
+  - gotland,  sweden
+  - halland,  sweden
+  - jamtland harjedalen,  sweden
+  - jonkoping,  sweden
+  - kalmar,  sweden
+  - kronoberg,  sweden
+  - norrbotten,  sweden
+  - orebro,  sweden
+  - ostergotland,  sweden
+  - skane,  sweden
+  - sormland,  sweden
+  - stockholm,  sweden
+  - uppsala,  sweden
+  - varmland,  sweden
+  - vasterbotten,  sweden
+  - vasternorrland,  sweden
+  - vastmanland,  sweden
+  - vastra gotaland,  sweden
+  - switzerland
+  - syria
+  - taiwan
+  - tajikistan
+  - tanzania
+  - thailand
+  - timor-leste
+  - togo
+  - trinidad and tobago
+  - tunisia
+  - turkey
+  - uganda
+  - cherkasy oblast,  ukraine
+  - chernihiv oblast,  ukraine
+  - chernivtsi oblast,  ukraine
+  - crimea republic,  ukraine
+  - dnipropetrovsk oblast,  ukraine
+  - donetsk oblast,  ukraine
+  - ivano-frankivsk oblast,  ukraine
+  - kharkiv oblast,  ukraine
+  - kherson oblast,  ukraine
+  - khmelnytskyi oblast,  ukraine
+  - kiev,  ukraine
+  - kiev oblast,  ukraine
+  - kirovohrad oblast,  ukraine
+  - luhansk oblast,  ukraine
+  - lviv oblast,  ukraine
+  - mykolaiv oblast,  ukraine
+  - odessa oblast,  ukraine
+  - poltava oblast,  ukraine
+  - rivne oblast,  ukraine
+  - sevastopol,  ukraine
+  - sumy oblast,  ukraine
+  - ternopil oblast,  ukraine
+  - vinnytsia oblast,  ukraine
+  - volyn oblast,  ukraine
+  - zakarpattia oblast,  ukraine
+  - zaporizhia oblast,  ukraine
+  - zhytomyr oblast,  ukraine
+  - united arab emirates
+  - anguilla,  united kingdom
+  - bermuda,  united kingdom
+  - british virgin islands,  united kingdom
+  - cayman islands,  united kingdom
+  - channel islands,  united kingdom
+  - england,  united kingdom
+  - falkland islands (malvinas),  united kingdom
+  - gibraltar,  united kingdom
+  - isle of man,  united kingdom
+  - montserrat,  united kingdom
+  - northern ireland,  united kingdom
+  - scotland,  united kingdom
+  - turks and caicos islands,  united kingdom
+  - unknown,  united kingdom
+  - wales,  united kingdom
+  - uruguay
+  - uzbekistan
+  - vanuatu
+  - venezuela
+  - vietnam
+  - west bank and gaza
+  - yemen
+  - zambia
+  - zimbabwe
