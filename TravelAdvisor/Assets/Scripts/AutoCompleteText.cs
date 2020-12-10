@@ -15,9 +15,10 @@ public class AutoCompleteText : MonoBehaviour
         myList = countrySO.AllRegions;
     }
 
-    public void InputValueChanged() //called by dokme
+    public void InputValueChanged() //called by InputText UI
     {
         dropDown.ClearOptions();
+
         string word = inputField.text.ToLower();
 
         if (!string.IsNullOrEmpty(word))
@@ -26,16 +27,13 @@ public class AutoCompleteText : MonoBehaviour
 
             if (found.Count > 0)
             {
+                dropDown.AddOptions(new List<string> { inputField.text + ".." });
                 dropDown.AddOptions(found);
-            }
-            else
-            {
-                dropDown.ClearOptions();
             }
         }
         else
         {
-            dropDown.ClearOptions();
+            dropDown.AddOptions(new List<string> { inputField.text + ".." });
         }
     }
 }
