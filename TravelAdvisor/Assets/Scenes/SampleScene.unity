@@ -1463,7 +1463,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 462313613}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.2
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1672,7 +1672,19 @@ MonoBehaviour:
     m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2124491273}
+        m_TargetAssemblyTypeName: DatabaseQuery, Assembly-CSharp
+        m_MethodName: DropDownMenuChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1543316836
 MonoBehaviour:
@@ -1918,6 +1930,9 @@ GameObject:
   - component: {fileID: 2124491269}
   - component: {fileID: 2124491271}
   - component: {fileID: 2124491272}
+  - component: {fileID: 2124491273}
+  - component: {fileID: 2124491275}
+  - component: {fileID: 2124491274}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1979,3 +1994,41 @@ MonoBehaviour:
   dropDown: {fileID: 1543316835}
   inputField: {fileID: 38874999}
   countrySO: {fileID: 11400000, guid: efb632d558711d544941e45bd5c1b4d9, type: 2}
+--- !u!114 &2124491273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124491268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6da1f67b45503439d28fda2b1ede3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdownMenu: {fileID: 1543316835}
+  inputField: {fileID: 38874999}
+--- !u!114 &2124491274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124491268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1852af4c48fa9084d947e85c63fb5acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2124491275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124491268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ecc4d9e0df74e458864aab0cfa421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

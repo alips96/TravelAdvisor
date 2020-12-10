@@ -6,10 +6,17 @@ public class LocationHandler : MonoBehaviour
 {
     [SerializeField] private Location startingPoint;
     private readonly string locationUrl = "https://extreme-ip-lookup.com/json";
+    private LocationMaster locationMaster;
 
     private void Start()
     {
+        SetInitialReferences();
         StartCoroutine(GetCurrentLocation());
+    }
+
+    private void SetInitialReferences()
+    {
+        locationMaster = GetComponent<LocationMaster>();
     }
 
     private IEnumerator GetCurrentLocation()
@@ -37,6 +44,9 @@ public class LocationHandler : MonoBehaviour
             startingPoint.query = jsonData.query;
             startingPoint.state = jsonData.region;
             startingPoint.status = jsonData.status;
+
+            string startingPositionKey = startingPoint.state.ToLower() + ", " + startingPoint.country.ToLower();
+            locationMaster.CallEventStartingPositionCaptured(startingPositionKey);
         }
     }
 }
