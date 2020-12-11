@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: tlaxcala, mexico
+  m_EditorClassIdentifier: 
+  Province_State: Tlaxcala
+  Country_Region: Mexico
+  Confirmed: 9819
+  Deaths: 1307
+  Recovered: 0
+  Active: 8512
+  Combined_Key: tlaxcala, mexico
+  Incident_Rate: 711.516067625548
+  Case_Fatality_Ratio: 13.310927793054283

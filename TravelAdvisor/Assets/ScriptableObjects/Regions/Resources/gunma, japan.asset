@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: gunma, japan
+  m_EditorClassIdentifier: 
+  Province_State: Gunma
+  Country_Region: Japan
+  Confirmed: 1526
+  Deaths: 22
+  Recovered: 1162
+  Active: 342
+  Combined_Key: gunma, japan
+  Incident_Rate: 78.5603380462672
+  Case_Fatality_Ratio: 1.4416775884665793

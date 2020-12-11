@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: lazio, italy
+  m_EditorClassIdentifier: 
+  Province_State: Lazio
+  Country_Region: Italy
+  Confirmed: 135913
+  Deaths: 2802
+  Recovered: 42344
+  Active: 90767
+  Combined_Key: lazio, italy
+  Incident_Rate: 2311.8065031241267
+  Case_Fatality_Ratio: 2.061612943574198

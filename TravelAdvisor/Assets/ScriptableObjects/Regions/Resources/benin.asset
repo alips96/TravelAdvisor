@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: benin
+  m_EditorClassIdentifier: 
+  Province_State: 
+  Country_Region: Benin
+  Confirmed: 3090
+  Deaths: 44
+  Recovered: 2972
+  Active: 74
+  Combined_Key: benin
+  Incident_Rate: 25.48832412041773
+  Case_Fatality_Ratio: 1.4239482200647249

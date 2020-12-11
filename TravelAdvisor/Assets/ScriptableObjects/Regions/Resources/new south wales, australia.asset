@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: new south wales, australia
+  m_EditorClassIdentifier: 
+  Province_State: New South Wales
+  Country_Region: Australia
+  Confirmed: 4633
+  Deaths: 53
+  Recovered: 3191
+  Active: 1389
+  Combined_Key: new south wales, australia
+  Incident_Rate: 57.07070707070707
+  Case_Fatality_Ratio: 1.1439671918843082

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: kyoto, japan
+  m_EditorClassIdentifier: 
+  Province_State: Kyoto
+  Country_Region: Japan
+  Confirmed: 3076
+  Deaths: 39
+  Recovered: 2590
+  Active: 447
+  Combined_Key: kyoto, japan
+  Incident_Rate: 119.08831622051778
+  Case_Fatality_Ratio: 1.2678803641092327

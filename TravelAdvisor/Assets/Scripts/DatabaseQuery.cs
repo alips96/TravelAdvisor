@@ -6,6 +6,8 @@ using UnityEngine;
 public class DatabaseQuery : MonoBehaviour
 {
     private LocationMaster locationMaster;
+    private Region startingPointData;
+    private Region destinationData;
 
     private void OnEnable()
     {
@@ -28,11 +30,11 @@ public class DatabaseQuery : MonoBehaviour
 
     private void StartingPoint(string sPoint)
     {
-        Debug.Log("start: " + sPoint);
+        startingPointData = Resources.Load<Region>(sPoint);
     }
 
     private void EndPoint(string endPoint)
     {
-        Debug.Log("End: " + endPoint);
+        destinationData = Resources.Load<Region>(endPoint);
     }
 }

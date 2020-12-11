@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: risaralda, colombia
+  m_EditorClassIdentifier: 
+  Province_State: Risaralda
+  Country_Region: Colombia
+  Confirmed: 25785
+  Deaths: 622
+  Recovered: 23574
+  Active: 1589
+  Combined_Key: risaralda, colombia
+  Incident_Rate: 2733.19617002738
+  Case_Fatality_Ratio: 2.412255187124297

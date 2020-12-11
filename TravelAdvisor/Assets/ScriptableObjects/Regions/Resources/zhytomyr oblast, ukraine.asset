@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: zhytomyr oblast, ukraine
+  m_EditorClassIdentifier: 
+  Province_State: Zhytomyr Oblast
+  Country_Region: Ukraine
+  Confirmed: 32987
+  Deaths: 554
+  Recovered: 23841
+  Active: 8592
+  Combined_Key: zhytomyr oblast, ukraine
+  Incident_Rate: 2703.424786078924
+  Case_Fatality_Ratio: 1.6794494800982205

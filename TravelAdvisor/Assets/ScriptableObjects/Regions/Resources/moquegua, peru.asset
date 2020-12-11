@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: moquegua, peru
+  m_EditorClassIdentifier: 
+  Province_State: Moquegua
+  Country_Region: Peru
+  Confirmed: 15563
+  Deaths: 292
+  Recovered: 0
+  Active: 15271
+  Combined_Key: moquegua, peru
+  Incident_Rate: 8076.284379865076
+  Case_Fatality_Ratio: 1.876244939921609

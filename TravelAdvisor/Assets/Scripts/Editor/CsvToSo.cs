@@ -11,13 +11,10 @@ public class CsvToSo
     private static readonly string dataCsvPath = "/Editor/Data/covidData.csv";
     private static readonly string usDataCsvPath = "/Editor/Data/USCovidData.csv";
 
-    [SerializeField] private static Country countryScriptableObject; //to fillout a list of all regions.
-
     [MenuItem("Utilities/Generate Region Stats")]
     public static void GenerateRegionStats()
     {
         string[] allLines = File.ReadAllLines(Application.dataPath + dataCsvPath);
-        countryScriptableObject = Resources.Load<Country>("RegionsList");
 
         for (int i = 1; i < allLines.Length; i++)
         {
@@ -54,22 +51,16 @@ public class CsvToSo
                 region.Deaths = Convert.ToInt32(column[8]);
                 region.Recovered = Convert.ToInt32(column[9]);
                 region.Active = column[10].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[10]);
-                region.Combined_Key = column[11].ToLower() + ", " + column[12].ToLower();
+                region.Combined_Key = column[11].ToLower() + "," + column[12].ToLower();
                 region.Incident_Rate = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
                 region.Case_Fatality_Ratio = column[14].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[14]);
             }
 
-            countryScriptableObject.AllRegions.Add(region.Combined_Key);
-            AssetDatabase.CreateAsset(region, $"Assets/ScriptableObjects/Regions/{region.Combined_Key}.asset");
+            AssetDatabase.CreateAsset(region, $"Assets/ScriptableObjects/Regions/Resources/{region.Combined_Key}.asset");
         }
 
-        AssetDatabase.SaveAssets();
-    }
-
-    [MenuItem("Utilities/Generate US Stats")]
-    public static void GenerateUSRegionStats()
-    {
-        string[] allLines = File.ReadAllLines(Application.dataPath + usDataCsvPath);
+        //Here comes the US
+        allLines = File.ReadAllLines(Application.dataPath + usDataCsvPath);
 
         foreach (string line in allLines.Skip(1))
         {
@@ -81,14 +72,13 @@ public class CsvToSo
             region.Country_Region = "US";
             region.Confirmed = Convert.ToInt32(column[5]);
             region.Deaths = Convert.ToInt32(column[6]);
-            region.Recovered = column[7].CompareTo("") == 0 ? 0 : (int) float.Parse(column[7]);
-            region.Active = (int) float.Parse(column[8]);
+            region.Recovered = column[7].CompareTo("") == 0 ? 0 : (int)float.Parse(column[7]);
+            region.Active = (int)float.Parse(column[8]);
             region.Incident_Rate = column[10].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[10]);
             region.Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
             region.Combined_Key = column[0].ToLower() + ", us";
 
-            countryScriptableObject.AllRegions.Add(region.Combined_Key);
-            AssetDatabase.CreateAsset(region, $"Assets/ScriptableObjects/Regions/{region.Combined_Key}.asset");
+            AssetDatabase.CreateAsset(region, $"Assets/ScriptableObjects/Regions/Resources/{region.Combined_Key}.asset");
         }
 
         AssetDatabase.SaveAssets();

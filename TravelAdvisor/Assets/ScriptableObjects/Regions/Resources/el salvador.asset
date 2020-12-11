@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: el salvador
+  m_EditorClassIdentifier: 
+  Province_State: 
+  Country_Region: El Salvador
+  Confirmed: 40741
+  Deaths: 1180
+  Recovered: 37172
+  Active: 2389
+  Combined_Key: el salvador
+  Incident_Rate: 628.1180617128578
+  Case_Fatality_Ratio: 2.8963452050759675

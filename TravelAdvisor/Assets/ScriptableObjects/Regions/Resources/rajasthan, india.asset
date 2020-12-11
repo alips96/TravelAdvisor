@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: rajasthan, india
+  m_EditorClassIdentifier: 
+  Province_State: Rajasthan
+  Country_Region: India
+  Confirmed: 287219
+  Deaths: 2500
+  Recovered: 265689
+  Active: 19030
+  Combined_Key: rajasthan, india
+  Incident_Rate: 354.4483140624891
+  Case_Fatality_Ratio: 0.8704159543762774

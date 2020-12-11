@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
+  m_Name: lebanon
+  m_EditorClassIdentifier: 
+  Province_State: 
+  Country_Region: Lebanon
+  Confirmed: 142187
+  Deaths: 1170
+  Recovered: 95737
+  Active: 45280
+  Combined_Key: lebanon
+  Incident_Rate: 2083.1910959026536
+  Case_Fatality_Ratio: 0.8228600364308973
