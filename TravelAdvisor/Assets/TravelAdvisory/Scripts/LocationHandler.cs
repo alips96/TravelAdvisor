@@ -1,17 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using System;
 
 public class LocationHandler : MonoBehaviour
 {
     [SerializeField] private Location startingPoint;
     private readonly string locationUrl = "https://extreme-ip-lookup.com/json";
     private LocationMaster locationMaster;
+    private bool isCurrentLocationCaptured;
+
+    [SerializeField] private GameObject MainMenu;
+    [SerializeField] private GameObject RetryMenu;
 
     private void Start()
     {
         SetInitialReferences();
-        StartCoroutine(GetCurrentLocation());
+        CheckIfLocationAlreadyCaptured();
+    }
+
+    public void CheckIfLocationAlreadyCaptured() //Also called by retry button
+    {
+        if(!isCurrentLocationCaptured)
+            StartCoroutine(GetCurrentLocation());
     }
 
     private void SetInitialReferences()
@@ -26,7 +37,10 @@ public class LocationHandler : MonoBehaviour
         yield return webRequest.SendWebRequest();
 
         if (webRequest.isNetworkError || webRequest.isHttpError)
+        {
             Debug.LogError(webRequest.error);
+            SwapMenus();
+        }
         else
         if (webRequest.isDone)
         {
@@ -46,8 +60,15 @@ public class LocationHandler : MonoBehaviour
             startingPoint.status = jsonData.status;
 
             string startingPositionKey = startingPoint.state.ToLower() + ", " + startingPoint.country.ToLower();
+            isCurrentLocationCaptured = true;
             locationMaster.CallEventStartingPositionCaptured(startingPositionKey);
         }
+    }
+
+    private void SwapMenus()
+    {
+        MainMenu.SetActive(false);
+        RetryMenu.SetActive(true);
     }
 }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -8,13 +7,18 @@ using UnityEngine.Networking;
 public class DataCollection : MonoBehaviour
 {
     string yesterday;
+    private bool isDataCaptured;
+    private bool shouldDownloadData;
+
+    [SerializeField] private GameObject MainMenu;
+    [SerializeField] private GameObject RetryMenu;
 
     void Start()
     {
         yesterday = GetYesterday();
-        bool shouldDownloadCorpus = CheckIfDownloadNecessary(yesterday);
+        shouldDownloadData = CheckIfDownloadNecessary(yesterday);
 
-        if (shouldDownloadCorpus)
+        if (shouldDownloadData)
         {
             PlayerPrefs.DeleteAll();
             DownloadRawData();
@@ -22,41 +26,47 @@ public class DataCollection : MonoBehaviour
         }
     }
 
-    private void DownloadRawData()
+    public void DownloadRawData() //Also called by retry button
     {
-        StartCoroutine(DownloadWorldCorpus());
-        StartCoroutine(DownloadUSCorpus());
+        if (!isDataCaptured)
+            DownloadWorldCorpus();
     }
 
-    private IEnumerator DownloadUSCorpus()
+    private void DownloadWorldCorpus()
     {
-        string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + yesterday + ".csv";
+        //World except US
+        string worldUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv";
+        string worldPath = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "covidData.csv");
 
+        //US
+        string USUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + yesterday + ".csv";
+        string UsPath = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "USCovidData.csv");
+
+        isDataCaptured = true;
+
+        StartCoroutine(DownloadData(worldUrl, worldPath));
+        StartCoroutine(DownloadData(USUrl, UsPath));
+    }
+
+    private IEnumerator DownloadData(string url, string path)
+    {
         UnityWebRequest webRequest = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
-        string path = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "USCovidData.csv");
         webRequest.downloadHandler = new DownloadHandlerFile(path);
 
         yield return webRequest.SendWebRequest();
 
         if (webRequest.isNetworkError || webRequest.isHttpError)
         {
+            isDataCaptured = false;
             Debug.LogError(webRequest.error);
-            PlayerPrefs.DeleteAll();
+            SwapMenus();
         }
     }
 
-    private IEnumerator DownloadWorldCorpus()
+    private void SwapMenus()
     {
-        string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv";
-
-        UnityWebRequest webRequest = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
-        string path = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "covidData.csv");
-        webRequest.downloadHandler = new DownloadHandlerFile(path);
-
-        yield return webRequest.SendWebRequest();
-
-        if (webRequest.isNetworkError || webRequest.isHttpError)
-            Debug.LogError(webRequest.error);
+        MainMenu.SetActive(false);
+        RetryMenu.SetActive(true);
     }
 
     private bool CheckIfDownloadNecessary(string yesterday)
