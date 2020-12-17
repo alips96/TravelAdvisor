@@ -11,16 +11,21 @@ public class DataCollection : MonoBehaviour
 
     void Start()
     {
-        /*yesterday = GetYesterday();
+        yesterday = GetYesterday();
         bool shouldDownloadCorpus = CheckIfDownloadNecessary(yesterday);
 
         if (shouldDownloadCorpus)
         {
             PlayerPrefs.DeleteAll();
-            StartCoroutine(DownloadWorldCorpus());
-            StartCoroutine(DownloadUSCorpus());
+            DownloadRawData();
             PlayerPrefs.SetInt(yesterday, 1);
-        }*/
+        }
+    }
+
+    private void DownloadRawData()
+    {
+        StartCoroutine(DownloadWorldCorpus());
+        StartCoroutine(DownloadUSCorpus());
     }
 
     private IEnumerator DownloadUSCorpus()
@@ -28,13 +33,16 @@ public class DataCollection : MonoBehaviour
         string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + yesterday + ".csv";
 
         UnityWebRequest webRequest = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
-        string path = Path.Combine(Application.dataPath + "/Editor/Data", "USCovidData.csv");
+        string path = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "USCovidData.csv");
         webRequest.downloadHandler = new DownloadHandlerFile(path);
 
         yield return webRequest.SendWebRequest();
 
         if (webRequest.isNetworkError || webRequest.isHttpError)
+        {
             Debug.LogError(webRequest.error);
+            PlayerPrefs.DeleteAll();
+        }
     }
 
     private IEnumerator DownloadWorldCorpus()
@@ -42,7 +50,7 @@ public class DataCollection : MonoBehaviour
         string url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv";
 
         UnityWebRequest webRequest = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
-        string path = Path.Combine(Application.dataPath + "/Editor/Data", "covidData.csv");
+        string path = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "covidData.csv");
         webRequest.downloadHandler = new DownloadHandlerFile(path);
 
         yield return webRequest.SendWebRequest();

@@ -8,8 +8,8 @@ using System.Text;
 
 public class CsvToSo
 {
-    private static readonly string dataCsvPath = "/Editor/Data/covidData.csv";
-    private static readonly string usDataCsvPath = "/Editor/Data/USCovidData.csv";
+    private static readonly string dataCsvPath = "/TravelAdvisory/Data/covidData.csv";
+    private static readonly string usDataCsvPath = "/TravelAdvisory/Data/USCovidData.csv";
 
     [MenuItem("Utilities/Generate Region Stats")]
     public static void GenerateRegionStats()
@@ -56,7 +56,7 @@ public class CsvToSo
                 region.Case_Fatality_Ratio = column[14].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[14]);
             }
 
-            AssetDatabase.CreateAsset(region, $"Assets/ScriptableObjects/Regions/Resources/{region.Combined_Key}.asset");
+            AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/ScriptableObjects/Regions/Resources/{region.Combined_Key}.asset");
         }
 
         //Here comes the US
@@ -78,7 +78,7 @@ public class CsvToSo
             region.Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
             region.Combined_Key = column[0].ToLower() + ", us";
 
-            AssetDatabase.CreateAsset(region, $"Assets/ScriptableObjects/Regions/Resources/{region.Combined_Key}.asset");
+            AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/ScriptableObjects/Regions/Resources/{region.Combined_Key}.asset");
         }
 
         AssetDatabase.SaveAssets();
