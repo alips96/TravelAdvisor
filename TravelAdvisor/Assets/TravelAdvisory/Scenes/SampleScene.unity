@@ -4825,7 +4825,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2036347748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2124491276}
+        m_TargetAssemblyTypeName: CsvToSo, Assembly-CSharp
+        m_MethodName: ProcessData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2093236891}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2036347748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4955,6 +4979,7 @@ GameObject:
   - component: {fileID: 2124491273}
   - component: {fileID: 2124491275}
   - component: {fileID: 2124491274}
+  - component: {fileID: 2124491276}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4974,6 +4999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983cf1334401f844c90c795e11edc81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yesterday: 
   MainMenu: {fileID: 2093236891}
   RetryMenu: {fileID: 164202038}
 --- !u!4 &2124491270
@@ -5058,6 +5084,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ecc4d9e0df74e458864aab0cfa421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2124491276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124491268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc817d155d9c08499083ad3fcce26e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingMenu: {fileID: 1615518160}
+  resultMenu: {fileID: 690579241}
 --- !u!224 &5628627334934586341
 RectTransform:
   m_ObjectHideFlags: 0

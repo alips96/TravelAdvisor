@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class DataCollection : MonoBehaviour
 {
-    string yesterday;
+    public string yesterday;
     private bool isDataCaptured;
     private bool shouldDownloadData;
 

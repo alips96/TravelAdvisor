@@ -4,20 +4,47 @@ using System.IO;
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.Text;
+using System.Collections;
 
-public class CsvToSo
+public class CsvToSo : MonoBehaviour
 {
-    private static readonly string dataCsvPath = "/TravelAdvisory/Data/covidData.csv";
-    private static readonly string usDataCsvPath = "/TravelAdvisory/Data/USCovidData.csv";
+    private readonly string dataCsvPath = "/TravelAdvisory/Data/covidData.csv";
+    private readonly string usDataCsvPath = "/TravelAdvisory/Data/USCovidData.csv";
 
-    [MenuItem("Utilities/Generate Region Stats")]
-    public static void GenerateRegionStats()
+    private DataCollection dataCollectionScript;
+
+    [SerializeField] private GameObject loadingMenu;
+    [SerializeField] private GameObject resultMenu;
+
+    private void Start()
+    {
+        SetInitialReferences();
+    }
+
+    private void SetInitialReferences()
+    {
+        dataCollectionScript = GetComponent<DataCollection>();
+    }
+
+    public void ProcessData()
+    {
+        if (PlayerPrefs.GetInt(dataCollectionScript.yesterday) == 1)
+        {
+            loadingMenu.SetActive(true);
+            StartCoroutine(GenerateRegionStats());
+            //loadingMenu.SetActive(false);
+        }
+
+        //resultMenu.SetActive(true);
+    }
+
+    private IEnumerator GenerateRegionStats() //Called by start button
     {
         string[] allLines = File.ReadAllLines(Application.dataPath + dataCsvPath);
 
         for (int i = 1; i < allLines.Length; i++)
         {
+            yield return null;
             if (i > 649 && i < 3924) //skip US
                 continue;
 
@@ -64,10 +91,11 @@ public class CsvToSo
 
         foreach (string line in allLines.Skip(1))
         {
+            yield return null;
             string[] column = line.Split(',');
 
             Region region = ScriptableObject.CreateInstance<Region>();
-
+            
             region.Province_State = column[0];
             region.Country_Region = "US";
             region.Confirmed = Convert.ToInt32(column[5]);
@@ -82,5 +110,7 @@ public class CsvToSo
         }
 
         AssetDatabase.SaveAssets();
+        loadingMenu.SetActive(false);
+        resultMenu.SetActive(true);
     }
 }

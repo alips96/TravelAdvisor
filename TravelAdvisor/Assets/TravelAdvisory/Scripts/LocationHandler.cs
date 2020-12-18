@@ -44,22 +44,9 @@ public class LocationHandler : MonoBehaviour
         else
         if (webRequest.isDone)
         {
-            JsonLocationData jsonData = JsonUtility.FromJson<JsonLocationData>(webRequest.downloadHandler.text);
+            JsonUtility.FromJsonOverwrite(webRequest.downloadHandler.text, startingPoint);
 
-            startingPoint.businessName = jsonData.businessName;
-            startingPoint.city = jsonData.city;
-            startingPoint.continent = jsonData.continent;
-            startingPoint.country = jsonData.country;
-            startingPoint.countryCode = jsonData.countryCode;
-            startingPoint.isp = jsonData.isp;
-            startingPoint.lat = jsonData.lat;
-            startingPoint.lon = jsonData.lon;
-            startingPoint.org = jsonData.org;
-            startingPoint.query = jsonData.query;
-            startingPoint.state = jsonData.region;
-            startingPoint.status = jsonData.status;
-
-            string startingPositionKey = startingPoint.state.ToLower() + ", " + startingPoint.country.ToLower();
+            string startingPositionKey = startingPoint.region.ToLower() + ", " + startingPoint.country.ToLower();
             isCurrentLocationCaptured = true;
             locationMaster.CallEventStartingPositionCaptured(startingPositionKey);
         }
@@ -70,25 +57,4 @@ public class LocationHandler : MonoBehaviour
         MainMenu.SetActive(false);
         RetryMenu.SetActive(true);
     }
-}
-
-public class JsonLocationData
-{
-
-    public string businessName;
-    public string businessWebsite;
-    public string city;
-    public string continent;
-    public string country;
-    public string countryCode;
-    public string ipName;
-    public string ipType;
-    public string isp;
-    public string lat;
-    public string lon;
-    public string org;
-    public string query;
-    public string region;
-    public string status;
-
 }
