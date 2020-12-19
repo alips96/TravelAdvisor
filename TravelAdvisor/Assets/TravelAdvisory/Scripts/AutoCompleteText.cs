@@ -19,7 +19,7 @@ public class AutoCompleteText : MonoBehaviour
     {
         dropDown.ClearOptions();
 
-        string word = inputField.text.ToLower();
+        string word = inputField.text;
 
         if (!string.IsNullOrEmpty(word))
         {

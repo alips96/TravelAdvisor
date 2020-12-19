@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class LocationMaster : MonoBehaviour
 {
-    public delegate void GeneralEventHandler(string someString);
+    public delegate void PositionEventHandler(string someString);
+    public event PositionEventHandler EventStartingPositionCaptured;
+    public event PositionEventHandler EventDestinationCaptured;
 
-    public event GeneralEventHandler EventStartingPositionCaptured;
-    public event GeneralEventHandler EventDestinationCaptured;
+    public delegate void DataEventHandler();
+    public event DataEventHandler EventDataDownloaded;
 
     public void CallEventStartingPositionCaptured(string startPos)
     {
@@ -17,5 +19,10 @@ public class LocationMaster : MonoBehaviour
     public void CallEventDestinationCaptured(string endPos)
     {
         EventDestinationCaptured.Invoke(endPos);
+    }
+
+    public void CallEventDataDownloaded()
+    {
+        EventDataDownloaded.Invoke();
     }
 }

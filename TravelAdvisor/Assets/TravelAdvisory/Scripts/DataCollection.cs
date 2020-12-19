@@ -13,10 +13,15 @@ public class DataCollection : MonoBehaviour
     [SerializeField] private GameObject MainMenu;
     [SerializeField] private GameObject RetryMenu;
 
+    private LocationMaster locationMasterScript;
+
+    byte fileCounter = 0;
+
     void Start()
     {
-        yesterday = GetYesterday();
-        shouldDownloadData = CheckIfDownloadNecessary(yesterday);
+        SetInitialReferences();
+        //yesterday = GetYesterday();
+        //shouldDownloadData = CheckIfDownloadNecessary(yesterday);
 
         if (shouldDownloadData)
         {
@@ -24,6 +29,15 @@ public class DataCollection : MonoBehaviour
             DownloadRawData();
             PlayerPrefs.SetInt(yesterday, 1);
         }
+        else
+        {
+            locationMasterScript.CallEventDataDownloaded();
+        }
+    }
+
+    private void SetInitialReferences()
+    {
+        locationMasterScript = GetComponent<LocationMaster>();
     }
 
     public void DownloadRawData() //Also called by retry button
@@ -60,6 +74,15 @@ public class DataCollection : MonoBehaviour
             isDataCaptured = false;
             Debug.LogError(webRequest.error);
             SwapMenus();
+        }
+        else if (webRequest.isDone)
+        {
+            fileCounter++;
+
+            if(fileCounter == 2)
+            {
+                locationMasterScript.CallEventDataDownloaded(); //both files downloaded successfully
+            }
         }
     }
 

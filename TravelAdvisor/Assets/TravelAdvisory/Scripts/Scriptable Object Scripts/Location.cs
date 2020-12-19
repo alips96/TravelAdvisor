@@ -13,6 +13,6 @@ public class Location : ScriptableObject
     public string lon;
     public string org;
     public string query;
-    public string state;
+    public string region;
     public string status;
 }
