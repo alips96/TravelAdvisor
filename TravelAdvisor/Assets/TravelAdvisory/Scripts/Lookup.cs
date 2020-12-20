@@ -77,8 +77,11 @@ public class Lookup : MonoBehaviour
         }
         else //rest of the world
         {
-            for (int i = 1; i < 650 || i > 3923; i++)
+            for (int i = 1; i < worldLines.Length; i++)
             {
+                if (i > 649 && i < 3924) //skip US
+                    continue;
+
                 if (worldLines[i].Contains(location))
                 {
                     ExtractAndSaveWorldData(worldLines[i], isDestination);
