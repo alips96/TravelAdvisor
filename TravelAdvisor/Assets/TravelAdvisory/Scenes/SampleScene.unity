@@ -1270,10 +1270,10 @@ RectTransform:
   m_Father: {fileID: 2093236892}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 71.13981, y: -138.19485}
-  m_SizeDelta: {x: 144.6, y: 47.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &385010527
 MonoBehaviour:
@@ -2270,7 +2270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &690579242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3079,10 +3079,10 @@ RectTransform:
   m_Father: {fileID: 2093236892}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 71.13981, y: -91.094864}
-  m_SizeDelta: {x: 144.6, y: 47.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117507092
 MonoBehaviour:
@@ -3640,7 +3640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1381742643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4778,10 +4778,10 @@ RectTransform:
   m_Father: {fileID: 2093236892}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 71.13981, y: -43.99486}
-  m_SizeDelta: {x: 144.6, y: 47.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2036347747
 MonoBehaviour:
@@ -4826,19 +4826,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2124491276}
-        m_TargetAssemblyTypeName: CsvToSo, Assembly-CSharp
-        m_MethodName: ProcessData
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2093236891}
+      - m_Target: {fileID: 1381742642}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -4849,6 +4837,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 690579241}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2036347748
 MonoBehaviour:
@@ -4979,7 +4979,6 @@ GameObject:
   - component: {fileID: 2124491273}
   - component: {fileID: 2124491275}
   - component: {fileID: 2124491274}
-  - component: {fileID: 2124491276}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5084,21 +5083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ecc4d9e0df74e458864aab0cfa421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2124491276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124491268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc817d155d9c08499083ad3fcce26e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coutrList: {fileID: 11400000, guid: efb632d558711d544941e45bd5c1b4d9, type: 2}
-  loadingMenu: {fileID: 1615518160}
-  resultMenu: {fileID: 690579241}
 --- !u!224 &5628627334934586341
 RectTransform:
   m_ObjectHideFlags: 0

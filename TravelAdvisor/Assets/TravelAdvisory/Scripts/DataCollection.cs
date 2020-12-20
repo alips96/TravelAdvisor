@@ -20,8 +20,8 @@ public class DataCollection : MonoBehaviour
     void Start()
     {
         SetInitialReferences();
-        //yesterday = GetYesterday();
-        //shouldDownloadData = CheckIfDownloadNecessary(yesterday);
+        yesterday = GetYesterday();
+        shouldDownloadData = CheckIfDownloadNecessary(yesterday);
 
         if (shouldDownloadData)
         {

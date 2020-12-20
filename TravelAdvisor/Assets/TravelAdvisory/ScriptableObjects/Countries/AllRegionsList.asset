@@ -10,764 +10,764 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1fdab1f5daa1a342a35e86d95159ce9, type: 3}
-  m_Name: RegionsList
+  m_Name: AllRegionsList
   m_EditorClassIdentifier: 
   AllRegions:
-  - afghanistan
-  - albania
-  - algeria
-  - andorra
-  - angola
-  - antigua and barbuda
-  - argentina
-  - armenia
-  - australian capital territory, australia
-  - new south wales, australia
-  - northern territory, australia
-  - queensland, australia
-  - south australia, australia
-  - tasmania, australia
-  - victoria, australia
-  - western australia, australia
-  - austria
-  - azerbaijan
-  - bahamas
-  - bahrain
-  - bangladesh
-  - barbados
-  - belarus
-  - antwerp, belgium
-  - brussels, belgium
-  - east flanders, belgium
-  - flemish brabant, belgium
-  - hainaut, belgium
-  - liege, belgium
-  - limburg, belgium
-  - luxembourg, belgium
-  - namur, belgium
-  - unknown, belgium
-  - walloon brabant, belgium
-  - west flanders, belgium
-  - belize
-  - benin
-  - bhutan
-  - bolivia
-  - bosnia and herzegovina
-  - botswana
-  - acre, brazil
-  - alagoas, brazil
-  - amapa, brazil
-  - amazonas, brazil
-  - bahia, brazil
-  - ceara, brazil
-  - distrito federal, brazil
-  - espirito santo, brazil
-  - goias, brazil
-  - maranhao, brazil
-  - mato grosso, brazil
-  - mato grosso do sul, brazil
-  - minas gerais, brazil
-  - para, brazil
-  - paraiba, brazil
-  - parana, brazil
-  - pernambuco, brazil
-  - piaui, brazil
-  - rio grande do norte, brazil
-  - rio grande do sul, brazil
-  - rio de janeiro, brazil
-  - rondonia, brazil
-  - roraima, brazil
-  - santa catarina, brazil
-  - sao paulo, brazil
-  - sergipe, brazil
-  - tocantins, brazil
-  - brunei
-  - bulgaria
-  - burkina faso
-  - burma
-  - burundi
-  - cabo verde
-  - cambodia
-  - cameroon
-  - alberta, canada
-  - british columbia, canada
-  - diamond princess, canada
-  - grand princess, canada
-  - manitoba, canada
-  - new brunswick, canada
-  - newfoundland and labrador, canada
-  - northwest territories,canada
-  - nova scotia, canada
-  - nunavut, canada
-  - ontario, canada
-  - prince edward island, canada
-  - quebec, canada
-  - repatriated travellers, canada
-  - saskatchewan, canada
-  - yukon, canada
-  - central african republic
-  - chad
-  - antofagasta, chile
-  - araucania, chile
-  - arica y parinacota, chile
-  - atacama, chile
-  - aysen, chile
-  - biobio, chile
-  - coquimbo, chile
-  - los lagos, chile
-  - los rios, chile
-  - magallanes, chile
-  - maule, chile
-  - metropolitana, chile
-  - nuble, chile
-  - ohiggins, chile
-  - tarapaca, chile
-  - unknown, chile
-  - valparaiso, chile
-  - anhui, china
-  - beijing, china
-  - chongqing, china
-  - fujian, china
-  - gansu, china
-  - guangdong, china
-  - guangxi, china
-  - guizhou, china
-  - hainan, china
-  - hebei, china
-  - heilongjiang, china
-  - henan, china
-  - hong kong, china
-  - hubei, china
-  - hunan, china
-  - inner mongolia, china
-  - jiangsu, china
-  - jiangxi, china
-  - jilin, china
-  - liaoning, china
-  - macau, china
-  - ningxia, china
-  - qinghai, china
-  - shaanxi, china
-  - shandong, china
-  - shanghai, china
-  - shanxi, china
-  - sichuan, china
-  - tianjin, china
-  - tibet, china
-  - xinjiang, china
-  - yunnan, china
-  - zhejiang, china
-  - amazonas, colombia
-  - antioquia, colombia
-  - arauca, colombia
-  - atlantico, colombia
-  - bolivar, colombia
-  - boyaca, colombia
-  - caldas, colombia
-  - capital district, colombia
-  - caqueta, colombia
-  - casanare, colombia
-  - cauca, colombia
-  - cesar, colombia
-  - choco, colombia
-  - cordoba, colombia
-  - cundinamarca, colombia
-  - guainia, colombia
-  - guaviare, colombia
-  - huila, colombia
-  - la guajira, colombia
-  - magdalena, colombia
-  - meta, colombia
-  - narino, colombia
-  - norte de santander, colombia
-  - putumayo, colombia
-  - quindio, colombia
-  - risaralda, colombia
-  - san andres y providencia, colombia
-  - santander, colombia
-  - sucre, colombia
-  - tolima, colombia
-  - unknown, colombia
-  - valle del cauca, colombia
-  - vaupes, colombia
-  - vichada, colombia
-  - comoros
-  - congo (brazzaville)
-  - congo (kinshasa)
-  - costa rica
-  - cote d'ivoire
-  - croatia
-  - cuba
-  - cyprus
-  - czechia
-  - faroe islands, denmark
-  - greenland, denmark
-  - denmark
-  - diamond princess
-  - djibouti
-  - dominica
-  - dominican republic
-  - ecuador
-  - egypt
-  - el salvador
-  - equatorial guinea
-  - eritrea
-  - estonia
-  - eswatini
-  - ethiopia
-  - fiji
-  - finland
-  - french guiana, france
-  - french polynesia, france
-  - guadeloupe, france
-  - martinique, france
-  - mayotte, france
-  - new caledonia, france
-  - reunion, france
-  - saint barthelemy, france
-  - saint pierre and miquelon, france
-  - st martin, france
-  - france
-  - gabon
-  - gambia
-  - georgia
-  - baden-wurttemberg, germany
-  - bayern, germany
-  - berlin, germany
-  - brandenburg, germany
-  - bremen, germany
-  - hamburg, germany
-  - hessen, germany
-  - mecklenburg-vorpommern, germany
-  - niedersachsen, germany
-  - nordrhein-westfalen, germany
-  - rheinland-pfalz, germany
-  - saarland, germany
-  - sachsen, germany
-  - sachsen-anhalt, germany
-  - schleswig-holstein, germany
-  - thuringen, germany
-  - unknown, germany
-  - ghana
-  - greece
-  - grenada
-  - guatemala
-  - guinea
-  - guinea-bissau
-  - guyana
-  - haiti
-  - holy see
-  - honduras
-  - hungary
-  - iceland
-  - andaman and nicobar islands, india
-  - andhra pradesh, india
-  - arunachal pradesh, india
-  - assam, india
-  - bihar, india
-  - chandigarh, india
-  - chhattisgarh, india
-  - dadra and nagar haveli and daman and diu, india
-  - delhi, india
-  - goa, india
-  - gujarat, india
-  - haryana, india
-  - himachal pradesh, india
-  - jammu and kashmir, india
-  - jharkhand, india
-  - karnataka, india
-  - kerala, india
-  - ladakh, india
-  - lakshadweep, india
-  - madhya pradesh, india
-  - maharashtra, india
-  - manipur, india
-  - meghalaya, india
-  - mizoram, india
-  - nagaland, india
-  - odisha, india
-  - puducherry, india
-  - punjab, india
-  - rajasthan, india
-  - sikkim, india
-  - tamil nadu, india
-  - telangana, india
-  - tripura, india
-  - unknown, india
-  - uttar pradesh, india
-  - uttarakhand, india
-  - west bengal, india
-  - indonesia
-  - iran
-  - iraq
-  - ireland
-  - israel
-  - abruzzo, italy
-  - basilicata, italy
-  - calabria, italy
-  - campania, italy
-  - emilia-romagna, italy
-  - friuli venezia giulia, italy
-  - lazio, italy
-  - liguria, italy
-  - lombardia, italy
-  - marche, italy
-  - molise, italy
-  - p.a. bolzano, italy
-  - p.a. trento, italy
-  - piemonte, italy
-  - puglia, italy
-  - sardegna, italy
-  - sicilia, italy
-  - toscana, italy
-  - umbria, italy
-  - valle d'aosta, italy
-  - veneto, italy
-  - jamaica
-  - aichi, japan
-  - akita, japan
-  - aomori, japan
-  - chiba, japan
-  - ehime, japan
-  - fukui, japan
-  - fukuoka, japan
-  - fukushima, japan
-  - gifu, japan
-  - gunma, japan
-  - hiroshima, japan
-  - hokkaido, japan
-  - hyogo, japan
-  - ibaraki, japan
-  - ishikawa, japan
-  - iwate, japan
-  - kagawa, japan
-  - kagoshima, japan
-  - kanagawa, japan
-  - kochi, japan
-  - kumamoto, japan
-  - kyoto, japan
-  - mie, japan
-  - miyagi, japan
-  - miyazaki, japan
-  - nagano, japan
-  - nagasaki, japan
-  - nara, japan
-  - niigata, japan
-  - oita, japan
-  - okayama, japan
-  - okinawa, japan
-  - osaka, japan
-  - port quarantine, japan
-  - saga, japan
-  - saitama, japan
-  - shiga, japan
-  - shimane, japan
-  - shizuoka, japan
-  - tochigi, japan
-  - tokushima, japan
-  - tokyo, japan
-  - tottori, japan
-  - toyama, japan
-  - unknown, japan
-  - wakayama, japan
-  - yamagata, japan
-  - yamaguchi, japan
-  - yamanashi, japan
-  - jordan
-  - kazakhstan
-  - kenya
-  - kosovo
-  - kuwait
-  - kyrgyzstan
-  - laos
-  - latvia
-  - lebanon
-  - lesotho
-  - liberia
-  - libya
-  - liechtenstein
-  - lithuania
-  - luxembourg
-  - ms zaandam
-  - madagascar
-  - malawi
-  - malaysia
-  - maldives
-  - mali
-  - malta
-  - marshall islands
-  - mauritania
-  - mauritius
-  - aguascalientes, mexico
-  - baja california, mexico
-  - baja california sur, mexico
-  - campeche, mexico
-  - chiapas, mexico
-  - chihuahua, mexico
-  - ciudad de mexico, mexico
-  - coahuila, mexico
-  - colima, mexico
-  - durango, mexico
-  - guanajuato, mexico
-  - guerrero, mexico
-  - hidalgo, mexico
-  - jalisco, mexico
-  - mexico, mexico
-  - michoacan, mexico
-  - morelos, mexico
-  - nayarit, mexico
-  - nuevo leon, mexico
-  - oaxaca, mexico
-  - puebla, mexico
-  - queretaro, mexico
-  - quintana roo, mexico
-  - san luis potosi, mexico
-  - sinaloa, mexico
-  - sonora, mexico
-  - tabasco, mexico
-  - tamaulipas, mexico
-  - tlaxcala, mexico
-  - unknown, mexico
-  - veracruz, mexico
-  - yucatan, mexico
-  - zacatecas, mexico
-  - moldova
-  - monaco
-  - mongolia
-  - montenegro
-  - morocco
-  - mozambique
-  - namibia
-  - nepal
-  - aruba, netherlands
-  - curacao, netherlands
-  - drenthe, netherlands
-  - flevoland, netherlands
-  - friesland, netherlands
-  - gelderland, netherlands
-  - groningen, netherlands
-  - limburg, netherlands
-  - noord-brabant, netherlands
-  - noord-holland, netherlands
-  - overijssel, netherlands
-  - sint maarten, netherlands
-  - unknown, netherlands
-  - utrecht, netherlands
-  - zeeland, netherlands
-  - zuid-holland, netherlands
-  - new zealand
-  - nicaragua
-  - niger
-  - nigeria
-  - north macedonia
-  - norway
-  - oman
-  - azad jammu and kashmir, pakistan
-  - balochistan, pakistan
-  - gilgit-baltistan, pakistan
-  - islamabad, pakistan
-  - khyber pakhtunkhwa, pakistan
-  - punjab, pakistan
-  - sindh, pakistan
-  - panama
-  - papua new guinea
-  - paraguay
-  - amazonas, peru
-  - ancash, peru
-  - apurimac, peru
-  - arequipa, peru
-  - ayacucho, peru
-  - cajamarca, peru
-  - callao, peru
-  - cusco, peru
-  - huancavelica, peru
-  - huanuco, peru
-  - ica, peru
-  - junin, peru
-  - la libertad, peru
-  - lambayeque, peru
-  - lima, peru
-  - loreto, peru
-  - madre de dios, peru
-  - moquegua, peru
-  - pasco, peru
-  - piura, peru
-  - puno, peru
-  - san martin, peru
-  - tacna, peru
-  - tumbes, peru
-  - ucayali, peru
-  - unknown, peru
-  - philippines
-  - poland
-  - portugal
-  - qatar
-  - romania
-  - adygea republic, russia
-  - altai krai, russia
-  - altai republic, russia
-  - amur oblast, russia
-  - arkhangelsk oblast, russia
-  - astrakhan oblast, russia
-  - bashkortostan republic, russia
-  - belgorod oblast, russia
-  - bryansk oblast, russia
-  - buryatia republic, russia
-  - chechen republic, russia
-  - chelyabinsk oblast, russia
-  - chukotka autonomous okrug, russia
-  - chuvashia republic, russia
-  - dagestan republic, russia
-  - ingushetia republic, russia
-  - irkutsk oblast, russia
-  - ivanovo oblast, russia
-  - jewish autonomous okrug, russia
-  - kabardino-balkarian republic, russia
-  - kaliningrad oblast, russia
-  - kalmykia republic, russia
-  - kaluga oblast, russia
-  - kamchatka krai, russia
-  - karachay-cherkess republic, russia
-  - karelia republic, russia
-  - kemerovo oblast, russia
-  - khabarovsk krai, russia
-  - khakassia republic, russia
-  - khanty-mansi autonomous okrug, russia
-  - kirov oblast, russia
-  - komi republic, russia
-  - kostroma oblast, russia
-  - krasnodar krai, russia
-  - krasnoyarsk krai, russia
-  - kurgan oblast, russia
-  - kursk oblast, russia
-  - leningrad oblast, russia
-  - lipetsk oblast, russia
-  - magadan oblast, russia
-  - mari el republic, russia
-  - mordovia republic, russia
-  - moscow, russia
-  - moscow oblast, russia
-  - murmansk oblast, russia
-  - nenets autonomous okrug, russia
-  - nizhny novgorod oblast, russia
-  - north ossetia - alania republic, russia
-  - novgorod oblast, russia
-  - novosibirsk oblast, russia
-  - omsk oblast, russia
-  - orel oblast, russia
-  - orenburg oblast, russia
-  - penza oblast, russia
-  - perm krai, russia
-  - primorsky krai, russia
-  - pskov oblast, russia
-  - rostov oblast, russia
-  - ryazan oblast, russia
-  - saint petersburg, russia
-  - sakha (yakutiya) republic, russia
-  - sakhalin oblast, russia
-  - samara oblast, russia
-  - saratov oblast, russia
-  - smolensk oblast, russia
-  - stavropol krai, russia
-  - sverdlovsk oblast, russia
-  - tambov oblast, russia
-  - tatarstan republic, russia
-  - tomsk oblast, russia
-  - tula oblast, russia
-  - tver oblast, russia
-  - tyumen oblast, russia
-  - tyva republic, russia
-  - udmurt republic, russia
-  - ulyanovsk oblast, russia
-  - vladimir oblast, russia
-  - volgograd oblast, russia
-  - vologda oblast, russia
-  - voronezh oblast, russia
-  - yamalo-nenets autonomous okrug, russia
-  - yaroslavl oblast, russia
-  - zabaykalsky krai, russia
-  - rwanda
-  - saint kitts and nevis
-  - saint lucia
-  - saint vincent and the grenadines
-  - samoa
-  - san marino
-  - sao tome and principe
-  - saudi arabia
-  - senegal
-  - serbia
-  - seychelles
-  - sierra leone
-  - singapore
-  - slovakia
-  - slovenia
-  - solomon islands
-  - somalia
-  - south africa
-  - south sudan
-  - andalusia, spain
-  - aragon, spain
-  - asturias, spain
-  - baleares, spain
-  - c. valenciana, spain
-  - canarias, spain
-  - cantabria, spain
-  - castilla - la mancha, spain
-  - castilla y leon, spain
-  - catalonia, spain
-  - ceuta, spain
-  - extremadura, spain
-  - galicia, spain
-  - la rioja, spain
-  - madrid, spain
-  - melilla, spain
-  - murcia, spain
-  - navarra, spain
-  - pais vasco, spain
-  - unknown, spain
-  - sri lanka
-  - sudan
-  - suriname
-  - blekinge, sweden
-  - dalarna, sweden
-  - gavleborg, sweden
-  - gotland, sweden
-  - halland, sweden
-  - jamtland harjedalen, sweden
-  - jonkoping, sweden
-  - kalmar, sweden
-  - kronoberg, sweden
-  - norrbotten, sweden
-  - orebro, sweden
-  - ostergotland, sweden
-  - skane, sweden
-  - sormland, sweden
-  - stockholm, sweden
-  - uppsala, sweden
-  - varmland, sweden
-  - vasterbotten, sweden
-  - vasternorrland, sweden
-  - vastmanland, sweden
-  - vastra gotaland, sweden
-  - switzerland
-  - syria
-  - taiwan
-  - tajikistan
-  - tanzania
-  - thailand
-  - timor-leste
-  - togo
-  - trinidad and tobago
-  - tunisia
-  - turkey
-  - uganda
-  - cherkasy oblast, ukraine
-  - chernihiv oblast, ukraine
-  - chernivtsi oblast, ukraine
-  - crimea republic, ukraine
-  - dnipropetrovsk oblast, ukraine
-  - donetsk oblast, ukraine
-  - ivano-frankivsk oblast, ukraine
-  - kharkiv oblast, ukraine
-  - kherson oblast, ukraine
-  - khmelnytskyi oblast, ukraine
-  - kiev, ukraine
-  - kiev oblast, ukraine
-  - kirovohrad oblast, ukraine
-  - luhansk oblast, ukraine
-  - lviv oblast, ukraine
-  - mykolaiv oblast, ukraine
-  - odessa oblast, ukraine
-  - poltava oblast, ukraine
-  - rivne oblast, ukraine
-  - sevastopol, ukraine
-  - sumy oblast, ukraine
-  - ternopil oblast, ukraine
-  - vinnytsia oblast, ukraine
-  - volyn oblast, ukraine
-  - zakarpattia oblast, ukraine
-  - zaporizhia oblast, ukraine
-  - zhytomyr oblast, ukraine
-  - united arab emirates
-  - anguilla, united kingdom
-  - bermuda, united kingdom
-  - british virgin islands, united kingdom
-  - cayman islands, united kingdom
-  - channel islands, united kingdom
-  - england, united kingdom
-  - falkland islands (malvinas), united kingdom
-  - gibraltar, united kingdom
-  - isle of man, united kingdom
-  - montserrat, united kingdom
-  - northern ireland, united kingdom
-  - scotland, united kingdom
-  - turks and caicos islands, united kingdom
-  - unknown, united kingdom
-  - wales, united kingdom
-  - uruguay
-  - uzbekistan
-  - vanuatu
-  - venezuela
-  - vietnam
-  - west bank and gaza
-  - yemen
-  - zambia
-  - zimbabwe
-  - alabama, us
-  - alaska, us
-  - american samoa, us
-  - arizona, us
-  - arkansas, us
-  - california, us
-  - colorado, us
-  - connecticut, us
-  - delaware, us
-  - diamond princess, us
-  - district of columbia, us
-  - florida, us
-  - georgia, us
-  - grand princess, us
-  - guam, us
-  - hawaii, us
-  - idaho, us
-  - illinois, us
-  - indiana, us
-  - iowa, us
-  - kansas, us
-  - kentucky, us
-  - louisiana, us
-  - maine, us
-  - maryland, us
-  - massachusetts, us
-  - michigan, us
-  - minnesota, us
-  - mississippi, us
-  - missouri, us
-  - montana, us
-  - nebraska, us
-  - nevada, us
-  - new hampshire, us
-  - new jersey, us
-  - new mexico, us
-  - new york, us
-  - north carolina, us
-  - north dakota, us
-  - northern mariana islands, us
-  - ohio, us
-  - oklahoma, us
-  - oregon, us
-  - pennsylvania, us
-  - puerto rico, us
-  - rhode island, us
-  - south carolina, us
-  - south dakota, us
-  - tennessee, us
-  - texas, us
-  - utah, us
-  - vermont, us
-  - virgin islands, us
-  - virginia, us
-  - washington, us
-  - west virginia, us
-  - wisconsin, us
-  - wyoming, us
+  - Afghanistan
+  - Albania
+  - Algeria
+  - Andorra
+  - Angola
+  - Antigua and Barbuda
+  - Argentina
+  - Armenia
+  - Australian Capital Territory, Australia
+  - New South Wales, Australia
+  - Northern Territory, Australia
+  - Queensland, Australia
+  - South Australia, Australia
+  - Tasmania, Australia
+  - Victoria, Australia
+  - Western Australia, Australia
+  - Austria
+  - Azerbaijan
+  - Bahamas
+  - Bahrain
+  - Bangladesh
+  - Barbados
+  - Belarus
+  - Antwerp, Belgium
+  - Brussels, Belgium
+  - East Flanders, Belgium
+  - Flemish Brabant, Belgium
+  - Hainaut, Belgium
+  - Liege, Belgium
+  - Limburg, Belgium
+  - Luxembourg, Belgium
+  - Namur, Belgium
+  - Unknown, Belgium
+  - Walloon Brabant, Belgium
+  - West Flanders, Belgium
+  - Belize
+  - Benin
+  - Bhutan
+  - Bolivia
+  - Bosnia and Herzegovina
+  - Botswana
+  - Acre, Brazil
+  - Alagoas, Brazil
+  - Amapa, Brazil
+  - Amazonas, Brazil
+  - Bahia, Brazil
+  - Ceara, Brazil
+  - Distrito Federal, Brazil
+  - Espirito Santo, Brazil
+  - Goias, Brazil
+  - Maranhao, Brazil
+  - Mato Grosso, Brazil
+  - Mato Grosso do Sul, Brazil
+  - Minas Gerais, Brazil
+  - Para, Brazil
+  - Paraiba, Brazil
+  - Parana, Brazil
+  - Pernambuco, Brazil
+  - Piaui, Brazil
+  - Rio Grande do Norte, Brazil
+  - Rio Grande do Sul, Brazil
+  - Rio de Janeiro, Brazil
+  - Rondonia, Brazil
+  - Roraima, Brazil
+  - Santa Catarina, Brazil
+  - Sao Paulo, Brazil
+  - Sergipe, Brazil
+  - Tocantins, Brazil
+  - Brunei
+  - Bulgaria
+  - Burkina Faso
+  - Burma
+  - Burundi
+  - Cabo Verde
+  - Cambodia
+  - Cameroon
+  - Alberta, Canada
+  - British Columbia, Canada
+  - Diamond Princess, Canada
+  - Grand Princess, Canada
+  - Manitoba, Canada
+  - New Brunswick, Canada
+  - Newfoundland and Labrador, Canada
+  - Northwest Territories,Canada
+  - Nova Scotia, Canada
+  - Nunavut, Canada
+  - Ontario, Canada
+  - Prince Edward Island, Canada
+  - Quebec, Canada
+  - Repatriated Travellers, Canada
+  - Saskatchewan, Canada
+  - Yukon, Canada
+  - Central African Republic
+  - Chad
+  - Antofagasta, Chile
+  - Araucania, Chile
+  - Arica y Parinacota, Chile
+  - Atacama, Chile
+  - Aysen, Chile
+  - Biobio, Chile
+  - Coquimbo, Chile
+  - Los Lagos, Chile
+  - Los Rios, Chile
+  - Magallanes, Chile
+  - Maule, Chile
+  - Metropolitana, Chile
+  - Nuble, Chile
+  - OHiggins, Chile
+  - Tarapaca, Chile
+  - Unknown, Chile
+  - Valparaiso, Chile
+  - Anhui, China
+  - Beijing, China
+  - Chongqing, China
+  - Fujian, China
+  - Gansu, China
+  - Guangdong, China
+  - Guangxi, China
+  - Guizhou, China
+  - Hainan, China
+  - Hebei, China
+  - Heilongjiang, China
+  - Henan, China
+  - Hong Kong, China
+  - Hubei, China
+  - Hunan, China
+  - Inner Mongolia, China
+  - Jiangsu, China
+  - Jiangxi, China
+  - Jilin, China
+  - Liaoning, China
+  - Macau, China
+  - Ningxia, China
+  - Qinghai, China
+  - Shaanxi, China
+  - Shandong, China
+  - Shanghai, China
+  - Shanxi, China
+  - Sichuan, China
+  - Tianjin, China
+  - Tibet, China
+  - Xinjiang, China
+  - Yunnan, China
+  - Zhejiang, China
+  - Amazonas, Colombia
+  - Antioquia, Colombia
+  - Arauca, Colombia
+  - Atlantico, Colombia
+  - Bolivar, Colombia
+  - Boyaca, Colombia
+  - Caldas, Colombia
+  - Capital District, Colombia
+  - Caqueta, Colombia
+  - Casanare, Colombia
+  - Cauca, Colombia
+  - Cesar, Colombia
+  - Choco, Colombia
+  - Cordoba, Colombia
+  - Cundinamarca, Colombia
+  - Guainia, Colombia
+  - Guaviare, Colombia
+  - Huila, Colombia
+  - La Guajira, Colombia
+  - Magdalena, Colombia
+  - Meta, Colombia
+  - Narino, Colombia
+  - Norte de Santander, Colombia
+  - Putumayo, Colombia
+  - Quindio, Colombia
+  - Risaralda, Colombia
+  - San Andres y Providencia, Colombia
+  - Santander, Colombia
+  - Sucre, Colombia
+  - Tolima, Colombia
+  - Unknown, Colombia
+  - Valle del Cauca, Colombia
+  - Vaupes, Colombia
+  - Vichada, Colombia
+  - Comoros
+  - Congo (Brazzaville)
+  - Congo (Kinshasa)
+  - Costa Rica
+  - Cote d'Ivoire
+  - Croatia
+  - Cuba
+  - Cyprus
+  - Czechia
+  - Faroe Islands, Denmark
+  - Greenland, Denmark
+  - Denmark
+  - Diamond Princess
+  - Djibouti
+  - Dominica
+  - Dominican Republic
+  - Ecuador
+  - Egypt
+  - El Salvador
+  - Equatorial Guinea
+  - Eritrea
+  - Estonia
+  - Eswatini
+  - Ethiopia
+  - Fiji
+  - Finland
+  - French Guiana, France
+  - French Polynesia, France
+  - Guadeloupe, France
+  - Martinique, France
+  - Mayotte, France
+  - New Caledonia, France
+  - Reunion, France
+  - Saint Barthelemy, France
+  - Saint Pierre and Miquelon, France
+  - St Martin, France
+  - France
+  - Gabon
+  - Gambia
+  - Georgia
+  - Baden-Wurttemberg, Germany
+  - Bayern, Germany
+  - Berlin, Germany
+  - Brandenburg, Germany
+  - Bremen, Germany
+  - Hamburg, Germany
+  - Hessen, Germany
+  - Mecklenburg-Vorpommern, Germany
+  - Niedersachsen, Germany
+  - Nordrhein-Westfalen, Germany
+  - Rheinland-Pfalz, Germany
+  - Saarland, Germany
+  - Sachsen, Germany
+  - Sachsen-Anhalt, Germany
+  - Schleswig-Holstein, Germany
+  - Thuringen, Germany
+  - Unknown, Germany
+  - Ghana
+  - Greece
+  - Grenada
+  - Guatemala
+  - Guinea
+  - Guinea-Bissau
+  - Guyana
+  - Haiti
+  - Holy See
+  - Honduras
+  - Hungary
+  - Iceland
+  - Andaman and Nicobar Islands, India
+  - Andhra Pradesh, India
+  - Arunachal Pradesh, India
+  - Assam, India
+  - Bihar, India
+  - Chandigarh, India
+  - Chhattisgarh, India
+  - Dadra and Nagar Haveli and Daman and Diu, India
+  - Delhi, India
+  - Goa, India
+  - Gujarat, India
+  - Haryana, India
+  - Himachal Pradesh, India
+  - Jammu and Kashmir, India
+  - Jharkhand, India
+  - Karnataka, India
+  - Kerala, India
+  - Ladakh, India
+  - Lakshadweep, India
+  - Madhya Pradesh, India
+  - Maharashtra, India
+  - Manipur, India
+  - Meghalaya, India
+  - Mizoram, India
+  - Nagaland, India
+  - Odisha, India
+  - Puducherry, India
+  - Punjab, India
+  - Rajasthan, India
+  - Sikkim, India
+  - Tamil Nadu, India
+  - Telangana, India
+  - Tripura, India
+  - Unknown, India
+  - Uttar Pradesh, India
+  - Uttarakhand, India
+  - West Bengal, India
+  - Indonesia
+  - Iran
+  - Iraq
+  - Ireland
+  - Israel
+  - Abruzzo, Italy
+  - Basilicata, Italy
+  - Calabria, Italy
+  - Campania, Italy
+  - Emilia-Romagna, Italy
+  - Friuli Venezia Giulia, Italy
+  - Lazio, Italy
+  - Liguria, Italy
+  - Lombardia, Italy
+  - Marche, Italy
+  - Molise, Italy
+  - P.A. Bolzano, Italy
+  - P.A. Trento, Italy
+  - Piemonte, Italy
+  - Puglia, Italy
+  - Sardegna, Italy
+  - Sicilia, Italy
+  - Toscana, Italy
+  - Umbria, Italy
+  - Valle d'Aosta, Italy
+  - Veneto, Italy
+  - Jamaica
+  - Aichi, Japan
+  - Akita, Japan
+  - Aomori, Japan
+  - Chiba, Japan
+  - Ehime, Japan
+  - Fukui, Japan
+  - Fukuoka, Japan
+  - Fukushima, Japan
+  - Gifu, Japan
+  - Gunma, Japan
+  - Hiroshima, Japan
+  - Hokkaido, Japan
+  - Hyogo, Japan
+  - Ibaraki, Japan
+  - Ishikawa, Japan
+  - Iwate, Japan
+  - Kagawa, Japan
+  - Kagoshima, Japan
+  - Kanagawa, Japan
+  - Kochi, Japan
+  - Kumamoto, Japan
+  - Kyoto, Japan
+  - Mie, Japan
+  - Miyagi, Japan
+  - Miyazaki, Japan
+  - Nagano, Japan
+  - Nagasaki, Japan
+  - Nara, Japan
+  - Niigata, Japan
+  - Oita, Japan
+  - Okayama, Japan
+  - Okinawa, Japan
+  - Osaka, Japan
+  - Port Quarantine, Japan
+  - Saga, Japan
+  - Saitama, Japan
+  - Shiga, Japan
+  - Shimane, Japan
+  - Shizuoka, Japan
+  - Tochigi, Japan
+  - Tokushima, Japan
+  - Tokyo, Japan
+  - Tottori, Japan
+  - Toyama, Japan
+  - Unknown, Japan
+  - Wakayama, Japan
+  - Yamagata, Japan
+  - Yamaguchi, Japan
+  - Yamanashi, Japan
+  - Jordan
+  - Kazakhstan
+  - Kenya
+  - Kosovo
+  - Kuwait
+  - Kyrgyzstan
+  - Laos
+  - Latvia
+  - Lebanon
+  - Lesotho
+  - Liberia
+  - Libya
+  - Liechtenstein
+  - Lithuania
+  - Luxembourg
+  - MS Zaandam
+  - Madagascar
+  - Malawi
+  - Malaysia
+  - Maldives
+  - Mali
+  - Malta
+  - Marshall Islands
+  - Mauritania
+  - Mauritius
+  - Aguascalientes, Mexico
+  - Baja California, Mexico
+  - Baja California Sur, Mexico
+  - Campeche, Mexico
+  - Chiapas, Mexico
+  - Chihuahua, Mexico
+  - Ciudad de Mexico, Mexico
+  - Coahuila, Mexico
+  - Colima, Mexico
+  - Durango, Mexico
+  - Guanajuato, Mexico
+  - Guerrero, Mexico
+  - Hidalgo, Mexico
+  - Jalisco, Mexico
+  - Mexico, Mexico
+  - Michoacan, Mexico
+  - Morelos, Mexico
+  - Nayarit, Mexico
+  - Nuevo Leon, Mexico
+  - Oaxaca, Mexico
+  - Puebla, Mexico
+  - Queretaro, Mexico
+  - Quintana Roo, Mexico
+  - San Luis Potosi, Mexico
+  - Sinaloa, Mexico
+  - Sonora, Mexico
+  - Tabasco, Mexico
+  - Tamaulipas, Mexico
+  - Tlaxcala, Mexico
+  - Unknown, Mexico
+  - Veracruz, Mexico
+  - Yucatan, Mexico
+  - Zacatecas, Mexico
+  - Moldova
+  - Monaco
+  - Mongolia
+  - Montenegro
+  - Morocco
+  - Mozambique
+  - Namibia
+  - Nepal
+  - Aruba, Netherlands
+  - Curacao, Netherlands
+  - Drenthe, Netherlands
+  - Flevoland, Netherlands
+  - Friesland, Netherlands
+  - Gelderland, Netherlands
+  - Groningen, Netherlands
+  - Limburg, Netherlands
+  - Noord-Brabant, Netherlands
+  - Noord-Holland, Netherlands
+  - Overijssel, Netherlands
+  - Sint Maarten, Netherlands
+  - Unknown, Netherlands
+  - Utrecht, Netherlands
+  - Zeeland, Netherlands
+  - Zuid-Holland, Netherlands
+  - New Zealand
+  - Nicaragua
+  - Niger
+  - Nigeria
+  - North Macedonia
+  - Norway
+  - Oman
+  - Azad Jammu and Kashmir, Pakistan
+  - Balochistan, Pakistan
+  - Gilgit-Baltistan, Pakistan
+  - Islamabad, Pakistan
+  - Khyber Pakhtunkhwa, Pakistan
+  - Punjab, Pakistan
+  - Sindh, Pakistan
+  - Panama
+  - Papua New Guinea
+  - Paraguay
+  - Amazonas, Peru
+  - Ancash, Peru
+  - Apurimac, Peru
+  - Arequipa, Peru
+  - Ayacucho, Peru
+  - Cajamarca, Peru
+  - Callao, Peru
+  - Cusco, Peru
+  - Huancavelica, Peru
+  - Huanuco, Peru
+  - Ica, Peru
+  - Junin, Peru
+  - La Libertad, Peru
+  - Lambayeque, Peru
+  - Lima, Peru
+  - Loreto, Peru
+  - Madre de Dios, Peru
+  - Moquegua, Peru
+  - Pasco, Peru
+  - Piura, Peru
+  - Puno, Peru
+  - San Martin, Peru
+  - Tacna, Peru
+  - Tumbes, Peru
+  - Ucayali, Peru
+  - Unknown, Peru
+  - Philippines
+  - Poland
+  - Portugal
+  - Qatar
+  - Romania
+  - Adygea Republic, Russia
+  - Altai Krai, Russia
+  - Altai Republic, Russia
+  - Amur Oblast, Russia
+  - Arkhangelsk Oblast, Russia
+  - Astrakhan Oblast, Russia
+  - Bashkortostan Republic, Russia
+  - Belgorod Oblast, Russia
+  - Bryansk Oblast, Russia
+  - Buryatia Republic, Russia
+  - Chechen Republic, Russia
+  - Chelyabinsk Oblast, Russia
+  - Chukotka Autonomous Okrug, Russia
+  - Chuvashia Republic, Russia
+  - Dagestan Republic, Russia
+  - Ingushetia Republic, Russia
+  - Irkutsk Oblast, Russia
+  - Ivanovo Oblast, Russia
+  - Jewish Autonomous Okrug, Russia
+  - Kabardino-Balkarian Republic, Russia
+  - Kaliningrad Oblast, Russia
+  - Kalmykia Republic, Russia
+  - Kaluga Oblast, Russia
+  - Kamchatka Krai, Russia
+  - Karachay-Cherkess Republic, Russia
+  - Karelia Republic, Russia
+  - Kemerovo Oblast, Russia
+  - Khabarovsk Krai, Russia
+  - Khakassia Republic, Russia
+  - Khanty-Mansi Autonomous Okrug, Russia
+  - Kirov Oblast, Russia
+  - Komi Republic, Russia
+  - Kostroma Oblast, Russia
+  - Krasnodar Krai, Russia
+  - Krasnoyarsk Krai, Russia
+  - Kurgan Oblast, Russia
+  - Kursk Oblast, Russia
+  - Leningrad Oblast, Russia
+  - Lipetsk Oblast, Russia
+  - Magadan Oblast, Russia
+  - Mari El Republic, Russia
+  - Mordovia Republic, Russia
+  - Moscow, Russia
+  - Moscow Oblast, Russia
+  - Murmansk Oblast, Russia
+  - Nenets Autonomous Okrug, Russia
+  - Nizhny Novgorod Oblast, Russia
+  - North Ossetia - Alania Republic, Russia
+  - Novgorod Oblast, Russia
+  - Novosibirsk Oblast, Russia
+  - Omsk Oblast, Russia
+  - Orel Oblast, Russia
+  - Orenburg Oblast, Russia
+  - Penza Oblast, Russia
+  - Perm Krai, Russia
+  - Primorsky Krai, Russia
+  - Pskov Oblast, Russia
+  - Rostov Oblast, Russia
+  - Ryazan Oblast, Russia
+  - Saint Petersburg, Russia
+  - Sakha (Yakutiya) Republic, Russia
+  - Sakhalin Oblast, Russia
+  - Samara Oblast, Russia
+  - Saratov Oblast, Russia
+  - Smolensk Oblast, Russia
+  - Stavropol Krai, Russia
+  - Sverdlovsk Oblast, Russia
+  - Tambov Oblast, Russia
+  - Tatarstan Republic, Russia
+  - Tomsk Oblast, Russia
+  - Tula Oblast, Russia
+  - Tver Oblast, Russia
+  - Tyumen Oblast, Russia
+  - Tyva Republic, Russia
+  - Udmurt Republic, Russia
+  - Ulyanovsk Oblast, Russia
+  - Vladimir Oblast, Russia
+  - Volgograd Oblast, Russia
+  - Vologda Oblast, Russia
+  - Voronezh Oblast, Russia
+  - Yamalo-Nenets Autonomous Okrug, Russia
+  - Yaroslavl Oblast, Russia
+  - Zabaykalsky Krai, Russia
+  - Rwanda
+  - Saint Kitts and Nevis
+  - Saint Lucia
+  - Saint Vincent and the Grenadines
+  - Samoa
+  - San Marino
+  - Sao Tome and Principe
+  - Saudi Arabia
+  - Senegal
+  - Serbia
+  - Seychelles
+  - Sierra Leone
+  - Singapore
+  - Slovakia
+  - Slovenia
+  - Solomon Islands
+  - Somalia
+  - South Africa
+  - South Sudan
+  - Andalusia, Spain
+  - Aragon, Spain
+  - Asturias, Spain
+  - Baleares, Spain
+  - C. Valenciana, Spain
+  - Canarias, Spain
+  - Cantabria, Spain
+  - Castilla - La Mancha, Spain
+  - Castilla y Leon, Spain
+  - Catalonia, Spain
+  - Ceuta, Spain
+  - Extremadura, Spain
+  - Galicia, Spain
+  - La Rioja, Spain
+  - Madrid, Spain
+  - Melilla, Spain
+  - Murcia, Spain
+  - Navarra, Spain
+  - Pais Vasco, Spain
+  - Unknown, Spain
+  - Sri Lanka
+  - Sudan
+  - Suriname
+  - Blekinge, Sweden
+  - Dalarna, Sweden
+  - Gavleborg, Sweden
+  - Gotland, Sweden
+  - Halland, Sweden
+  - Jamtland Harjedalen, Sweden
+  - Jonkoping, Sweden
+  - Kalmar, Sweden
+  - Kronoberg, Sweden
+  - Norrbotten, Sweden
+  - Orebro, Sweden
+  - Ostergotland, Sweden
+  - Skane, Sweden
+  - Sormland, Sweden
+  - Stockholm, Sweden
+  - Uppsala, Sweden
+  - Varmland, Sweden
+  - Vasterbotten, Sweden
+  - Vasternorrland, Sweden
+  - Vastmanland, Sweden
+  - Vastra Gotaland, Sweden
+  - Switzerland
+  - Syria
+  - Taiwan
+  - Tajikistan
+  - Tanzania
+  - Thailand
+  - Timor-Leste
+  - Togo
+  - Trinidad and Tobago
+  - Tunisia
+  - Turkey
+  - Uganda
+  - Cherkasy Oblast, Ukraine
+  - Chernihiv Oblast, Ukraine
+  - Chernivtsi Oblast, Ukraine
+  - Crimea Republic, Ukraine
+  - Dnipropetrovsk Oblast, Ukraine
+  - Donetsk Oblast, Ukraine
+  - Ivano-Frankivsk Oblast, Ukraine
+  - Kharkiv Oblast, Ukraine
+  - Kherson Oblast, Ukraine
+  - Khmelnytskyi Oblast, Ukraine
+  - Kiev, Ukraine
+  - Kiev Oblast, Ukraine
+  - Kirovohrad Oblast, Ukraine
+  - Luhansk Oblast, Ukraine
+  - Lviv Oblast, Ukraine
+  - Mykolaiv Oblast, Ukraine
+  - Odessa Oblast, Ukraine
+  - Poltava Oblast, Ukraine
+  - Rivne Oblast, Ukraine
+  - Sevastopol, Ukraine
+  - Sumy Oblast, Ukraine
+  - Ternopil Oblast, Ukraine
+  - Vinnytsia Oblast, Ukraine
+  - Volyn Oblast, Ukraine
+  - Zakarpattia Oblast, Ukraine
+  - Zaporizhia Oblast, Ukraine
+  - Zhytomyr Oblast, Ukraine
+  - United Arab Emirates
+  - Anguilla, United Kingdom
+  - Bermuda, United Kingdom
+  - British Virgin Islands, United Kingdom
+  - Cayman Islands, United Kingdom
+  - Channel Islands, United Kingdom
+  - England, United Kingdom
+  - Falkland Islands (Malvinas), United Kingdom
+  - Gibraltar, United Kingdom
+  - Isle of Man, United Kingdom
+  - Montserrat, United Kingdom
+  - Northern Ireland, United Kingdom
+  - Scotland, United Kingdom
+  - Turks and Caicos Islands, United Kingdom
+  - Unknown, United Kingdom
+  - Wales, United Kingdom
+  - Uruguay
+  - Uzbekistan
+  - Vanuatu
+  - Venezuela
+  - Vietnam
+  - West Bank and Gaza
+  - Yemen
+  - Zambia
+  - Zimbabwe
+  - Alabama, US
+  - Alaska, US
+  - American Samoa, US
+  - Arizona, US
+  - Arkansas, US
+  - California, US
+  - Colorado, US
+  - Connecticut, US
+  - Delaware, US
+  - Diamond Princess, US
+  - District of Columbia, US
+  - Florida, US
+  - Georgia, US
+  - Grand Princess, US
+  - Guam, US
+  - Hawaii, US
+  - Idaho, US
+  - Illinois, US
+  - Indiana, US
+  - Iowa, US
+  - Kansas, US
+  - Kentucky, US
+  - Louisiana, US
+  - Maine, US
+  - Maryland, US
+  - Massachusetts, US
+  - Michigan, US
+  - Minnesota, US
+  - Mississippi, US
+  - Missouri, US
+  - Montana, US
+  - Nebraska, US
+  - Nevada, US
+  - New Hampshire, US
+  - New Jersey, US
+  - New Mexico, US
+  - New York, US
+  - North Carolina, US
+  - North Dakota, US
+  - Northern Mariana Islands, US
+  - Ohio, US
+  - Oklahoma, US
+  - Oregon, US
+  - Pennsylvania, US
+  - Puerto Rico, US
+  - Rhode Island, US
+  - South Carolina, US
+  - South Dakota, US
+  - Tennessee, US
+  - Texas, US
+  - Utah, US
+  - Vermont, US
+  - Virgin Islands, US
+  - Virginia, US
+  - Washington, US
+  - West Virginia, US
+  - Wisconsin, US
+  - Wyoming, US

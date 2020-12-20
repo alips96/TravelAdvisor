@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Province_State: Hessen
   Country_Region: Germany
-  Confirmed: 113998
-  Deaths: 1964
-  Recovered: 84901
-  Active: 27133
+  Confirmed: 120716
+  Deaths: 2121
+  Recovered: 88903
+  Active: 29692
   Combined_Key: Hessen, Germany
-  Incident_Rate: 1819.3660228072706
-  Case_Fatality_Ratio: 1.722837242758645
+  Incident_Rate: 1926.5828243407996
+  Case_Fatality_Ratio: 1.7570164684051823

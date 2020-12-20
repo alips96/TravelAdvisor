@@ -13,14 +13,15 @@ public class CsvToSo : MonoBehaviour
 
     private DataCollection dataCollectionScript;
 
-    [SerializeField] private Country coutrList;
+    [SerializeField] private Country coutryList;
     [SerializeField] private GameObject loadingMenu;
     [SerializeField] private GameObject resultMenu;
 
     private void Start()
     {
-        //coutrList.AllRegions.Clear();
+        coutryList.AllRegions.Clear();
         SetInitialReferences();
+        ProcessData();
     }
 
     private void SetInitialReferences()
@@ -69,7 +70,7 @@ public class CsvToSo : MonoBehaviour
                 region.Recovered = Convert.ToInt32(column[9]);
                 region.Active = column[10].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[10]);
                 region.Combined_Key = column[11];
-                //coutrList.AllRegions.Add(column[11]);
+                coutryList.AllRegions.Add(column[11]);
                 region.Incident_Rate = column[12].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[12]);
                 region.Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
             }
@@ -82,7 +83,7 @@ public class CsvToSo : MonoBehaviour
                 region.Recovered = Convert.ToInt32(column[9]);
                 region.Active = column[10].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[10]);
                 region.Combined_Key = column[11] + "," + column[12];
-                //coutrList.AllRegions.Add(region.Combined_Key);
+                coutryList.AllRegions.Add(region.Combined_Key);
                 region.Incident_Rate = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
                 region.Case_Fatality_Ratio = column[14].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[14]);
             }
@@ -108,7 +109,7 @@ public class CsvToSo : MonoBehaviour
             region.Incident_Rate = column[10].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[10]);
             region.Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
             region.Combined_Key = column[0] + ", US";
-            //coutrList.AllRegions.Add(region.Combined_Key);
+            coutryList.AllRegions.Add(region.Combined_Key);
 
             AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/ScriptableObjects/Regions/Resources/{region.Combined_Key}.asset");
         }

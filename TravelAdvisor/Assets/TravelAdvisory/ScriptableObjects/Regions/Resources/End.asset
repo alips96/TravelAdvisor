@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
   m_Name: End
   m_EditorClassIdentifier: 
-  Province_State: 
-  Country_Region: Saudi Arabia
-  Confirmed: 360335
-  Deaths: 6080
-  Recovered: 351192
-  Active: 3063
-  Combined_Key: Saudi Arabia
-  Incident_Rate: 1035.0329654559775
-  Case_Fatality_Ratio: 1.6873187450566833
+  Province_State: Illinois
+  Country_Region: US
+  Confirmed: 894367
+  Deaths: 16326
+  Recovered: 0
+  Active: 878041
+  Combined_Key: Illinois, US
+  Incident_Rate: 7057.920088991156
+  Case_Fatality_Ratio: 1.8254251330829516

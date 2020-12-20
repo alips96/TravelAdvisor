@@ -9,9 +9,6 @@ using UnityEngine;
 public class Lookup : MonoBehaviour
 {
     private LocationMaster locationMaster;
-    //private Region startingPoint;
-    //private Region destination;
-    private Directory directories;
 
     string[] worldLines;
     string[] usLines;
@@ -37,10 +34,6 @@ public class Lookup : MonoBehaviour
     private void SetInitialReferences()
     {
         locationMaster = GetComponent<LocationMaster>();
-
-        //startingPoint = Resources.Load<Region>("Start");
-        //destination = Resources.Load<Region>("End");
-        directories = Resources.Load<Directory>("dataDirectories");
     }
 
     private void SetStartingPointReference(string sPoint)
@@ -55,8 +48,9 @@ public class Lookup : MonoBehaviour
 
     private void ProcessCsv()
     {
-        worldLines = File.ReadAllLines(Application.dataPath + directories.worldSavePath);
-        usLines = File.ReadAllLines(Application.dataPath + directories.usSavePath);
+        worldLines = File.ReadAllLines(Application.dataPath + "/TravelAdvisory/Data/covidData.csv");
+        usLines = File.ReadAllLines(Application.dataPath + "/TravelAdvisory/Data/USCovidData.csv");
+
         StartCoroutine(WaitForStartingPoint());
     }
 
@@ -68,7 +62,7 @@ public class Lookup : MonoBehaviour
 
     private void LookupData(string location, bool isDestination)
     {
-        if(location[location.Length - 1].CompareTo('S') == 0) //if it was US
+        if(location[location.Length - 1].CompareTo('S') == 0) //US
         {
             location = location.Replace(" ", "");
 
@@ -92,26 +86,26 @@ public class Lookup : MonoBehaviour
                 }
             }
         }
+
+        AssetDatabase.SaveAssets();
     }
 
     private void ExtractAndSaveWorldData(string line, bool isDestination)
     {
         line = line.Replace("\"", string.Empty);
-        line = line.Replace("*", string.Empty);
         string[] column = line.Split(',');
 
         Region region = ScriptableObject.CreateInstance<Region>();
 
-        if (column[2].CompareTo("") == 0) //if state/region is specified in the dataset
+        if (column[2].CompareTo("") == 0) //if state/region is not specified in the dataset
         {
-            region.Province_State = string.Empty; //this means the stats are provided only for the  country.
+            region.Province_State = string.Empty; //this means the stats are provided only for the country.
             region.Country_Region = column[3];
             region.Confirmed = Convert.ToInt32(column[7]);
             region.Deaths = Convert.ToInt32(column[8]);
             region.Recovered = Convert.ToInt32(column[9]);
             region.Active = column[10].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[10]);
             region.Combined_Key = column[11];
-            //coutrList.AllRegions.Add(column[11]);
             region.Incident_Rate = column[12].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[12]);
             region.Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
         }
@@ -124,11 +118,15 @@ public class Lookup : MonoBehaviour
             region.Recovered = Convert.ToInt32(column[9]);
             region.Active = column[10].CompareTo("") == 0 ? 0 : Convert.ToInt32(column[10]);
             region.Combined_Key = column[11] + "," + column[12];
-            //coutrList.AllRegions.Add(region.Combined_Key);
             region.Incident_Rate = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
             region.Case_Fatality_Ratio = column[14].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[14]);
         }
 
+        SaveAsset(isDestination, region);
+    }
+
+    private void SaveAsset(bool isDestination, Region region)
+    {
         if (isDestination)
         {
             AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/ScriptableObjects/Regions/Resources/End.asset");
@@ -155,13 +153,6 @@ public class Lookup : MonoBehaviour
         region.Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
         region.Combined_Key = column[0] + ", US";
 
-        if (isDestination)
-        {
-            AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/ScriptableObjects/Regions/Resources/End.asset");
-        }
-        else
-        {
-            AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/ScriptableObjects/Regions/Resources/Start.asset");
-        }
+        SaveAsset(isDestination, region);
     }
 }
