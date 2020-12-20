@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AutoCompleteText : MonoBehaviour
 {
-    List<string> myList = new List<string>();
-    [SerializeField] private Dropdown dropDown;
-    [SerializeField] private InputField inputField;
+    private List<string> myList = new List<string>();
+    private TMP_InputField inputField;
+    private TMP_Dropdown dropDown;
+
     [SerializeField] private Country countrySO;
 
     private void Start()
     {
         myList = countrySO.AllRegions;
+        inputField = GetComponent<TMP_InputField>();
+        //dropDown = GetComponentInChildren<TMP_Dropdown>();
+        dropDown = transform.Find("Dropdown").GetComponent<TMP_Dropdown>();
     }
 
     public void InputValueChanged() //called by InputText UI
@@ -23,6 +28,8 @@ public class AutoCompleteText : MonoBehaviour
 
         if (!string.IsNullOrEmpty(word))
         {
+            dropDown.gameObject.SetActive(true);
+
             List<string> found = myList.FindAll(w => w.StartsWith(word));
 
             if (found.Count > 0)
@@ -33,7 +40,8 @@ public class AutoCompleteText : MonoBehaviour
         }
         else
         {
-            dropDown.AddOptions(new List<string> { inputField.text + ".." });
+            //dropDown.AddOptions(new List<string> { inputField.text + ".." });
+            dropDown.gameObject.SetActive(false);
         }
     }
 }

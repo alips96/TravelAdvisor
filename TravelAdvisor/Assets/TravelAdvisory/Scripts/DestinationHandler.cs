@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class DestinationHandler : MonoBehaviour
 {
-    [SerializeField] Dropdown dropdownMenu;
-    [SerializeField] InputField inputField;
+    private TMP_Dropdown dropdownMenu;
+    private TMP_InputField inputField;
     private string destination;
     private LocationMaster locationMaster;
 
@@ -19,14 +15,17 @@ public class DestinationHandler : MonoBehaviour
 
     private void SetInitialReferences()
     {
-        locationMaster = GetComponent<LocationMaster>();
+        locationMaster = GameObject.Find("GameManager").GetComponent<LocationMaster>();
+
+        inputField = GetComponent<TMP_InputField>();
+        dropdownMenu = transform.Find("Dropdown").GetComponent<TMP_Dropdown>();
     }
 
     public void DropDownMenuChanged() //Called by Dropdown Menu UI
     {
         if(dropdownMenu != null)
         {
-            destination = dropdownMenu.GetComponentInChildren<Text>().text;
+            destination = dropdownMenu.options[dropdownMenu.value].text;
             inputField.text = destination;
 
             locationMaster.CallEventDestinationCaptured(destination);
