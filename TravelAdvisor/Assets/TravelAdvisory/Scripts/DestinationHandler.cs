@@ -8,6 +8,9 @@ public class DestinationHandler : MonoBehaviour
     private string destination;
     private LocationMaster locationMaster;
 
+    [SerializeField] GameObject destinationResultUI;
+    [SerializeField] TMP_Text destinationText;
+
     private void Start()
     {
         SetInitialReferences();
@@ -29,10 +32,11 @@ public class DestinationHandler : MonoBehaviour
             inputField.text = destination;
 
             locationMaster.CallEventDestinationCaptured(destination);
-        }
-        else
-        {
-            Debug.LogError("dropDown menu not assigned!");
+
+            dropdownMenu.gameObject.SetActive(false);
+            inputField.gameObject.SetActive(false);
+            destinationResultUI.SetActive(true);
+            destinationText.text = destination;
         }
     }
 }
