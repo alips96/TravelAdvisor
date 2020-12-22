@@ -1390,6 +1390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 176556489}
+  - component: {fileID: 176556490}
   m_Layer: 5
   m_Name: ResultsMenu
   m_TagString: Untagged
@@ -1423,6 +1424,37 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000019073, y: -22.565}
   m_SizeDelta: {x: 167.99998, y: 252.9759}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &176556490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176556488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f064bceb120a084885ecd271b311217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SState: {fileID: 783931770}
+  SCountry: {fileID: 271214475}
+  SConfirmed: {fileID: 687065473}
+  SDeaths: {fileID: 1638361666}
+  SRecovered: {fileID: 1301772898}
+  SActive: {fileID: 578539862}
+  SIncidentRate: {fileID: 919026839}
+  SCaseFatalityRatio: {fileID: 1219365685}
+  SStatus: {fileID: 80692607}
+  DState: {fileID: 1611486691}
+  DCountry: {fileID: 290415349}
+  DConfirmed: {fileID: 1936082463}
+  DDeaths: {fileID: 315489964}
+  DRecovered: {fileID: 1599585206}
+  DActive: {fileID: 576282287}
+  DIncidentRate: {fileID: 1905263283}
+  DCaseFatalityRatio: {fileID: 249946822}
+  DStatus: {fileID: 1412991595}
+  OverallStatus: {fileID: 1526816678}
 --- !u!1 &223132835
 GameObject:
   m_ObjectHideFlags: 0
@@ -6889,8 +6921,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.55, y: -27.17}
-  m_SizeDelta: {x: 85.99965, y: 23.658005}
+  m_AnchoredPosition: {x: -36.71, y: -27.17}
+  m_SizeDelta: {x: 87.67204, y: 23.658005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956243770
 MonoBehaviour:
@@ -6912,7 +6944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Total travel risk is:'
+  m_text: 'Overall travel risk is:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -9684,7 +9716,7 @@ GameObject:
   - component: {fileID: 1526816679}
   - component: {fileID: 1526816678}
   m_Layer: 5
-  m_Name: TextTravelRisk
+  m_Name: TextOverallRisk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
