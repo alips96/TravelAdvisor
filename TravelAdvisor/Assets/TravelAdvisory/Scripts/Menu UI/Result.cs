@@ -34,11 +34,102 @@ public class Result : MonoBehaviour
     [SerializeField] private TMP_Text OverallStatus;
     private Condition[] StateConditionsArr;
 
+    private Condition startingPointStatus;
+    private Condition destinationStatus;
+
+    private readonly Dictionary<int, string> ColorsToStatusDic = new Dictionary<int, string>()
+    {
+        {5, "Very High"},
+        {4,"High"},
+        {3, "Moderate" },
+        {2, "Low" }
+    };
+
     private void Start()
     {
         SetInitialReferences();
         SetStatsUI();
         AssignColorsToStats();
+        AnalyzeStatus();
+        CalculateOverallRisk();
+    }
+
+    private void CalculateOverallRisk()
+    {
+        int difference = Mathf.Abs(startingPointStatus.Code - destinationStatus.Code);
+
+        switch (difference)
+        {
+            case 2:
+                if(destinationStatus.Code > startingPointStatus.Code)
+                {
+                    if(destinationStatus.Code == 5)
+                    {
+                        AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
+                    }
+                    else
+                    {
+                        AssignOverallStatus(Color.yellow, "Moderate");
+                    }
+                }
+                else
+                {
+                    if(destinationStatus.Code == 3)
+                    {
+                        AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
+                    }
+                    else
+                    {
+                        AssignOverallStatus(Color.yellow, "Moderate");
+                    }
+                }
+                break;
+
+            case 3:
+                if(destinationStatus.Code > startingPointStatus.Code)
+                {
+                    AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
+                }
+                else
+                {
+                    AssignOverallStatus(Color.yellow, "Moderate");
+                }
+                break;
+
+            default:
+                AssignOverallStatus(destinationStatus.Color, ColorsToStatusDic[destinationStatus.Code]);
+                break;
+        }
+    }
+
+    private void AssignOverallStatus(Color color, string status)
+    {
+        OverallStatus.text = status;
+        OverallStatus.color = color;
+    }
+
+    private void AnalyzeStatus()
+    {
+        startingPointStatus = SetStateStatus(StateConditionsArr[0].Code + (2 * StateConditionsArr[1].Code));
+        destinationStatus = SetStateStatus(StateConditionsArr[2].Code + (2 * StateConditionsArr[3].Code));
+
+        //Assign colors
+        SStatus.color = startingPointStatus.Color;
+        DStatus.color = destinationStatus.Color;
+    }
+
+    private Condition SetStateStatus(int value)
+    {
+        if (value > 13)
+            return new Condition(Color.red, 5);
+
+        if (value > 10 && value < 14)
+            return new Condition(new Color(1.0f, 0.64f, 0.0f), 4);
+
+        if (value > 7 && value < 11)
+            return new Condition(Color.yellow, 3);
+
+        return new Condition(Color.green, 2);
     }
 
     private void AssignColorsToStats()
@@ -48,10 +139,10 @@ public class Result : MonoBehaviour
             AnalyzeData(i);
         }
 
-        SetColors();
+        SetStatsColors();
     }
 
-    private void SetColors()
+    private void SetStatsColors()
     {
         SIncidentRate.color = StateConditionsArr[0].Color;
         SCaseFatalityRatio.color = StateConditionsArr[1].Color;
