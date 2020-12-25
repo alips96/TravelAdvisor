@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
-    [SerializeField] private Color[] colors;
     [SerializeField] private Transform scrollbar, imageContent;
 
     private float scroll_pos = 0;
@@ -20,20 +19,35 @@ public class Swipe : MonoBehaviour
 
     private void Start()
     {
-        pos = new float[8];
+        SetItemsLength();
+        FilloutPosValues();
+
+        if (posLength > 8)
+        {
+            imageContent.GetComponent<HorizontalLayoutGroup>().childControlWidth = true;
+        }
+
+        InstantiateTipsObjects();
+    }
+
+    private void SetItemsLength()
+    {
+        pos = new float[9];
         posLength = pos.Length;
+    }
+
+    private void FilloutPosValues()
+    {
         distance = 1f / (posLength - 1f);
 
         for (int i = 0; i < posLength; i++)
         {
             pos[i] = distance * i;
         }
-        Swipe s = transform.GetComponent<Swipe>();
-        if (posLength > 8)
-        {
-            imageContent.GetComponent<HorizontalLayoutGroup>().childControlWidth = true;
-        }
+    }
 
+    private void InstantiateTipsObjects()
+    {
         for (int i = 0; i < posLength; i++)
         {
             Instantiate(Resources.Load("Tip"), transform);
@@ -66,13 +80,11 @@ public class Swipe : MonoBehaviour
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
-                //Debug.Log("Current Selected Image" + i);
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
 
                 Transform childButton = imageContent.GetChild(i);
                 childButton.localScale = Vector2.Lerp(imageContent.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
-                //childButton.GetComponent<Image>().color = new Color(1.0f, 0.64f, 0.0f);
-                childButton.GetComponent<Image>().color = Color.yellow;
+                childButton.GetComponent<Image>().color = new Color(1.0f, 0.72f, 0f);
 
                 for (int j = 0; j < posLength; j++)
                 {
@@ -100,7 +112,7 @@ public class Swipe : MonoBehaviour
             }
         }
 
-        int childCount = btn.transform.parent.transform.childCount;
+        int childCount = btn.transform.parent.childCount;
         for (int i = 0; i < childCount; i++)
         {
             btn.transform.name = ".";
@@ -110,11 +122,11 @@ public class Swipe : MonoBehaviour
     public void WhichBtnClicked(Button btn)
     {
         btn.transform.name = "clicked";
-        int childCount = btn.transform.parent.transform.childCount;
+        int childCount = btn.transform.parent.childCount;
 
         for (int i = 0; i < childCount; i++)
         {
-            if (btn.transform.parent.transform.GetChild(i).transform.name == "clicked")
+            if (btn.transform.parent.GetChild(i).transform.name == "clicked")
             {
                 btnNumber = i;
                 takeTheBtn = btn;
