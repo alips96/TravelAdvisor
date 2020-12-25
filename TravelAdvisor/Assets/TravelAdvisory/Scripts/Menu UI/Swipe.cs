@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Swipe : MonoBehaviour
 {
     [SerializeField] private Color[] colors;
-    [SerializeField] private GameObject scrollbar, imageContent;
+    [SerializeField] private Transform scrollbar, imageContent;
     private float scroll_pos = 0;
     private float[] pos;
     private Button takeTheBtn;
@@ -20,18 +20,25 @@ public class Swipe : MonoBehaviour
         pos = new float[transform.childCount];
         posLength = pos.Length;
         distance = 1f / (posLength - 1f);
-    }
 
-    void Update()
-    {
         for (int i = 0; i < posLength; i++)
         {
             pos[i] = distance * i;
         }
 
+        if(posLength > 8)
+        {
+            imageContent.GetComponent<HorizontalLayoutGroup>().childControlWidth = true;
+        }
+    }
+
+    void Update()
+    {
+        float scrollbarValue = scrollbar.GetComponent<Scrollbar>().value;
+
         if (Input.GetMouseButton(0))
         {
-            scroll_pos = scrollbar.GetComponent<Scrollbar>().value;
+            scroll_pos = scrollbarValue;
         }
         else
         {
@@ -39,7 +46,7 @@ public class Swipe : MonoBehaviour
             {
                 if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
                 {
-                    scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], 0.1f);
+                    scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbarValue, pos[i], 0.1f);
                 }
             }
         }
@@ -49,29 +56,32 @@ public class Swipe : MonoBehaviour
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
-                //Debug.Log("Current Selected Level" + i);
+                //Debug.Log("Current Selected Image" + i);
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
-                imageContent.transform.GetChild(i).localScale = Vector2.Lerp(imageContent.transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
-                imageContent.transform.GetChild(i).GetComponent<Image>().color = colors[1];
+
+                Transform childButton = imageContent.GetChild(i);
+                childButton.localScale = Vector2.Lerp(imageContent.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
+                //childButton.GetComponent<Image>().color = new Color(1.0f, 0.64f, 0.0f);
+                childButton.GetComponent<Image>().color = Color.yellow;
+
                 for (int j = 0; j < posLength; j++)
                 {
                     if (j != i)
                     {
-                        imageContent.transform.GetChild(j).GetComponent<Image>().color = colors[0];
-                        imageContent.transform.GetChild(j).localScale = Vector2.Lerp(imageContent.transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
-                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                        Transform smallButton = imageContent.GetChild(j);
+                        Transform childTransform = transform.GetChild(j);
+
+                        smallButton.GetComponent<Image>().color = Color.grey;
+                        smallButton.localScale = Vector2.Lerp(smallButton.localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                        childTransform.localScale = Vector2.Lerp(childTransform.localScale, new Vector2(0.8f, 0.8f), 0.1f);
                     }
                 }
             }
         }
-
-
     }
 
     private void SmallButtonHandler(float distance, float[] pos, Button btn)
     {
-        // btnSayi = System.Int32.Parse(btn.transform.name);
-
         for (int i = 0; i < posLength; i++)
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
@@ -103,8 +113,6 @@ public class Swipe : MonoBehaviour
                 SmallButtonHandler(distance, pos, takeTheBtn);
             }
         }
-
-
     }
 
 }
