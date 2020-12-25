@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Swipe : MonoBehaviour
+public class SwipeTips : MonoBehaviour
 {
     [SerializeField] private Transform scrollbar, imageContent;
 
     private float scroll_pos = 0;
     private float[] pos;
-    private Button takeTheBtn;
-    private int btnNumber;
 
     private float distance;
     private int posLength;
 
-    public Button myButton;
+    [SerializeField] private Button buttonPrefab;
 
     private void Start()
     {
@@ -32,7 +30,7 @@ public class Swipe : MonoBehaviour
 
     private void SetItemsLength()
     {
-        pos = new float[9];
+        pos = new float[4];
         posLength = pos.Length;
     }
 
@@ -51,8 +49,9 @@ public class Swipe : MonoBehaviour
         for (int i = 0; i < posLength; i++)
         {
             Instantiate(Resources.Load("Tip"), transform);
-            Button button = Instantiate(myButton, imageContent);
-            button.onClick.AddListener(delegate { WhichBtnClicked(button); });
+            Button indexButton = Instantiate(buttonPrefab, imageContent);
+            int x = i; //Closure Problem :/ why don't they fix this??
+            indexButton.onClick.AddListener(delegate { WhichBtnClicked(x); });
         }
     }
 
@@ -102,39 +101,21 @@ public class Swipe : MonoBehaviour
         }
     }
 
-    private void SmallButtonHandler(float distance, float[] pos, Button btn)
+    private void SmallButtonHandler(float distance, float[] pos, int buttonIndex)
     {
         for (int i = 0; i < posLength; i++)
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
-                scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[btnNumber], 1f * Time.deltaTime);
+                scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[buttonIndex], 1f * Time.deltaTime);
             }
         }
-
-        int childCount = btn.transform.parent.childCount;
-        for (int i = 0; i < childCount; i++)
-        {
-            btn.transform.name = ".";
-        }
-
     }
-    public void WhichBtnClicked(Button btn)
+
+    public void WhichBtnClicked(int i)
     {
-        btn.transform.name = "clicked";
-        int childCount = btn.transform.parent.childCount;
-
-        for (int i = 0; i < childCount; i++)
-        {
-            if (btn.transform.parent.GetChild(i).transform.name == "clicked")
-            {
-                btnNumber = i;
-                takeTheBtn = btn;
-                scroll_pos = pos[btnNumber];
-
-                SmallButtonHandler(distance, pos, takeTheBtn);
-            }
-        }
+        scroll_pos = pos[i];
+        SmallButtonHandler(distance, pos, i);
     }
 
 }
