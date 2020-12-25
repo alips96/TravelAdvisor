@@ -7,6 +7,7 @@ public class Swipe : MonoBehaviour
 {
     [SerializeField] private Color[] colors;
     [SerializeField] private Transform scrollbar, imageContent;
+
     private float scroll_pos = 0;
     private float[] pos;
     private Button takeTheBtn;
@@ -15,9 +16,11 @@ public class Swipe : MonoBehaviour
     private float distance;
     private int posLength;
 
+    public Button myButton;
+
     private void Start()
     {
-        pos = new float[transform.childCount];
+        pos = new float[8];
         posLength = pos.Length;
         distance = 1f / (posLength - 1f);
 
@@ -25,10 +28,17 @@ public class Swipe : MonoBehaviour
         {
             pos[i] = distance * i;
         }
-
-        if(posLength > 8)
+        Swipe s = transform.GetComponent<Swipe>();
+        if (posLength > 8)
         {
             imageContent.GetComponent<HorizontalLayoutGroup>().childControlWidth = true;
+        }
+
+        for (int i = 0; i < posLength; i++)
+        {
+            Instantiate(Resources.Load("Tip"), transform);
+            Button button = Instantiate(myButton, imageContent);
+            button.onClick.AddListener(delegate { WhichBtnClicked(button); });
         }
     }
 
