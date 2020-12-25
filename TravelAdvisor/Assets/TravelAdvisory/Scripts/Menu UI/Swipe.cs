@@ -5,34 +5,26 @@ using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
-    public Color[] colors;
-    public GameObject scrollbar, imageContent;
+    [SerializeField] private Color[] colors;
+    [SerializeField] private GameObject scrollbar, imageContent;
     private float scroll_pos = 0;
-    float[] pos;
-    private bool runIt = false;
-    private float time;
+    private float[] pos;
     private Button takeTheBtn;
-    int btnNumber;
+    private int btnNumber;
 
-    // Update is called once per frame
-    void Update()
+    private float distance;
+    private int posLength;
+
+    private void Start()
     {
         pos = new float[transform.childCount];
-        float distance = 1f / (pos.Length - 1f);
+        posLength = pos.Length;
+        distance = 1f / (posLength - 1f);
+    }
 
-        if (runIt)
-        {
-            SmallButtonHandler(distance, pos, takeTheBtn);
-            time += Time.deltaTime;
-
-            if (time > 1f)
-            {
-                time = 0;
-                runIt = false;
-            }
-        }
-
-        for (int i = 0; i < pos.Length; i++)
+    void Update()
+    {
+        for (int i = 0; i < posLength; i++)
         {
             pos[i] = distance * i;
         }
@@ -43,7 +35,7 @@ public class Swipe : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < pos.Length; i++)
+            for (int i = 0; i < posLength; i++)
             {
                 if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
                 {
@@ -53,7 +45,7 @@ public class Swipe : MonoBehaviour
         }
 
 
-        for (int i = 0; i < pos.Length; i++)
+        for (int i = 0; i < posLength; i++)
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
@@ -61,7 +53,7 @@ public class Swipe : MonoBehaviour
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
                 imageContent.transform.GetChild(i).localScale = Vector2.Lerp(imageContent.transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
                 imageContent.transform.GetChild(i).GetComponent<Image>().color = colors[1];
-                for (int j = 0; j < pos.Length; j++)
+                for (int j = 0; j < posLength; j++)
                 {
                     if (j != i)
                     {
@@ -80,16 +72,16 @@ public class Swipe : MonoBehaviour
     {
         // btnSayi = System.Int32.Parse(btn.transform.name);
 
-        for (int i = 0; i < pos.Length; i++)
+        for (int i = 0; i < posLength; i++)
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
                 scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[btnNumber], 1f * Time.deltaTime);
-
             }
         }
 
-        for (int i = 0; i < btn.transform.parent.transform.childCount; i++)
+        int childCount = btn.transform.parent.transform.childCount;
+        for (int i = 0; i < childCount; i++)
         {
             btn.transform.name = ".";
         }
@@ -98,15 +90,17 @@ public class Swipe : MonoBehaviour
     public void WhichBtnClicked(Button btn)
     {
         btn.transform.name = "clicked";
-        for (int i = 0; i < btn.transform.parent.transform.childCount; i++)
+        int childCount = btn.transform.parent.transform.childCount;
+
+        for (int i = 0; i < childCount; i++)
         {
             if (btn.transform.parent.transform.GetChild(i).transform.name == "clicked")
             {
                 btnNumber = i;
                 takeTheBtn = btn;
-                time = 0;
-                scroll_pos = (pos[btnNumber]);
-                runIt = true;
+                scroll_pos = pos[btnNumber];
+
+                SmallButtonHandler(distance, pos, takeTheBtn);
             }
         }
 
