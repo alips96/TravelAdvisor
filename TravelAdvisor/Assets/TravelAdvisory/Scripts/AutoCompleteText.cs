@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,7 +26,8 @@ public class AutoCompleteText : MonoBehaviour
     {
         dropDown.ClearOptions();
 
-        string word = inputField.text;
+        string word = ConvertToStandardForm(inputField.text);
+        //string word = inputField.text;
 
         if (!string.IsNullOrEmpty(word))
         {
@@ -43,5 +46,15 @@ public class AutoCompleteText : MonoBehaviour
             //dropDown.AddOptions(new List<string> { inputField.text + ".." });
             dropDown.gameObject.SetActive(false);
         }
+    }
+
+    private string ConvertToStandardForm(string text)
+    {
+        string oldString = text.Trim();
+
+        StringBuilder newText = new StringBuilder(oldString);
+        newText.Replace(oldString[0], char.ToUpper(oldString[0]), 0, 1);
+
+        return newText.ToString();
     }
 }
