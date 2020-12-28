@@ -45,13 +45,24 @@ public class Result : MonoBehaviour
         {2, "Low" }
     };
 
-    private void Start()
+    private string capturedString = "";
+
+    public void ShowResults() //Called by go button
     {
+        if (destination != null)
+        {
+            capturedString = destination.Combined_Key;
+        }
+
         SetInitialReferences();
-        SetStatsUI();
-        AssignColorsToStats();
-        AnalyzeStatus();
-        CalculateOverallRisk();
+
+        if(capturedString.CompareTo(destination.Combined_Key) != 0)
+        {
+            SetStatsUI();
+            AssignColorsToStats();
+            AnalyzeStatus();
+            CalculateOverallRisk();
+        }
     }
 
     private void CalculateOverallRisk()

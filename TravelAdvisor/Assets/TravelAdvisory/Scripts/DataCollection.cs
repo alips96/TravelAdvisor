@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class DataCollection : MonoBehaviour
 {
-    public string yesterday;
+    public string targetDay;
     private bool isDataCaptured;
     private bool shouldDownloadData;
 
@@ -20,14 +20,23 @@ public class DataCollection : MonoBehaviour
     void Start()
     {
         SetInitialReferences();
-        yesterday = GetYesterday();
-        shouldDownloadData = CheckIfDownloadNecessary(yesterday);
+
+        if (DateTime.Now.Hour > 7) //Files get uploaded after 7 a.m :)
+        {
+            targetDay = GetTargetDay(-1); // yesterday
+        }
+        else
+        {
+            targetDay = GetTargetDay(-2); // To handle late upload.
+        }
+
+        shouldDownloadData = CheckIfDownloadNecessary(targetDay);
 
         if (shouldDownloadData)
         {
             PlayerPrefs.DeleteAll();
             DownloadRawData();
-            PlayerPrefs.SetInt(yesterday, 1);
+            PlayerPrefs.SetInt(targetDay, 1);
         }
         else
         {
@@ -49,11 +58,11 @@ public class DataCollection : MonoBehaviour
     private void DownloadWorldCorpus()
     {
         //World except US
-        string worldUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv";
+        string worldUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + targetDay + ".csv";
         string worldPath = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "covidData.csv");
 
         //US
-        string USUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + yesterday + ".csv";
+        string USUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + targetDay + ".csv";
         string UsPath = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "USCovidData.csv");
 
         isDataCaptured = true;
@@ -72,7 +81,7 @@ public class DataCollection : MonoBehaviour
         if (webRequest.isNetworkError || webRequest.isHttpError)
         {
             isDataCaptured = false;
-            Debug.LogError(webRequest.error);
+            //Debug.LogError(webRequest.error);
             SwapMenus();
         }
         else if (webRequest.isDone)
@@ -97,9 +106,9 @@ public class DataCollection : MonoBehaviour
         return PlayerPrefs.GetInt(yesterday) != 1;
     }
 
-    private string GetYesterday()
+    private string GetTargetDay(int daysAdded)
     {
-        DateTime yesterday = DateTime.Today.AddDays(-1); //because we need to download the data of the previous day.
+        DateTime yesterday = DateTime.Today.AddDays(daysAdded); //we need to download the data of the previous days.
 
         int day = yesterday.Day;
         int month = yesterday.Month;

@@ -39,4 +39,10 @@ public class DestinationHandler : MonoBehaviour
             destinationText.text = destination;
         }
     }
+
+    public void ClearDropDownContents() //Called by input menu Back & Edit buttons.
+    {
+        inputField.text = "";
+        dropdownMenu.gameObject.SetActive(false);
+    }
 }

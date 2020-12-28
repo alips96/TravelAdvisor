@@ -50,6 +50,9 @@ public class AutoCompleteText : MonoBehaviour
 
     private string ConvertToStandardForm(string text)
     {
+        if (string.IsNullOrEmpty(text))
+            return null;
+
         string oldString = text.Trim();
 
         StringBuilder newText = new StringBuilder(oldString);

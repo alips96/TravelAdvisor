@@ -31,7 +31,7 @@ public class CsvToSo : MonoBehaviour
 
     public void ProcessData() //Called by start button
     {
-        if (PlayerPrefs.GetInt(dataCollectionScript.yesterday) != 1)
+        if (PlayerPrefs.GetInt(dataCollectionScript.targetDay) != 1)
         {
             loadingMenu.SetActive(true);
             //StartCoroutine(GenerateRegionStats());

@@ -38,7 +38,7 @@ public class LocationHandler : MonoBehaviour
 
         if (webRequest.isNetworkError || webRequest.isHttpError)
         {
-            Debug.LogError(webRequest.error);
+            //Debug.LogError(webRequest.error);
             SwapMenus();
         }
         else
