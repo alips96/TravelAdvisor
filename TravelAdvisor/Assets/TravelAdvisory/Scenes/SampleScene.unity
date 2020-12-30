@@ -1579,6 +1579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f064bceb120a084885ecd271b311217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overallStatusIndex: 0
   SState: {fileID: 783931770}
   SCountry: {fileID: 271214475}
   SConfirmed: {fileID: 687065473}
@@ -2802,6 +2803,7 @@ MonoBehaviour:
   scrollbar: {fileID: 784957636}
   imageContent: {fileID: 780489134}
   buttonPrefab: {fileID: 4905795262430242762, guid: 92d624b1cacc1924fbcc3e5ceda705c5, type: 3}
+  resultScript: {fileID: 176556490}
 --- !u!1 &315489962
 GameObject:
   m_ObjectHideFlags: 0
@@ -14001,8 +14003,8 @@ GameObject:
   - component: {fileID: 2124491270}
   - component: {fileID: 2124491269}
   - component: {fileID: 2124491271}
-  - component: {fileID: 2124491275}
   - component: {fileID: 2124491274}
+  - component: {fileID: 2124491272}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -14054,6 +14056,18 @@ MonoBehaviour:
   startingPoint: {fileID: 11400000, guid: d543ac47de3c0984f90c755e52a581e0, type: 2}
   MainMenu: {fileID: 2093236891}
   RetryMenu: {fileID: 164202038}
+--- !u!114 &2124491272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124491268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64360df5b0b789348bef04d55721cc66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2124491274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14064,18 +14078,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1852af4c48fa9084d947e85c63fb5acd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2124491275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124491268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ecc4d9e0df74e458864aab0cfa421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &5628627334934586341

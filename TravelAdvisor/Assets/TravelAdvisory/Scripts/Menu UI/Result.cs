@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Result : MonoBehaviour
 {
     private Region startingPoint;
     private Region destination;
+
+    [HideInInspector] public byte overallStatusIndex;
 
     //Starting Point
     [SerializeField] private TMP_Text SState;
@@ -32,10 +35,12 @@ public class Result : MonoBehaviour
     [SerializeField] private TMP_Text DStatus;
 
     [SerializeField] private TMP_Text OverallStatus;
-    private Condition[] StateConditionsArr;
+    private Condition[] StateConditionsArr = new Condition[4];
 
     private Condition startingPointStatus;
     private Condition destinationStatus;
+
+    private bool isStartingPointCaptured;
 
     private readonly Dictionary<int, string> ColorsToStatusDic = new Dictionary<int, string>()
     {
@@ -54,9 +59,9 @@ public class Result : MonoBehaviour
             capturedString = destination.Combined_Key;
         }
 
-        SetInitialReferences();
+        SetPlacesReferences();
 
-        if(capturedString.CompareTo(destination.Combined_Key) != 0)
+        if (capturedString.CompareTo(destination.Combined_Key) != 0)
         {
             SetStatsUI();
             AssignColorsToStats();
@@ -77,10 +82,12 @@ public class Result : MonoBehaviour
                     if(destinationStatus.Code == 5)
                     {
                         AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
+                        overallStatusIndex = 4;
                     }
                     else
                     {
                         AssignOverallStatus(Color.yellow, "Moderate");
+                        overallStatusIndex = 3;
                     }
                 }
                 else
@@ -88,10 +95,12 @@ public class Result : MonoBehaviour
                     if(destinationStatus.Code == 3)
                     {
                         AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
+                        overallStatusIndex = 4;
                     }
                     else
                     {
                         AssignOverallStatus(Color.yellow, "Moderate");
+                        overallStatusIndex = 3;
                     }
                 }
                 break;
@@ -100,15 +109,18 @@ public class Result : MonoBehaviour
                 if(destinationStatus.Code > startingPointStatus.Code)
                 {
                     AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
+                    overallStatusIndex = 4;
                 }
                 else
                 {
                     AssignOverallStatus(Color.yellow, "Moderate");
+                    overallStatusIndex = 3;
                 }
                 break;
 
             default:
                 AssignOverallStatus(destinationStatus.Color, ColorsToStatusDic[destinationStatus.Code]);
+                overallStatusIndex = destinationStatus.Code;
                 break;
         }
     }
@@ -307,12 +319,17 @@ public class Result : MonoBehaviour
         DCaseFatalityRatio.text = Math.Round(destination.Case_Fatality_Ratio, 3).ToString();
     }
 
-    private void SetInitialReferences()
+    private void SetPlacesReferences()
     {
-        startingPoint = Resources.Load<Region>("Start");
-        destination = Resources.Load<Region>("End");
+        Region[] regions = Resources.FindObjectsOfTypeAll<Region>();
 
-        StateConditionsArr = new Condition[4];
+        destination = regions[0];
+
+        if (!isStartingPointCaptured)
+        {
+            startingPoint = regions[1];
+            isStartingPointCaptured = true;
+        }
     }
 
     private class Condition

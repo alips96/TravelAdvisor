@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,9 +15,11 @@ public class SwipeTips : MonoBehaviour
     private int posLength;
 
     [SerializeField] private Button buttonPrefab;
+    [SerializeField] private Result resultScript;
 
     private void Start()
     {
+        SetInitialReferences();
         SetItemsLength();
         FilloutPosValues();
 
@@ -26,6 +29,13 @@ public class SwipeTips : MonoBehaviour
         }
 
         InstantiateTipsObjects();
+    }
+
+    private void SetInitialReferences()
+    {
+        //resultScript = GameObject.Find("ResultsMenu").GetComponent<Result>();
+        byte b = resultScript.overallStatusIndex;
+        Debug.Log(b);
     }
 
     private void SetItemsLength()
@@ -48,7 +58,7 @@ public class SwipeTips : MonoBehaviour
     {
         for (int i = 0; i < posLength; i++)
         {
-            Instantiate(Resources.Load("Tip"), transform);
+            Instantiate(Resources.Load("Prefabs/Tip"), transform);
             Button indexButton = Instantiate(buttonPrefab, imageContent);
             int x = i; //Closure Problem :/ why don't they fix this??
             indexButton.onClick.AddListener(delegate { WhichBtnClicked(x); });

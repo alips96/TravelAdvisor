@@ -132,11 +132,11 @@ public class Lookup : MonoBehaviour
     {
         if (isDestination)
         {
-            AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/ScriptableObjects/Regions/Resources/End.asset");
+            AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/Resources/ScriptableObjects/Regions/End.asset");
         }
         else
         {
-            AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/ScriptableObjects/Regions/Resources/Start.asset");
+            AssetDatabase.CreateAsset(region, $"Assets/TravelAdvisory/Resources/ScriptableObjects/Regions/Start.asset");
         }
     }
 

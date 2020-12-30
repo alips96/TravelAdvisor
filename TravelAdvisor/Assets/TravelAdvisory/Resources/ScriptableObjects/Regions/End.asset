@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
-  m_Name: Start
+  m_Name: End
   m_EditorClassIdentifier: 
-  Province_State: Hessen
-  Country_Region: Germany
-  Confirmed: 120716
-  Deaths: 2121
-  Recovered: 88903
-  Active: 29692
-  Combined_Key: Hessen, Germany
-  Incident_Rate: 1926.5828243407996
-  Case_Fatality_Ratio: 1.7570164684051823
+  Province_State: Lombardia
+  Country_Region: Italy
+  Confirmed: 473371
+  Deaths: 24958
+  Recovered: 393995
+  Active: 54418
+  Combined_Key: Lombardia, Italy
+  Incident_Rate: 4705.208669008349
+  Case_Fatality_Ratio: 5.272397337394982
