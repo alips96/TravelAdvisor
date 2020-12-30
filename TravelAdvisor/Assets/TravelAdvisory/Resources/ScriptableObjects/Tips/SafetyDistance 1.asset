@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950f1529fa83c2d47aadd04bad76aa94, type: 3}
-  m_Name: SafetyDistance
+  m_Name: SafetyDistance 1
   m_EditorClassIdentifier: 
   title: Keep Safety Distance
   content: People should keep safety distance all the time.
   image: {fileID: 21300000, guid: a093780a76b8e8c4c8b121e123d21a82, type: 3}
-  priority: 2

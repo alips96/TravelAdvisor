@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950f1529fa83c2d47aadd04bad76aa94, type: 3}
-  m_Name: MeetPeople
+  m_Name: another p3
   m_EditorClassIdentifier: 
-  title: Meet People outside
-  content: Outdoor gatherings are safer than indoor ones, particularly if indoor
-    spaces are small and without outdoor air coming in.
-  image: {fileID: 21300000, guid: 0b723a187b246ad44ad90b0600b1e98e, type: 3}
+  title: I am p another p3
+  content: yes it is p another p3
+  image: {fileID: 21300000, guid: 6a4c582ed02cf4e40954a044796d37ac, type: 3}

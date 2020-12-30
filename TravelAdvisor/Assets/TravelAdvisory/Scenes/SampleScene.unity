@@ -1705,6 +1705,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 314087845}
+        m_TargetAssemblyTypeName: SwipeTips, Assembly-CSharp
+        m_MethodName: ShowTips
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &223132838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,6 +2816,17 @@ MonoBehaviour:
   imageContent: {fileID: 780489134}
   buttonPrefab: {fileID: 4905795262430242762, guid: 92d624b1cacc1924fbcc3e5ceda705c5, type: 3}
   resultScript: {fileID: 176556490}
+  tipsPriority1:
+  - {fileID: 11400000, guid: 2b5c79e7b117d9643902450edb780e27, type: 2}
+  - {fileID: 11400000, guid: 6342ccf4fa6ebbd40befe48947aa846c, type: 2}
+  tipsPriority2:
+  - {fileID: 11400000, guid: 08ab94143a695294bb6c4ee52e09c82b, type: 2}
+  - {fileID: 11400000, guid: 538916f249d87914da4f772bd192062a, type: 2}
+  tipsPriority3:
+  - {fileID: 11400000, guid: de4a3a2a3868b744f8271877719c637a, type: 2}
+  - {fileID: 11400000, guid: 72f0bd3e970c2bc4d9f1387ed37a1996, type: 2}
+  tipsPriority4:
+  - {fileID: 11400000, guid: 784c91fe0fd03734c8675b82040173e0, type: 2}
 --- !u!1 &315489962
 GameObject:
   m_ObjectHideFlags: 0

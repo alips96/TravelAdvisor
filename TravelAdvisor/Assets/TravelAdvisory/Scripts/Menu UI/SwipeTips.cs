@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,30 +18,56 @@ public class SwipeTips : MonoBehaviour
     [SerializeField] private Button buttonPrefab;
     [SerializeField] private Result resultScript;
 
-    private void Start()
-    {
-        SetInitialReferences();
-        SetItemsLength();
-        FilloutPosValues();
+    private byte statusIndex = 0;
 
-        if (posLength > 8)
+    [SerializeField] private Tip[] tipsPriority1;
+    [SerializeField] private Tip[] tipsPriority2;
+    [SerializeField] private Tip[] tipsPriority3;
+    [SerializeField] private Tip[] tipsPriority4;
+
+    public void ShowTips() //Called by tips button
+    {
+        if(resultScript.overallStatusIndex != statusIndex)
         {
-            imageContent.GetComponent<HorizontalLayoutGroup>().childControlWidth = true;
+            statusIndex = resultScript.overallStatusIndex;
+
+            switch (statusIndex)
+            {
+                case 2:
+                    SetItemsLength(tipsPriority1.Length);
+                    FilloutPosValues();
+                    InstantiateTipsObjects(new List<Tip[]> { tipsPriority1 });
+                    break;
+
+                case 3:
+                    SetItemsLength(tipsPriority1.Length + tipsPriority2.Length);
+                    FilloutPosValues();
+                    InstantiateTipsObjects(new List<Tip[]> { tipsPriority1, tipsPriority2 });
+                    break;
+
+                case 4:
+                    SetItemsLength(tipsPriority1.Length + tipsPriority2.Length + tipsPriority3.Length);
+                    FilloutPosValues();
+                    InstantiateTipsObjects(new List<Tip[]> { tipsPriority1, tipsPriority2, tipsPriority3 });
+                    break;
+
+                case 5:
+                    SetItemsLength(tipsPriority1.Length + tipsPriority2.Length + tipsPriority3.Length + tipsPriority4.Length);
+                    FilloutPosValues();
+                    InstantiateTipsObjects(new List<Tip[]> { tipsPriority1, tipsPriority2, tipsPriority3, tipsPriority4 });
+                    break;
+            }
+
+            if (posLength > 8)
+            {
+                imageContent.GetComponent<HorizontalLayoutGroup>().childControlWidth = true;
+            }
         }
-
-        InstantiateTipsObjects();
     }
 
-    private void SetInitialReferences()
+    private void SetItemsLength(int length)
     {
-        //resultScript = GameObject.Find("ResultsMenu").GetComponent<Result>();
-        byte b = resultScript.overallStatusIndex;
-        Debug.Log(b);
-    }
-
-    private void SetItemsLength()
-    {
-        pos = new float[4];
+        pos = new float[length];
         posLength = pos.Length;
     }
 
@@ -54,14 +81,23 @@ public class SwipeTips : MonoBehaviour
         }
     }
 
-    private void InstantiateTipsObjects()
+    private void InstantiateTipsObjects(List<Tip[]> myList)
     {
-        for (int i = 0; i < posLength; i++)
+        int i = 0;
+
+        foreach (Tip[] tipArr in myList)
         {
-            Instantiate(Resources.Load("Prefabs/Tip"), transform);
-            Button indexButton = Instantiate(buttonPrefab, imageContent);
-            int x = i; //Closure Problem :/ why don't they fix this??
-            indexButton.onClick.AddListener(delegate { WhichBtnClicked(x); });
+            foreach (Tip item in tipArr)
+            {
+                GameObject go = Instantiate(Resources.Load("Prefabs/Tip"), transform) as GameObject;
+                go.transform.GetChild(0).GetComponent<Image>().sprite = item.image;
+                go.transform.GetChild(1).GetComponent<TMP_Text>().text = item.title;
+                go.transform.GetChild(2).GetComponent<TMP_Text>().text = item.content;
+
+                Button indexButton = Instantiate(buttonPrefab, imageContent);
+                int x = i++; //Closure Problem
+                indexButton.onClick.AddListener(delegate { WhichBtnClicked(x); });
+            }
         }
     }
 
