@@ -11,6 +11,14 @@ public class LocationMaster : MonoBehaviour
     public delegate void DataEventHandler();
     public event DataEventHandler EventDataDownloaded;
 
+    public delegate void AnalyzerEventHandler(List<string> list);
+    public event AnalyzerEventHandler EventAnalyzeData;
+
+    public void CallEventAnalyzeData(List<string> list)
+    {
+        EventAnalyzeData.Invoke(list);
+    }
+
     public void CallEventStartingPositionCaptured(string startPos)
     {
         EventStartingPositionCaptured.Invoke(startPos);

@@ -18,7 +18,7 @@ public class SwipeTips : MonoBehaviour
     [SerializeField] private Button buttonPrefab;
     [SerializeField] private Result resultScript;
 
-    private byte statusIndex = 0;
+    private byte statusIndex = 5;
 
     [SerializeField] private Tip[] tipsPriority1;
     [SerializeField] private Tip[] tipsPriority2;
@@ -33,25 +33,25 @@ public class SwipeTips : MonoBehaviour
 
             switch (statusIndex)
             {
-                case 2:
+                case 0:
                     SetItemsLength(tipsPriority1.Length);
                     FilloutPosValues();
                     InstantiateTipsObjects(new List<Tip[]> { tipsPriority1 });
                     break;
 
-                case 3:
+                case 1:
                     SetItemsLength(tipsPriority1.Length + tipsPriority2.Length);
                     FilloutPosValues();
                     InstantiateTipsObjects(new List<Tip[]> { tipsPriority1, tipsPriority2 });
                     break;
 
-                case 4:
+                case 2:
                     SetItemsLength(tipsPriority1.Length + tipsPriority2.Length + tipsPriority3.Length);
                     FilloutPosValues();
                     InstantiateTipsObjects(new List<Tip[]> { tipsPriority1, tipsPriority2, tipsPriority3 });
                     break;
 
-                case 5:
+                case 3:
                     SetItemsLength(tipsPriority1.Length + tipsPriority2.Length + tipsPriority3.Length + tipsPriority4.Length);
                     FilloutPosValues();
                     InstantiateTipsObjects(new List<Tip[]> { tipsPriority1, tipsPriority2, tipsPriority3, tipsPriority4 });

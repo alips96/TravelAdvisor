@@ -14,4 +14,5 @@ public class Region : ScriptableObject
     public string Combined_Key;
     public double Incident_Rate;
     public double Case_Fatality_Ratio;
+    public int statusIndex;
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -21,7 +20,7 @@ public class Result : MonoBehaviour
     [SerializeField] private TMP_Text SActive;
     [SerializeField] private TMP_Text SIncidentRate;
     [SerializeField] private TMP_Text SCaseFatalityRatio;
-    [SerializeField] private TMP_Text SStatus;
+    [SerializeField] private Image SStatus;
 
     //Destination
     [SerializeField] private TMP_Text DState;
@@ -32,22 +31,27 @@ public class Result : MonoBehaviour
     [SerializeField] private TMP_Text DActive;
     [SerializeField] private TMP_Text DIncidentRate;
     [SerializeField] private TMP_Text DCaseFatalityRatio;
-    [SerializeField] private TMP_Text DStatus;
+    [SerializeField] private Image DStatus;
 
     [SerializeField] private TMP_Text OverallStatus;
     private Condition[] StateConditionsArr = new Condition[4];
-
-    private Condition startingPointStatus;
-    private Condition destinationStatus;
 
     private bool isStartingPointCaptured;
 
     private readonly Dictionary<int, string> ColorsToStatusDic = new Dictionary<int, string>()
     {
-        {5, "Very High"},
-        {4,"High"},
-        {3, "Moderate" },
-        {2, "Low" }
+        {3, "Very High"},
+        {2,"High"},
+        {1, "Moderate" },
+        {0, "Low" }
+    };
+
+    private readonly Dictionary<int, Color> codesToColorDic = new Dictionary<int, Color>()
+    {
+        {3, Color.red},
+        {2, new Color(1.0f, 0.64f, 0.0f)},
+        {1, Color.yellow },
+        {0, Color.green }
     };
 
     private string capturedString = "";
@@ -72,55 +76,55 @@ public class Result : MonoBehaviour
 
     private void CalculateOverallRisk()
     {
-        int difference = Mathf.Abs(startingPointStatus.Code - destinationStatus.Code);
+        int difference = Mathf.Abs(startingPoint.statusIndex - destination.statusIndex);
 
         switch (difference)
         {
             case 2:
-                if(destinationStatus.Code > startingPointStatus.Code)
+                if(destination.statusIndex > startingPoint.statusIndex)
                 {
-                    if(destinationStatus.Code == 5)
+                    if(destination.statusIndex == 3)
                     {
                         AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
-                        overallStatusIndex = 4;
+                        overallStatusIndex = 2;
                     }
                     else
                     {
                         AssignOverallStatus(Color.yellow, "Moderate");
-                        overallStatusIndex = 3;
+                        overallStatusIndex = 1;
                     }
                 }
                 else
                 {
-                    if(destinationStatus.Code == 3)
+                    if(destination.statusIndex == 1)
                     {
                         AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
-                        overallStatusIndex = 4;
+                        overallStatusIndex = 2;
                     }
                     else
                     {
                         AssignOverallStatus(Color.yellow, "Moderate");
-                        overallStatusIndex = 3;
+                        overallStatusIndex = 1;
                     }
                 }
                 break;
 
             case 3:
-                if(destinationStatus.Code > startingPointStatus.Code)
+                if(destination.statusIndex > startingPoint.statusIndex)
                 {
                     AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
-                    overallStatusIndex = 4;
+                    overallStatusIndex = 2;
                 }
                 else
                 {
                     AssignOverallStatus(Color.yellow, "Moderate");
-                    overallStatusIndex = 3;
+                    overallStatusIndex = 1;
                 }
                 break;
 
             default:
-                AssignOverallStatus(destinationStatus.Color, ColorsToStatusDic[destinationStatus.Code]);
-                overallStatusIndex = destinationStatus.Code;
+                AssignOverallStatus(codesToColorDic[destination.statusIndex], ColorsToStatusDic[destination.statusIndex]);
+                overallStatusIndex = (byte) destination.statusIndex;
                 break;
         }
     }
@@ -133,26 +137,9 @@ public class Result : MonoBehaviour
 
     private void AnalyzeStatus()
     {
-        startingPointStatus = SetStateStatus(StateConditionsArr[0].Code + (2 * StateConditionsArr[1].Code));
-        destinationStatus = SetStateStatus(StateConditionsArr[2].Code + (2 * StateConditionsArr[3].Code));
-
         //Assign colors
-        SStatus.color = startingPointStatus.Color;
-        DStatus.color = destinationStatus.Color;
-    }
-
-    private Condition SetStateStatus(int value)
-    {
-        if (value > 13)
-            return new Condition(Color.red, 5);
-
-        if (value > 10 && value < 14)
-            return new Condition(new Color(1.0f, 0.64f, 0.0f), 4);
-
-        if (value > 7 && value < 11)
-            return new Condition(Color.yellow, 3);
-
-        return new Condition(Color.green, 2);
+        SStatus.color = codesToColorDic[startingPoint.statusIndex];
+        DStatus.color = codesToColorDic[destination.statusIndex];
     }
 
     private void AssignColorsToStats()

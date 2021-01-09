@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bc3c10f2e40de46942bee25305cb2b, type: 3}
   m_Name: End
   m_EditorClassIdentifier: 
-  Province_State: Lombardia
-  Country_Region: Italy
-  Confirmed: 473371
-  Deaths: 24958
-  Recovered: 393995
-  Active: 54418
-  Combined_Key: Lombardia, Italy
-  Incident_Rate: 4705.208669008349
-  Case_Fatality_Ratio: 5.272397337394982
+  Province_State: 
+  Country_Region: Jamaica
+  Confirmed: 13411
+  Deaths: 307
+  Recovered: 11323
+  Active: 1781
+  Combined_Key: Jamaica
+  Incident_Rate: 452.8966847800576
+  Case_Fatality_Ratio: 2.2891656103198867
+  statusIndex: 0

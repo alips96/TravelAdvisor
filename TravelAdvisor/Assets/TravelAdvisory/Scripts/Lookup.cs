@@ -9,10 +9,11 @@ using UnityEngine;
 public class Lookup : MonoBehaviour
 {
     private LocationMaster locationMaster;
+    private Analyzer analyzerScript;
 
     string[] worldLines;
     string[] usLines;
-
+    private List<string> worldList;
     private string startLocation;
 
     private void OnEnable()
@@ -34,6 +35,7 @@ public class Lookup : MonoBehaviour
     private void SetInitialReferences()
     {
         locationMaster = GetComponent<LocationMaster>();
+        analyzerScript = GetComponent<Analyzer>();
     }
 
     private void SetStartingPointReference(string sPoint)
@@ -46,10 +48,27 @@ public class Lookup : MonoBehaviour
         LookupData(endPoint, true);
     }
 
-    private void ProcessCsv()
+    private void ProcessCsv() //remember to get it back to private after testing
     {
         worldLines = File.ReadAllLines(Application.dataPath + "/TravelAdvisory/Data/covidData.csv");
         usLines = File.ReadAllLines(Application.dataPath + "/TravelAdvisory/Data/USCovidData.csv");
+
+        // call event analyse data
+
+        worldList = new List<string>();
+        List<string> usList;
+
+        for (int i = 1; i < worldLines.Length; i++)
+        {
+            if (i > 650 && i < 3926) //skip US
+                continue;
+
+            worldList.Add(worldLines[i]);
+        }
+        usList = usLines.Skip(1).ToList();
+
+        worldList.AddRange(usList);
+        locationMaster.CallEventAnalyzeData(worldList);
 
         StartCoroutine(WaitForStartingPoint());
     }
@@ -62,29 +81,26 @@ public class Lookup : MonoBehaviour
 
     private void LookupData(string location, bool isDestination)
     {
-        if(location[location.Length - 1].CompareTo('S') == 0) //US
+        if (location[location.Length - 1].CompareTo('S') == 0) //US
         {
             location = location.Replace(" ", "");
 
-            foreach (string line in usLines.Skip(1))
+            for (int i = 702; i < worldList.Count; i++)
             {
-                if (line.Contains(location))
+                if (worldList[i].Contains(location))
                 {
-                    ExtractAndSaveUSData(line, isDestination);
+                    ExtractAndSaveUSData(worldList[i], isDestination, analyzerScript.GetCorrespondingIndex(i));
                     break;
                 }
             }
         }
         else //rest of the world
         {
-            for (int i = 1; i < worldLines.Length; i++)
+            for (int i = 0; i < 702; i++)
             {
-                if (i > 649 && i < 3924) //skip US
-                    continue;
-
-                if (worldLines[i].Contains(location))
+                if (worldList[i].Contains(location))
                 {
-                    ExtractAndSaveWorldData(worldLines[i], isDestination);
+                    ExtractAndSaveWorldData(worldList[i], isDestination, analyzerScript.GetCorrespondingIndex(i));
                     break;
                 }
             }
@@ -93,7 +109,7 @@ public class Lookup : MonoBehaviour
         AssetDatabase.SaveAssets();
     }
 
-    private void ExtractAndSaveWorldData(string line, bool isDestination)
+    private void ExtractAndSaveWorldData(string line, bool isDestination, int statusIndex)
     {
         line = line.Replace("\"", string.Empty);
         string[] column = line.Split(',');
@@ -125,6 +141,8 @@ public class Lookup : MonoBehaviour
             region.Case_Fatality_Ratio = column[14].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[14]);
         }
 
+        region.statusIndex = statusIndex;
+
         SaveAsset(isDestination, region);
     }
 
@@ -140,7 +158,7 @@ public class Lookup : MonoBehaviour
         }
     }
 
-    private void ExtractAndSaveUSData(string line, bool isDestination)
+    private void ExtractAndSaveUSData(string line, bool isDestination, int statusIndex)
     {
         string[] column = line.Split(',');
 
@@ -155,6 +173,7 @@ public class Lookup : MonoBehaviour
         region.Incident_Rate = column[10].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[10]);
         region.Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
         region.Combined_Key = column[0] + ", US";
+        region.statusIndex = statusIndex;
 
         SaveAsset(isDestination, region);
     }
