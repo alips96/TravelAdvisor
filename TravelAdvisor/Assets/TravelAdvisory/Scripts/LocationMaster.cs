@@ -14,6 +14,9 @@ public class LocationMaster : MonoBehaviour
     public delegate void AnalyzerEventHandler(List<string> list);
     public event AnalyzerEventHandler EventAnalyzeData;
 
+    public Region StartingPoint { get; set; }
+    public Region Destination { get; set; }
+
     public void CallEventAnalyzeData(List<string> list)
     {
         EventAnalyzeData.Invoke(list);

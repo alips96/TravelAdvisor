@@ -27,8 +27,10 @@ public class SwipeTips : MonoBehaviour
 
     public void ShowTips() //Called by tips button
     {
-        if(resultScript.overallStatusIndex != statusIndex)
+        if (resultScript.overallStatusIndex != statusIndex)
         {
+            RemovePreviousObjects();
+
             statusIndex = resultScript.overallStatusIndex;
 
             switch (statusIndex)
@@ -62,6 +64,19 @@ public class SwipeTips : MonoBehaviour
             {
                 imageContent.GetComponent<HorizontalLayoutGroup>().childControlWidth = true;
             }
+        }
+    }
+
+    private void RemovePreviousObjects()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Transform item in imageContent)
+        {
+            Destroy(item.gameObject);
         }
     }
 

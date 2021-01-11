@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
-using System;
+using TMPro;
 
 public class LocationHandler : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class LocationHandler : MonoBehaviour
     private readonly string locationUrl = "https://extreme-ip-lookup.com/json";
     private LocationMaster locationMaster;
     private bool isCurrentLocationCaptured;
+    [SerializeField] private TMP_Text currenLocationText;
 
     [SerializeField] private GameObject MainMenu;
     [SerializeField] private GameObject RetryMenu;
@@ -47,6 +48,7 @@ public class LocationHandler : MonoBehaviour
             JsonUtility.FromJsonOverwrite(webRequest.downloadHandler.text, startingPoint);
 
             string startingPositionKey = startingPoint.region + ", " + startingPoint.country;
+            currenLocationText.text = startingPoint.city + ", " + startingPoint.country;
             isCurrentLocationCaptured = true;
             locationMaster.CallEventStartingPositionCaptured(startingPositionKey);
         }

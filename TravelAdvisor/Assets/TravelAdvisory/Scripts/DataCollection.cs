@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class DataCollection : MonoBehaviour
 {
-    public string targetDay;
+    [HideInInspector] public string targetDay;
     private bool isDataCaptured;
     private bool shouldDownloadData;
 
@@ -57,38 +57,42 @@ public class DataCollection : MonoBehaviour
 
     private void DownloadWorldCorpus()
     {
+        foreach (string item in Directory.GetFiles(Application.dataPath + "/TravelAdvisory/Data"))
+        {
+            File.Delete(item);
+        }
+
         //World except US
         string worldUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + targetDay + ".csv";
-        string worldPath = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "covidData.csv");
+        string worldPath = Application.dataPath + "/TravelAdvisory/Data/covidData.csv";
 
         //US
         string USUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + targetDay + ".csv";
-        string UsPath = Path.Combine(Application.dataPath + "/TravelAdvisory/Data", "USCovidData.csv");
+        string UsPath = Application.dataPath + "/TravelAdvisory/Data/UScovidData.csv";
 
         isDataCaptured = true;
-
-        StartCoroutine(DownloadData(worldUrl, worldPath));
-        StartCoroutine(DownloadData(USUrl, UsPath));
+        StartCoroutine(DownloadData(worldUrl, worldPath, "world"));
+        StartCoroutine(DownloadData(USUrl, UsPath, "US"));
     }
 
-    private IEnumerator DownloadData(string url, string path)
+    private IEnumerator DownloadData(string url, string path, string key)
     {
-        UnityWebRequest webRequest = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
-        webRequest.downloadHandler = new DownloadHandlerFile(path);
+        Debug.Log(path);
+        UnityWebRequest webRequest = UnityWebRequest.Get(url);
 
         yield return webRequest.SendWebRequest();
 
         if (webRequest.isNetworkError || webRequest.isHttpError)
         {
             isDataCaptured = false;
-            //Debug.LogError(webRequest.error);
             SwapMenus();
         }
         else if (webRequest.isDone)
         {
+            PlayerPrefs.SetString(key, webRequest.downloadHandler.text);
             fileCounter++;
 
-            if(fileCounter == 2)
+            if (fileCounter == 2)
             {
                 locationMasterScript.CallEventDataDownloaded(); //both files downloaded successfully
             }

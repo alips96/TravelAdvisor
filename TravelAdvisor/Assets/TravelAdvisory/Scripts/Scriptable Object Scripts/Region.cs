@@ -1,18 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[CreateAssetMenu(fileName = "New Region", menuName = "Assets/ScriptibleObjects/New Region")]
-public class Region : ScriptableObject
+﻿public class Region
 {
-    public string Province_State;
-    public string Country_Region;
-    public int Confirmed;
-    public int Deaths;
-    public int Recovered;
-    public int Active;
-    public string Combined_Key;
-    public double Incident_Rate;
-    public double Case_Fatality_Ratio;
-    public int statusIndex;
+    public string Province_State { get; set; }
+    public string Country_Region { get; set; }
+    public int Confirmed { get; set; }
+    public int Deaths { get; set; }
+    public int Recovered { get; set; }
+    public int Active { get; set; }
+    public string Combined_Key { get; set; }
+    public double Incident_Rate { get; set; }
+    public double Case_Fatality_Ratio { get; set; }
+    public int StatusIndex { get; set; }
 }

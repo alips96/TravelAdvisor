@@ -26,8 +26,9 @@ public class DestinationHandler : MonoBehaviour
 
     public void DropDownMenuChanged() //Called by Dropdown Menu UI
     {
-        if(dropdownMenu != null)
+        if (dropdownMenu != null)
         {
+            
             destination = dropdownMenu.options[dropdownMenu.value].text;
             inputField.text = destination;
 

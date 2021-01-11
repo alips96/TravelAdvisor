@@ -38,6 +38,8 @@ public class Result : MonoBehaviour
 
     private bool isStartingPointCaptured;
 
+    private LocationMaster locationMaster;
+
     private readonly Dictionary<int, string> ColorsToStatusDic = new Dictionary<int, string>()
     {
         {3, "Very High"},
@@ -58,6 +60,8 @@ public class Result : MonoBehaviour
 
     public void ShowResults() //Called by go button
     {
+        SetInitialReferences();
+
         if (destination != null)
         {
             capturedString = destination.Combined_Key;
@@ -74,16 +78,26 @@ public class Result : MonoBehaviour
         }
     }
 
+    private void SetInitialReferences()
+    {
+        locationMaster = GameObject.Find("GameManager").GetComponent<LocationMaster>();
+
+        if(locationMaster == null)
+        {
+            Debug.LogWarning("LocationMaster is NULL");
+        }
+    }
+
     private void CalculateOverallRisk()
     {
-        int difference = Mathf.Abs(startingPoint.statusIndex - destination.statusIndex);
+        int difference = Mathf.Abs(startingPoint.StatusIndex - destination.StatusIndex);
 
         switch (difference)
         {
             case 2:
-                if(destination.statusIndex > startingPoint.statusIndex)
+                if(destination.StatusIndex > startingPoint.StatusIndex)
                 {
-                    if(destination.statusIndex == 3)
+                    if(destination.StatusIndex == 3)
                     {
                         AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
                         overallStatusIndex = 2;
@@ -96,7 +110,7 @@ public class Result : MonoBehaviour
                 }
                 else
                 {
-                    if(destination.statusIndex == 1)
+                    if(destination.StatusIndex == 1)
                     {
                         AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
                         overallStatusIndex = 2;
@@ -110,7 +124,7 @@ public class Result : MonoBehaviour
                 break;
 
             case 3:
-                if(destination.statusIndex > startingPoint.statusIndex)
+                if(destination.StatusIndex > startingPoint.StatusIndex)
                 {
                     AssignOverallStatus(new Color(1.0f, 0.64f, 0.0f), "High");
                     overallStatusIndex = 2;
@@ -123,8 +137,8 @@ public class Result : MonoBehaviour
                 break;
 
             default:
-                AssignOverallStatus(codesToColorDic[destination.statusIndex], ColorsToStatusDic[destination.statusIndex]);
-                overallStatusIndex = (byte) destination.statusIndex;
+                AssignOverallStatus(codesToColorDic[destination.StatusIndex], ColorsToStatusDic[destination.StatusIndex]);
+                overallStatusIndex = (byte) destination.StatusIndex;
                 break;
         }
     }
@@ -138,8 +152,8 @@ public class Result : MonoBehaviour
     private void AnalyzeStatus()
     {
         //Assign colors
-        SStatus.color = codesToColorDic[startingPoint.statusIndex];
-        DStatus.color = codesToColorDic[destination.statusIndex];
+        SStatus.color = codesToColorDic[startingPoint.StatusIndex];
+        DStatus.color = codesToColorDic[destination.StatusIndex];
     }
 
     private void AssignColorsToStats()
@@ -238,18 +252,18 @@ public class Result : MonoBehaviour
         {
             double destinationIncidentRate = destination.Incident_Rate;
 
-            if(destinationIncidentRate < 500)
+            if (destinationIncidentRate < 500)
             {
                 StateConditionsArr[2] = new Condition(Color.green, 2);
             }
             else
-            if(destinationIncidentRate >= 500 && destinationIncidentRate < 1500)
+            if (destinationIncidentRate >= 500 && destinationIncidentRate < 2000)
             {
 
                 StateConditionsArr[2] = new Condition(Color.yellow, 3);
             }
             else
-            if(destinationIncidentRate >= 1500 && destinationIncidentRate < 3000)
+            if (destinationIncidentRate >= 2000 && destinationIncidentRate < 4000)
             {
                 StateConditionsArr[2] = new Condition(new Color(1.0f, 0.64f, 0.0f), 4); //Orange
             }
@@ -308,13 +322,11 @@ public class Result : MonoBehaviour
 
     private void SetPlacesReferences()
     {
-        Region[] regions = Resources.FindObjectsOfTypeAll<Region>();
-
-        destination = regions[0];
+        destination = locationMaster.Destination;
 
         if (!isStartingPointCaptured)
         {
-            startingPoint = regions[1];
+            startingPoint = locationMaster.StartingPoint;
             isStartingPointCaptured = true;
         }
     }
