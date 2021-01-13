@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AutoCompleteText : MonoBehaviour
 {
@@ -18,7 +15,6 @@ public class AutoCompleteText : MonoBehaviour
     {
         myList = countrySO.AllRegions;
         inputField = GetComponent<TMP_InputField>();
-        //dropDown = GetComponentInChildren<TMP_Dropdown>();
         dropDown = transform.Find("Dropdown").GetComponent<TMP_Dropdown>();
     }
 
@@ -27,7 +23,6 @@ public class AutoCompleteText : MonoBehaviour
         dropDown.ClearOptions();
 
         string word = ConvertToStandardForm(inputField.text);
-        //string word = inputField.text;
 
         if (!string.IsNullOrEmpty(word))
         {
@@ -43,7 +38,6 @@ public class AutoCompleteText : MonoBehaviour
         }
         else
         {
-            //dropDown.AddOptions(new List<string> { inputField.text + ".." });
             dropDown.gameObject.SetActive(false);
         }
     }

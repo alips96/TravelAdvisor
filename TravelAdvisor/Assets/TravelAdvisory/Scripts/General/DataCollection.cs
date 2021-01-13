@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections;
-using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 
 public class DataCollection : MonoBehaviour
 {
     [HideInInspector] public string targetDay;
+
     private bool isDataCaptured;
     private bool shouldDownloadData;
 
@@ -35,7 +35,7 @@ public class DataCollection : MonoBehaviour
         if (shouldDownloadData)
         {
             PlayerPrefs.DeleteAll();
-            DownloadRawData();
+            InitiateDownload();
             PlayerPrefs.SetInt(targetDay, 1);
         }
         else
@@ -49,35 +49,24 @@ public class DataCollection : MonoBehaviour
         locationMasterScript = GetComponent<LocationMaster>();
     }
 
-    public void DownloadRawData() //Also called by retry button
+    public void InitiateDownload() //Also called by retry button
     {
         if (!isDataCaptured)
-            DownloadWorldCorpus();
-    }
-
-    private void DownloadWorldCorpus()
-    {
-        foreach (string item in Directory.GetFiles(Application.dataPath + "/TravelAdvisory/Data"))
         {
-            File.Delete(item);
+            //World except US
+            string worldUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + targetDay + ".csv";
+
+            //US
+            string USUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + targetDay + ".csv";
+
+            isDataCaptured = true;
+            _ = StartCoroutine(DownloadRawData(worldUrl, "world"));
+            _ = StartCoroutine(DownloadRawData(USUrl, "US"));
         }
-
-        //World except US
-        string worldUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/" + targetDay + ".csv";
-        string worldPath = Application.dataPath + "/TravelAdvisory/Data/covidData.csv";
-
-        //US
-        string USUrl = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/" + targetDay + ".csv";
-        string UsPath = Application.dataPath + "/TravelAdvisory/Data/UScovidData.csv";
-
-        isDataCaptured = true;
-        StartCoroutine(DownloadData(worldUrl, worldPath, "world"));
-        StartCoroutine(DownloadData(USUrl, UsPath, "US"));
     }
 
-    private IEnumerator DownloadData(string url, string path, string key)
+    private IEnumerator DownloadRawData(string url, string key)
     {
-        Debug.Log(path);
         UnityWebRequest webRequest = UnityWebRequest.Get(url);
 
         yield return webRequest.SendWebRequest();

@@ -8,7 +8,6 @@ public class LoadingMenu : MonoBehaviour
 
     [SerializeField] private float speed = 0.7f;
 
-
     void Start()
     {
         rectComponent = GetComponent<RectTransform>();

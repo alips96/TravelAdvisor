@@ -46,16 +46,15 @@ public class Lookup : MonoBehaviour
         LookupData(endPoint, true);
     }
 
-    private void ProcessCsv() //remember to get it back to private after testing
+    private void ProcessCsv()
     {
         worldLines = PlayerPrefs.GetString("world").Split('\n');
         usLines = PlayerPrefs.GetString("US").Split('\n');
-        // call event analyse data
 
         worldList = new List<string>();
         List<string> usList;
 
-        for (int i = 1; i < worldLines.Length - 1; i++)
+        for (int i = 1; i < worldLines.Length; i++)
         {
             if (i > 650 && i < 3926) //skip US
                 continue;
@@ -63,7 +62,6 @@ public class Lookup : MonoBehaviour
             worldList.Add(worldLines[i]);
         }
         usList = usLines.Skip(1).ToList();
-        usList.RemoveAt(usList.Count - 1);
 
         worldList.AddRange(usList);
         locationMaster.CallEventAnalyzeData(worldList);

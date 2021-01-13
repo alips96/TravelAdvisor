@@ -6,9 +6,11 @@ using TMPro;
 public class LocationHandler : MonoBehaviour
 {
     [SerializeField] private Location startingPoint;
+
     private readonly string locationUrl = "https://extreme-ip-lookup.com/json";
     private LocationMaster locationMaster;
     private bool isCurrentLocationCaptured;
+
     [SerializeField] private TMP_Text currenLocationText;
 
     [SerializeField] private GameObject MainMenu;
@@ -39,7 +41,6 @@ public class LocationHandler : MonoBehaviour
 
         if (webRequest.isNetworkError || webRequest.isHttpError)
         {
-            //Debug.LogError(webRequest.error);
             SwapMenus();
         }
         else

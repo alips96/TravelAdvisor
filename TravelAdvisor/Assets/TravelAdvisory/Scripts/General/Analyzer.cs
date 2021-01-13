@@ -43,36 +43,36 @@ public class Analyzer : MonoBehaviour
 
                 if (column[3] == "Korea")
                 {
-                    ir = column[14].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[14]);
-                    cfr = column[15].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[15]);
+                    ir = column[14].Equals("") ? 0f : Convert.ToDouble(column[14]);
+                    cfr = column[15].Equals("") ? 0f : Convert.ToDouble(column[15]);
                     rawData[i] = new double[] { ir, cfr * 1000 };
                     continue;
                 }
 
                 if (column[2] == "Bonaire")
                 {
-                    ir = column[15].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[15]);
-                    cfr = column[16].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[16]);
+                    ir = column[15].Equals("") ? 0f : Convert.ToDouble(column[15]);
+                    cfr = column[16].Equals("") ? 0f : Convert.ToDouble(column[16]);
                     rawData[i] = new double[] { ir, cfr * 1000 };
                     continue;
                 }
 
                 if (column[2].CompareTo("") == 0) //if state/region is not specified in the dataset
                 {
-                    ir = column[12].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[12]);
-                    cfr = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
+                    ir = column[12].Equals("") ? 0f : Convert.ToDouble(column[12]);
+                    cfr = string.IsNullOrWhiteSpace(column[13]) ? 0f : Convert.ToDouble(column[13]);
                 }
                 else
                 {
-                    ir = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
-                    cfr = column[14].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[14]);
+                    ir = column[13].Equals("") ? 0f : Convert.ToDouble(column[13]);
+                    cfr = string.IsNullOrWhiteSpace(column[14]) ? 0f : Convert.ToDouble(column[14]);
                 }
             }
             else //US
             {
                 string[] column = worldList[i].Split(',');
-                ir = column[10].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[10]);
-                cfr = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]);
+                ir = column[10].Equals("") ? 0f : Convert.ToDouble(column[10]);
+                cfr = column[13].Equals("") ? 0f : Convert.ToDouble(column[13]);
             }
 
             rawData[i] = new double[] { ir, cfr * 1000 };
