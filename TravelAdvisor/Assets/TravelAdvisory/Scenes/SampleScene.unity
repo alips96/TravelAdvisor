@@ -3870,7 +3870,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2124491269}
         m_TargetAssemblyTypeName: DataCollection, Assembly-CSharp
-        m_MethodName: DownloadRawData
+        m_MethodName: InitiateDownload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

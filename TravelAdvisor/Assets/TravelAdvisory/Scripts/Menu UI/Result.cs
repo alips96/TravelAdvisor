@@ -95,7 +95,7 @@ public class Result : MonoBehaviour
         switch (difference)
         {
             case 2:
-                if(destination.StatusIndex > startingPoint.StatusIndex)
+                if (destination.StatusIndex > startingPoint.StatusIndex)
                 {
                     if(destination.StatusIndex == 3)
                     {

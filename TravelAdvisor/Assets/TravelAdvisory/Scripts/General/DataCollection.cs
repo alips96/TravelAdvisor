@@ -40,7 +40,7 @@ public class DataCollection : MonoBehaviour
         }
         else
         {
-            locationMasterScript.CallEventDataDownloaded();
+            locationMasterScript.CallEventDataAnalyzed();
         }
     }
 

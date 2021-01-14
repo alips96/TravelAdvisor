@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Analyzer : MonoBehaviour
@@ -8,15 +9,19 @@ public class Analyzer : MonoBehaviour
     private int[] clusteredData;
     private Dictionary<int, int> priorityDic;
 
+    string[] worldLines;
+    string[] usLines;
+    private List<string> worldList;
+
     private void OnEnable()
     {
         SetInitialReferences();
-        locationMasterScript.EventAnalyzeData += AnalyzeData;
+        locationMasterScript.EventDataDownloaded += ProcessCsv;
     }
 
     private void OnDisable()
     {
-        locationMasterScript.EventAnalyzeData -= AnalyzeData;
+        locationMasterScript.EventDataDownloaded -= ProcessCsv;
     }
 
     private void SetInitialReferences()
@@ -24,12 +29,40 @@ public class Analyzer : MonoBehaviour
         locationMasterScript = GameObject.Find("GameManager").GetComponent<LocationMaster>();
     }
 
-    public int GetCorrespondingIndex(int i)
+    private void ProcessCsv()
     {
-        return priorityDic[clusteredData[i]];
+        worldLines = PlayerPrefs.GetString("world").Split('\n');
+        usLines = PlayerPrefs.GetString("US").Split('\n');
+
+        worldList = new List<string>();
+        List<string> usList;
+
+        for (int i = 1; i < worldLines.Length; i++)
+        {
+            if (i > 650 && i < 3926) //skip US
+                continue;
+
+            worldList.Add(worldLines[i]);
+        }
+
+        usList = usLines.Skip(1).ToList();
+
+        if (string.IsNullOrEmpty(worldList[worldList.Count - 1])) //null check
+        {
+            worldList.RemoveAt(worldList.Count - 1);
+        }
+
+        if (string.IsNullOrEmpty(usList[usList.Count - 1])) //null check
+        {
+            usList.RemoveAt(usList.Count - 1);
+        }
+
+        worldList.AddRange(usList);
+
+        AnalyzeData();
     }
 
-    private void AnalyzeData(List<string> worldList)
+    private void AnalyzeData()
     {
         double[][] rawData = new double[worldList.Count][];
         double ir, cfr;
@@ -100,18 +133,24 @@ public class Analyzer : MonoBehaviour
             clustersDic[i].value /= clustersDic[i].indexCount;
         }
 
-        Queue<int> priorityQueue = new Queue<int>(new[] { 2, 3, 1, 0 });
+        Queue<int> priorityQueue = new Queue<int>(new[] { 3, 2, 1, 0 });
 
         priorityDic = new Dictionary<int, int>();
 
-        while(priorityQueue.Count > 0)
+        while (priorityQueue.Count > 0)
         {
             int maxKey = FindMax(clustersDic);
             clustersDic.Remove(maxKey);
             priorityDic.Add(maxKey, priorityQueue.Dequeue());
         }
 
+        SaveData();
+    }
 
+    private void SaveData()
+    {
+        SaveSystem.SaveData(worldList, clusteredData, priorityDic);
+        locationMasterScript.CallEventDataAnalyzed();
     }
 
     private int FindMax(Dictionary<int, ClusterStates> clustersDic)

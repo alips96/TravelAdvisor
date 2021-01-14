@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Lookup : MonoBehaviour
 {
     private LocationMaster locationMaster;
-    private Analyzer analyzerScript;
 
-    string[] worldLines;
-    string[] usLines;
-    private List<string> worldList;
-    private string startLocation;
+    private List<string> worldList = new List<string>();
+
+    private CovidData data;
 
     private void OnEnable()
     {
@@ -20,62 +17,42 @@ public class Lookup : MonoBehaviour
 
         locationMaster.EventStartingPositionCaptured += SetStartingPointReference;
         locationMaster.EventDestinationCaptured += SetDestinationReference;
-        locationMaster.EventDataDownloaded += ProcessCsv;
+        locationMaster.EventDataAnalyzed += InitializeEssentialData;
     }
 
     private void OnDisable()
     {
         locationMaster.EventStartingPositionCaptured -= SetStartingPointReference;
         locationMaster.EventDestinationCaptured -= SetDestinationReference;
-        locationMaster.EventDataDownloaded -= ProcessCsv;
+        locationMaster.EventDataAnalyzed -= InitializeEssentialData;
+    }
+
+    private void InitializeEssentialData()
+    {
+        data = SaveSystem.LoadData();
+
+        worldList = data.worldList;
     }
 
     private void SetInitialReferences()
     {
         locationMaster = GetComponent<LocationMaster>();
-        analyzerScript = GetComponent<Analyzer>();
     }
 
     private void SetStartingPointReference(string sPoint)
     {
-        startLocation = sPoint;
+        StartCoroutine(LookupData(sPoint, false));
     }
 
     private void SetDestinationReference(string endPoint)
     {
-        LookupData(endPoint, true);
+        StartCoroutine(LookupData(endPoint, true));
     }
 
-    private void ProcessCsv()
+    private IEnumerator LookupData(string location, bool isDestination)
     {
-        worldLines = PlayerPrefs.GetString("world").Split('\n');
-        usLines = PlayerPrefs.GetString("US").Split('\n');
+        yield return new WaitUntil(() => worldList.Count > 0);
 
-        worldList = new List<string>();
-        List<string> usList;
-
-        for (int i = 1; i < worldLines.Length; i++)
-        {
-            if (i > 650 && i < 3926) //skip US
-                continue;
-
-            worldList.Add(worldLines[i]);
-        }
-        usList = usLines.Skip(1).ToList();
-
-        worldList.AddRange(usList);
-        locationMaster.CallEventAnalyzeData(worldList);
-        StartCoroutine(WaitForStartingPoint());
-    }
-
-    private IEnumerator WaitForStartingPoint()
-    {
-        yield return new WaitUntil(() => !string.IsNullOrEmpty(startLocation));
-        LookupData(startLocation, false);
-    }
-
-    private void LookupData(string location, bool isDestination)
-    {
         if (location[location.Length - 1].CompareTo('S') == 0) //US
         {
             location = location.Replace(" ", "");
@@ -84,7 +61,7 @@ public class Lookup : MonoBehaviour
             {
                 if (worldList[i].Contains(location))
                 {
-                    ExtractAndSaveUSData(worldList[i], isDestination, analyzerScript.GetCorrespondingIndex(i));
+                    ExtractAndSaveUSData(worldList[i], isDestination, data.GetCorrespondingSituationIndex(i));
                     break;
                 }
             }
@@ -95,7 +72,7 @@ public class Lookup : MonoBehaviour
             {
                 if (worldList[i].Contains(location))
                 {
-                    ExtractAndSaveWorldData(worldList[i], isDestination, analyzerScript.GetCorrespondingIndex(i));
+                    ExtractAndSaveWorldData(worldList[i], isDestination, data.GetCorrespondingSituationIndex(i));
                     break;
                 }
             }

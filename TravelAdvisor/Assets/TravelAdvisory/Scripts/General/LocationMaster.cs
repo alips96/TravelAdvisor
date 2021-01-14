@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LocationMaster : MonoBehaviour
 {
@@ -9,16 +8,14 @@ public class LocationMaster : MonoBehaviour
 
     public delegate void DataEventHandler();
     public event DataEventHandler EventDataDownloaded;
-
-    public delegate void AnalyzerEventHandler(List<string> list);
-    public event AnalyzerEventHandler EventAnalyzeData;
+    public event DataEventHandler EventDataAnalyzed;
 
     public Region StartingPoint { get; set; }
     public Region Destination { get; set; }
 
-    public void CallEventAnalyzeData(List<string> list)
+    public void CallEventDataAnalyzed()
     {
-        EventAnalyzeData.Invoke(list);
+        EventDataAnalyzed.Invoke();
     }
 
     public void CallEventStartingPositionCaptured(string startPos)
