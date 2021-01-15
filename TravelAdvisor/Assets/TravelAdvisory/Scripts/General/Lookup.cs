@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class Lookup : MonoBehaviour
@@ -55,7 +56,7 @@ public class Lookup : MonoBehaviour
 
         if (location[location.Length - 1].CompareTo('S') == 0) //US
         {
-            location = location.Replace(" ", "");
+            location = NormalizeLocation(location);
 
             for (int i = 702; i < worldList.Count; i++)
             {
@@ -77,6 +78,17 @@ public class Lookup : MonoBehaviour
                 }
             }
         }
+    }
+
+    private static string NormalizeLocation(string location)
+    {
+        int removeIndex = location.Length - 3;
+
+        StringBuilder builder = new StringBuilder(location);
+        builder.Replace(" ", string.Empty, removeIndex, 1);
+        location = builder.ToString();
+
+        return location;
     }
 
     private void ExtractAndSaveWorldData(string line, bool isDestination, int statusIndex)
