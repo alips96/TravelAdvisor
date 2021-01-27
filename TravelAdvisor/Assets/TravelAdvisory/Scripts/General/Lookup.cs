@@ -58,7 +58,7 @@ public class Lookup : MonoBehaviour
         {
             location = NormalizeLocation(location);
 
-            for (int i = 702; i < worldList.Count; i++)
+            for (int i = worldList.Count - 58; i < worldList.Count; i++) //58 US States
             {
                 if (worldList[i].Contains(location))
                 {
@@ -69,7 +69,9 @@ public class Lookup : MonoBehaviour
         }
         else //rest of the world
         {
-            for (int i = 0; i < 702; i++)
+            int usStartIndex = worldList.Count - 58; //58 US States
+
+            for (int i = 0; i < usStartIndex; i++)
             {
                 if (worldList[i].Contains(location))
                 {

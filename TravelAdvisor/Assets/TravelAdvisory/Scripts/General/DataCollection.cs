@@ -20,6 +20,7 @@ public class DataCollection : MonoBehaviour
     void Start()
     {
         SetInitialReferences();
+        //PlayerPrefs.DeleteAll();
 
         if (DateTime.Now.Hour > 7) //Files get uploaded after 7 a.m :)
         {

@@ -37,20 +37,24 @@ public class Analyzer : MonoBehaviour
         worldList = new List<string>();
         List<string> usList;
 
-        for (int i = 1; i < worldLines.Length; i++)
+        for (int i = 1; i < worldLines.Length - 1; i++)
         {
-            if (i > 650 && i < 3926) //skip US
+            //651 to 3927 to skip US
+            if (i > 653 && i < 3925) //Just in Case!
                 continue;
 
-            worldList.Add(worldLines[i]);
+            char temp = worldLines[i][0];
+
+            if (!(temp > '0' && temp < '9'))
+                worldList.Add(worldLines[i]);
+        }
+
+        if (!string.IsNullOrEmpty(worldLines[worldLines.Length - 1])) //null check
+        {
+            worldList.Add(worldLines[worldLines.Length - 1]);
         }
 
         usList = usLines.Skip(1).ToList();
-
-        if (string.IsNullOrEmpty(worldList[worldList.Count - 1])) //null check
-        {
-            worldList.RemoveAt(worldList.Count - 1);
-        }
 
         if (string.IsNullOrEmpty(usList[usList.Count - 1])) //null check
         {
@@ -67,9 +71,11 @@ public class Analyzer : MonoBehaviour
         double[][] rawData = new double[worldList.Count][];
         double ir, cfr;
 
+        int usStartIndex = worldList.Count - 58; //58 US States
+
         for (int i = 0; i < worldList.Count; i++)
         {
-            if (i < 702)
+            if (i < usStartIndex) //704
             {
                 string line = worldList[i].Replace("\"", string.Empty);
                 string[] column = line.Split(',');

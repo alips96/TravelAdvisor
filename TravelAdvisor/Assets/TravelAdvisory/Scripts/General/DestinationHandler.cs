@@ -28,7 +28,6 @@ public class DestinationHandler : MonoBehaviour
     {
         if (dropdownMenu != null)
         {
-            
             destination = dropdownMenu.options[dropdownMenu.value].text;
             inputField.text = destination;
 
