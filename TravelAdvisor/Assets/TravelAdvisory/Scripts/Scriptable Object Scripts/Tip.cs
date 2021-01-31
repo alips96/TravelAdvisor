@@ -6,4 +6,5 @@ public class Tip : ScriptableObject
     public string title;
     public string content;
     public Sprite image;
+    public string url;
 }

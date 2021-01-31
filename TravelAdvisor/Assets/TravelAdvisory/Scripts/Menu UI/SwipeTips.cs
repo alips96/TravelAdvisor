@@ -15,6 +15,7 @@ public class SwipeTips : MonoBehaviour
 
     [SerializeField] private Button buttonPrefab;
     [SerializeField] private Result resultScript;
+    [SerializeField] private OpenURL openUrlScript;
 
     private byte statusIndex = 5;
 
@@ -106,6 +107,7 @@ public class SwipeTips : MonoBehaviour
                 go.transform.GetChild(0).GetComponent<Image>().sprite = item.image;
                 go.transform.GetChild(1).GetComponent<TMP_Text>().text = item.title;
                 go.transform.GetChild(2).GetComponent<TMP_Text>().text = item.content;
+                go.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { openUrlScript.OpenUrl(item.url); });
 
                 Button indexButton = Instantiate(buttonPrefab, imageContent);
                 int x = i++; //Closure Problem

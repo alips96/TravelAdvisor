@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950f1529fa83c2d47aadd04bad76aa94, type: 3}
+  m_Name: Bell peppers
+  m_EditorClassIdentifier: 
+  title: Bell peppers
+  content: red bell peppers are packed with beta-carotene, which helps to promote
+    immune system health by fighting oxidative stress in the body.
+  image: {fileID: 21300000, guid: cc9dd890ac51cf5418a2380d75a2b14c, type: 3}
+  url: https://www.narayanahealth.org/blog/boost-immune-system-against-coronavirus-covid-19-infection/
