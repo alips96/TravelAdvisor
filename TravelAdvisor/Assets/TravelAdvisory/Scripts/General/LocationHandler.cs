@@ -48,7 +48,17 @@ public class LocationHandler : MonoBehaviour
         {
             JsonUtility.FromJsonOverwrite(webRequest.downloadHandler.text, startingPoint);
 
-            string startingPositionKey = startingPoint.region + ", " + startingPoint.country;
+            string startingPositionKey;
+
+            if (startingPoint.countryCode.Equals("US"))
+            {
+                startingPositionKey = startingPoint.region + ", " + startingPoint.countryCode;
+            }
+            else
+            {
+                startingPositionKey = startingPoint.region + ", " + startingPoint.country;
+            }
+
             currenLocationText.text = startingPoint.city + ", " + startingPoint.country;
             isCurrentLocationCaptured = true;
             locationMaster.CallEventStartingPositionCaptured(startingPositionKey);

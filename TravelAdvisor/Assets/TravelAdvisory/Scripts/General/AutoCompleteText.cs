@@ -28,7 +28,7 @@ public class AutoCompleteText : MonoBehaviour
         {
             dropDown.gameObject.SetActive(true);
 
-            List<string> found = myList.FindAll(w => w.StartsWith(word));
+            List<string> found = myList.FindAll(w => w.Contains(word));
 
             if (found.Count > 0)
             {
