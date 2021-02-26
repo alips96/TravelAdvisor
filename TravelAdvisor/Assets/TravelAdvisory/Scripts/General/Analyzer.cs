@@ -40,12 +40,12 @@ public class Analyzer : MonoBehaviour
         for (int i = 1; i < worldLines.Length - 1; i++)
         {
             //651 to 3927 to skip US
-            if (i > 653 && i < 3925) //Just in Case!
+            if (i == 33 || (i > 653 && i < 3925)) //Just in Case! *i == 33 is for unknonwn, belgium!*
                 continue;
 
             char temp = worldLines[i][0];
-
-            if (!(temp > '0' && temp < '9'))
+            
+            if (!(temp >= '0' && temp <= '9'))
                 worldList.Add(worldLines[i]);
         }
 
@@ -80,7 +80,7 @@ public class Analyzer : MonoBehaviour
                 string line = worldList[i].Replace("\"", string.Empty);
                 string[] column = line.Split(',');
 
-                if (column[3] == "Korea")
+                if (column[3].Equals("Korea"))
                 {
                     ir = column[14].Equals("") ? 0f : Convert.ToDouble(column[14]);
                     cfr = column[15].Equals("") ? 0f : Convert.ToDouble(column[15]);
@@ -88,7 +88,7 @@ public class Analyzer : MonoBehaviour
                     continue;
                 }
 
-                if (column[2] == "Bonaire")
+                if (column[2].Equals("Bonaire") || column[2].Equals("Saint Helena"))
                 {
                     ir = column[15].Equals("") ? 0f : Convert.ToDouble(column[15]);
                     cfr = column[16].Equals("") ? 0f : Convert.ToDouble(column[16]);
@@ -96,7 +96,7 @@ public class Analyzer : MonoBehaviour
                     continue;
                 }
 
-                if (column[2].CompareTo("") == 0) //if state/region is not specified in the dataset
+                if (column[2].Equals("")) //if state/region is not specified in the dataset
                 {
                     ir = column[12].Equals("") ? 0f : Convert.ToDouble(column[12]);
                     cfr = string.IsNullOrWhiteSpace(column[13]) ? 0f : Convert.ToDouble(column[13]);
@@ -129,7 +129,7 @@ public class Analyzer : MonoBehaviour
 
         for (int i = 0; i < clusteredData.Length; i++)
         {
-            clustersDic[clusteredData[i]].value += rawData[i][0];
+            clustersDic[clusteredData[i]].value += rawData[i][0] + rawData[i][1];
 
             clustersDic[clusteredData[i]].indexCount++;
         }
@@ -139,6 +139,7 @@ public class Analyzer : MonoBehaviour
             clustersDic[i].value /= clustersDic[i].indexCount;
         }
 
+        //Queue<int> priorityQueue = new Queue<int>(new[] { 2, 1, 3, 0 });
         Queue<int> priorityQueue = new Queue<int>(new[] { 3, 2, 1, 0 });
 
         priorityDic = new Dictionary<int, int>();
