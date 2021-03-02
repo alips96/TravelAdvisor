@@ -207,16 +207,16 @@ public class Result : MonoBehaviour
                 StateConditionsArr[3] = new Condition(Color.green, 2);
             }
             else
-            if (destinationCFRatio >= 1f && destinationCFRatio < 2.5f)
+            if (destinationCFRatio >= 1f && destinationCFRatio < 3f)
             {
                 StateConditionsArr[3] = new Condition(Color.yellow, 3);
             }
             else
-            if (destinationCFRatio >= 2.5f && destinationCFRatio < 4)
+            if (destinationCFRatio >= 3f && destinationCFRatio < 5)
             {
                 StateConditionsArr[3] = new Condition(new Color(1.0f, 0.64f, 0.0f), 4); //Orange
             }
-            else // >= 4
+            else // >= 5
             {
                 StateConditionsArr[3] = new Condition(Color.red, 5);
             }
@@ -230,16 +230,16 @@ public class Result : MonoBehaviour
                 StateConditionsArr[1] = new Condition(Color.green, 2);
             }
             else
-            if (StartingPointCFRatio >= 1f && StartingPointCFRatio < 2.5f)
+            if (StartingPointCFRatio >= 1f && StartingPointCFRatio < 3f)
             {
                 StateConditionsArr[1] = new Condition(Color.yellow, 3);
             }
             else
-            if (StartingPointCFRatio >= 2.5f && StartingPointCFRatio < 4)
+            if (StartingPointCFRatio >= 3f && StartingPointCFRatio < 5)
             {
                 StateConditionsArr[1] = new Condition(new Color(1.0f, 0.64f, 0.0f), 4); //Orange
             }
-            else // >= 4
+            else // >= 5
             {
                 StateConditionsArr[1] = new Condition(Color.red, 5);
             }
@@ -263,11 +263,11 @@ public class Result : MonoBehaviour
                 StateConditionsArr[2] = new Condition(Color.yellow, 3);
             }
             else
-            if (destinationIncidentRate >= 3500 && destinationIncidentRate < 6000)
+            if (destinationIncidentRate >= 3500 && destinationIncidentRate < 7000)
             {
                 StateConditionsArr[2] = new Condition(new Color(1.0f, 0.64f, 0.0f), 4); //Orange
             }
-            else // >= 5000
+            else // >= 7000
             {
                 StateConditionsArr[2] = new Condition(Color.red, 5);
             }
@@ -286,11 +286,11 @@ public class Result : MonoBehaviour
                 StateConditionsArr[0] = new Condition(Color.yellow, 3);
             }
             else
-            if (StartingPointIncidentRate >= 3500 && StartingPointIncidentRate < 6000)
+            if (StartingPointIncidentRate >= 3500 && StartingPointIncidentRate < 7000)
             {
                 StateConditionsArr[0] = new Condition(new Color(1.0f, 0.64f, 0.0f), 4); //Orange
             }
-            else // >= 6000
+            else // >= 7000
             {
                 StateConditionsArr[0] = new Condition(Color.red, 5);
             }
