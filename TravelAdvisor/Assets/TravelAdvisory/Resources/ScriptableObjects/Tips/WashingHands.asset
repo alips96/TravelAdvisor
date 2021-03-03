@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950f1529fa83c2d47aadd04bad76aa94, type: 3}
-  m_Name: MeetPeople
+  m_Name: WashingHands
   m_EditorClassIdentifier: 
-  title: Meet People outside
-  content: Outdoor gatherings are safer than indoor ones, particularly if indoor
-    spaces are small and without outdoor air coming in.
-  image: {fileID: 21300000, guid: 0b723a187b246ad44ad90b0600b1e98e, type: 3}
+  title: Washing Hands
+  content: Wash your hands for a duration of 20 sec front and back part of palm thoroughly.
+  image: {fileID: 21300000, guid: 2d51a0df5d8ee604888cc44ce0a04ee8, type: 3}
+  url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/coronavirus-safety.html

@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950f1529fa83c2d47aadd04bad76aa94, type: 3}
-  m_Name: p2
+  m_Name: PCRTest
   m_EditorClassIdentifier: 
-  title: Priority 2
-  content: This is Priority 2
-  image: {fileID: 21300000, guid: 088394762547d4e40b218dde01305c92, type: 3}
+  title: Take a Test
+  content: Take a swab test in the regional covid centre incase you come in contact
+    with infected person and isolate yourself.
+  image: {fileID: 21300000, guid: 6e73a932b89e3b3448b87c31fc42c734, type: 3}
+  url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/coronavirus-safety.html

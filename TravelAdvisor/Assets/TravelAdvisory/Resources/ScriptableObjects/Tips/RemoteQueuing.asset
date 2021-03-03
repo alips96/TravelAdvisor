@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950f1529fa83c2d47aadd04bad76aa94, type: 3}
-  m_Name: Mask
+  m_Name: RemoteQueuing
   m_EditorClassIdentifier: 
-  title: Wearing Masks
-  content: Wear a FFP or N95 mask when venturing outside, especially in crowded regions.
-  image: {fileID: 21300000, guid: 153b1f314b9faca40aca92a885db7959, type: 3}
+  title: Remote Queuing
+  content: Enable remote queuing when checking in for hotels or any other means by
+    providing your contact number so that the service provider contacts you during
+    your turn when you wait in your taxi or lounge.
+  image: {fileID: 21300000, guid: d03dc8b3ec8c77b46b2d0d28501d900b, type: 3}
   url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/coronavirus-safety.html

@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950f1529fa83c2d47aadd04bad76aa94, type: 3}
-  m_Name: P4
+  m_Name: SafetyDistance
   m_EditorClassIdentifier: 
-  title: I am p Red Haha
-  content: yes it is p Red
-  image: {fileID: 21300000, guid: 2be6e18ba50ecf44087389e07142d7f7, type: 3}
+  title: Safety Distance
+  content: Maintain a distance of 6 feet from your neighbors all the time.
+  image: {fileID: 21300000, guid: f7fa83d839fff7c4d853fb1db378ed43, type: 3}
+  url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/coronavirus-safety.html

@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950f1529fa83c2d47aadd04bad76aa94, type: 3}
-  m_Name: SafetyDistance 1
+  m_Name: Covering
   m_EditorClassIdentifier: 
-  title: Keep Safety Distance
-  content: People should keep safety distance all the time.
-  image: {fileID: 21300000, guid: a093780a76b8e8c4c8b121e123d21a82, type: 3}
+  title: Covering Mouth and Nose
+  content: Cover your mouth and nose when sneezing or coughing with a napkin or your
+    elbow.
+  image: {fileID: 21300000, guid: ea0d0f4ba00e9d449baad953a04f31d1, type: 3}
+  url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/coronavirus-safety.html
