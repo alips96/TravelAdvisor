@@ -153,7 +153,7 @@ public class Lookup : MonoBehaviour
             Confirmed = Convert.ToInt32(column[5]),
             Deaths = Convert.ToInt32(column[6]),
             Recovered = column[7].CompareTo("") == 0 ? 0 : (int)float.Parse(column[7]),
-            Active = (int)float.Parse(column[8]),
+            Active = column[8].CompareTo("") == 0 ? 0 : (int)float.Parse(column[8]),
             Incident_Rate = column[10].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[10]),
             Case_Fatality_Ratio = column[13].CompareTo("") == 0 ? 0f : Convert.ToDouble(column[13]),
             Combined_Key = column[0] + ", US",
